@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        aws: grunt.file.readJSON('aws.json'),
         
         jshint: {
             gruntfile: {
@@ -95,9 +96,9 @@ module.exports = function(grunt) {
         
         aws_s3: {
             options: {
-                accessKeyId: 'AKIAJ52H342DBPWJ3F4A',
-                secretAccessKey: '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',
-                bucket: 'rainbowlemon.co.uk',
+                accessKeyId: '<%= aws.accessKeyId %>',
+                secretAccessKey: '<%= aws.secretAccessKey %>',
+                bucket: '<%= aws.bucket %>',
                 region: 'eu-west-1',
                 uploadConcurrency: 5
             },
