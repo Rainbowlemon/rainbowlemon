@@ -1,4 +1,15 @@
 rainbowlemon
 ============
 
-Code for rainbowlemon.co.uk
+##### Install:
+
+````
+npm install
+bower install
+````
+
+##### Compile css:
+
+````
+grunt sass
+````
