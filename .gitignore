@@ -1,2 +1,4 @@
 node_modules/
 web/vendor/bower/
+temp/
+*._*

@@ -52,13 +52,88 @@ module.exports = function(grunt) {
                     ]
                 }
             }
+        },
+        
+        copy: {
+            temp: {
+                files: [{
+                    expand: true, 
+                    cwd: 'web/', 
+                    src: ['*', 'app/templates/**/*', 'css/**', 'img/**', 'fonts/*', 'vendor/libs/**/*'], 
+                    dest: 'temp/'
+                }]
+            }
+        },
+        
+        clean: {
+            temp: 'temp/' 
+        },
+        
+        requirejs: {
+            temp: {
+                options: {
+                    name: 'main',
+                    mainConfigFile: 'web/app/main.js',
+                    out: 'temp/app/main.js',
+                    preserveLicenseComments: false,
+                    almond: true
+                /*
+                    name: 'main',
+                    mainConfigFile: 'web/app/main.js',
+                    out: 'temp/app/<%= pkg.version %>.js',
+                    preserveLicenseComments: false,
+                    almond: true,
+                    replaceRequireScript: [{
+                        files: ['temp/index.html'],
+                        module: '<%= pkg.version %>',
+                        modulePath: '/temp/app/<%= pkg.version %>'
+                    }]
+                */
+                }
+            }
+        },
+        
+        aws_s3: {
+            options: {
+                accessKeyId: 'AKIAJ52H342DBPWJ3F4A',
+                secretAccessKey: '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',
+                bucket: 'rainbowlemon.co.uk',
+                region: 'eu-west-1',
+                uploadConcurrency: 5
+            },
+            
+            wipe: {
+                files: [
+                    {
+                        dest: '/',
+                        'action': 'delete'
+                    }
+                ]
+            },
+            
+            deploy: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'temp/',
+                        src: ['**'],
+                        dest: ''
+                    }
+                ]
+            }
         }
     });
-
+    
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-modernizr');
+    grunt.loadNpmTasks('grunt-requirejs');
+    grunt.loadNpmTasks('grunt-aws-s3');
     
+    grunt.registerTask('wipe', ['aws_s3:wipe']);
+    grunt.registerTask('deploy', ['clean:temp', 'copy:temp', 'requirejs:temp', 'aws_s3:deploy', 'clean:temp']);
     grunt.registerTask('default', ['modernizr', 'sass', 'jshint']);
 };

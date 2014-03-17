@@ -1,12 +1,16 @@
 {
-  "name": "rainbowlemon",
-  "version": "0.0.1",
-  "description": "Website of designer/developer Aidan Jalali",
-  "author": "Aidan Jalali <aidanjalali@gmail.com>",
-  "devDependencies": {
-    "grunt-contrib-jshint": "0.7.x",
-    "grunt-contrib-sass": "0.5.x",
-    "grunt-contrib-watch": "0.5.x",
-    "grunt-modernizr": "0.5.x"
-  }
+    "name": "rainbowlemon",
+    "version": "0.0.1",
+    "description": "Website of designer/developer Aidan Jalali",
+    "author": "Aidan Jalali <aidanjalali@gmail.com>",
+    "devDependencies": {
+        "grunt-requirejs": "0.4.x",
+        "grunt-contrib-clean": "0.5.x",
+        "grunt-contrib-copy": "0.4.x",
+        "grunt-contrib-jshint": "0.7.x",
+        "grunt-contrib-sass": "0.5.x",
+        "grunt-contrib-watch": "0.5.x",
+        "grunt-modernizr": "0.5.x",
+        "grunt-aws-s3": "0.8.x"
+    }
 }
