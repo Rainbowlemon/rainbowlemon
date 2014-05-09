@@ -14,4 +14,3 @@ bower install
 grunt sass
 
 ````
-
