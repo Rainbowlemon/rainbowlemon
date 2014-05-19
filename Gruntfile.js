@@ -8,14 +8,14 @@ module.exports = function(grunt) {
                 src: 'Gruntfile.js'
             },
             src: {
-                src: 'web/app/**/*.js'
+                src: 'www/app/**/*.js'
             }
         },
         
         sass: {
             dev: {
                 files: {
-                    'web/css/style.css': 'sass/style.scss'
+                    'www/css/style.css': 'sass/style.scss'
                 }
             },
             prod: {
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
                     style: 'compressed'
                 },
                 files: {
-                    'web/css/style.css': 'sass/style.scss'
+                    'www/css/style.css': 'sass/style.scss'
                 }
             }
         },
@@ -37,8 +37,8 @@ module.exports = function(grunt) {
         
         modernizr: {
             dist: {
-                devFile: 'web/vendor/bower/modernizr/modernizr.js',
-                outputFile: 'web/vendor/libs/modernizr/modernizr-custom.js',
+                devFile: 'www/vendor/bower/modernizr/modernizr.js',
+                outputFile: 'www/vendor/libs/modernizr/modernizr-custom.js',
                 
                 extra: {
                     load: false
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
                 
                 files: {
                     src: [
-                        'web/app/**/*',
+                        'www/app/**/*',
                         'sass/**/*'
                     ]
                 }
@@ -56,40 +56,33 @@ module.exports = function(grunt) {
         },
         
         copy: {
-            temp: {
+            build: {
                 files: [{
                     expand: true, 
-                    cwd: 'web/', 
+                    cwd: 'www/', 
                     src: ['*', 'app/templates/**/*', 'css/**', 'img/**', 'fonts/*', 'vendor/libs/**/*'], 
-                    dest: 'temp/'
+                    dest: 'build/'
                 }]
             }
         },
         
         clean: {
-            temp: 'temp/' 
+            build: 'build/' 
         },
         
         requirejs: {
-            temp: {
+            build: {
                 options: {
                     name: 'main',
-                    mainConfigFile: 'web/app/main.js',
-                    out: 'temp/app/main.js',
-                    preserveLicenseComments: false,
-                    almond: true
-                /*
-                    name: 'main',
-                    mainConfigFile: 'web/app/main.js',
-                    out: 'temp/app/<%= pkg.version %>.js',
+                    mainConfigFile: 'www/app/main.js',
+                    out: 'build/app/<%= pkg.version %>.js',
                     preserveLicenseComments: false,
                     almond: true,
                     replaceRequireScript: [{
-                        files: ['temp/index.html'],
+                        files: ['build/index.html'],
                         module: '<%= pkg.version %>',
-                        modulePath: '/temp/app/<%= pkg.version %>'
+                        modulePath: '/build/app/<%= pkg.version %>'
                     }]
-                */
                 }
             }
         },
@@ -116,7 +109,7 @@ module.exports = function(grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: 'temp/',
+                        cwd: 'build/',
                         src: ['**'],
                         dest: ''
                     }
@@ -134,7 +127,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-requirejs');
     grunt.loadNpmTasks('grunt-aws-s3');
     
-    grunt.registerTask('wipe', ['aws_s3:wipe']);
-    grunt.registerTask('deploy', ['clean:temp', 'copy:temp', 'requirejs:temp', 'aws_s3:deploy', 'clean:temp']);
-    grunt.registerTask('default', ['modernizr', 'sass', 'jshint']);
+    grunt.registerTask('build', ['clean:build', 'copy:build', 'requirejs:build']);
+    grunt.registerTask('deploy', ['aws_s3:wipe', 'aws_s3:deploy', 'clean:build']);
+    grunt.registerTask('default', ['modernizr', 'sass', 'jshint', 'clean:build', 'copy:build', 'requirejs:build', 'aws_s3:wipe', 'aws_s3:deploy', 'clean:build']);
 };

@@ -47,18 +47,19 @@ strong {
 }
 
 main {
-    width: 70%;
+    width: 88%;
+    max-width: 800px;
     display: block;
     margin: 0 auto;
     text-align: center;
-    padding-top: 8rem;
-    margin-top: 5%;
+    margin-top: 10%;
+    margin-top: 12vw;
     
-    transition: padding 0.5s cubic-bezier(.12,.8,.4,1), margin 0.5s cubic-bezier(.12,.8,.4,1);
+    transition: margin 0.5s cubic-bezier(.12,.8,.4,1);
     
     
     img {
-        display: block;
+        display: block; 
         margin: 0 auto 1em;
     }
     
@@ -73,9 +74,11 @@ main {
 }
 
 @media (max-width: 500px) {
-    main {
-        padding-top: 3rem;
-        margin-top: 2%;
+    h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.3em;
     }
 }
 
