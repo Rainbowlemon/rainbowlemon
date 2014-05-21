@@ -1,6 +1,6 @@
 html,body {
     color: #fff;
-    background-color: #7E2121;
+    background-color: #8B2424;
 }
 
 html {
@@ -54,6 +54,7 @@ strong {
     right: 0;
     background: #fff;
     font-size: 110%;
+    z-index: 100;
     
     > nav,
     > p {
@@ -66,18 +67,37 @@ strong {
         a {
             height: 100%;
             display: block;
-            padding: 0 .8em;
+            padding: 0 1.2em;
+            position: relative;
             
             &:hover,
             &:focus {
                 background-color: #f6f6f6;
                 top: 0;
             }
+            
+            &:after {
+                content: '';
+                left: 50%;
+                bottom: -3px;
+                height: 2px;
+                width: 0;
+                position: absolute;
+                background-color: #fff;
+                
+                transition: left 0.15s cubic-bezier(0,.8,.4,1), width 0.15s cubic-bezier(0,.8,.4,1);
+            }
+            
+            &.active:after {
+                width: 100%;
+                left: 0;
+            }
         }
         
         img {
             display: inline-block;
             vertical-align: middle;
+            margin: 0 .2em;
         }
     }
     
@@ -113,8 +133,4 @@ main {
     display: block;
     margin: 0 auto;
     text-align: center;
-    margin-top: 10%;
-    margin-top: 12vw;
-    
-    transition: margin 0.5s cubic-bezier(.12,.8,.4,1);
 }

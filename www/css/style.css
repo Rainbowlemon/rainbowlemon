@@ -354,7 +354,7 @@ th {
 
 html, body {
   color: #fff;
-  background-color: #7E2121; }
+  background-color: #8B2424; }
 
 html {
   color: #777;
@@ -394,19 +394,34 @@ strong {
   left: 0;
   right: 0;
   background: #fff;
-  font-size: 110%; }
+  font-size: 110%;
+  z-index: 100; }
   #page-header > nav {
     float: left; }
     #page-header > nav a {
       height: 100%;
       display: block;
-      padding: 0 .8em; }
+      padding: 0 1.2em;
+      position: relative; }
       #page-header > nav a:hover, #page-header > nav a:focus {
         background-color: #f6f6f6;
         top: 0; }
+      #page-header > nav a:after {
+        content: '';
+        left: 50%;
+        bottom: -3px;
+        height: 2px;
+        width: 0;
+        position: absolute;
+        background-color: #fff;
+        transition: left 0.15s cubic-bezier(0, 0.8, 0.4, 1), width 0.15s cubic-bezier(0, 0.8, 0.4, 1); }
+      #page-header > nav a.active:after {
+        width: 100%;
+        left: 0; }
     #page-header > nav img {
       display: inline-block;
-      vertical-align: middle; }
+      vertical-align: middle;
+      margin: 0 .2em; }
   #page-header > p {
     float: right;
     height: 100%;
@@ -430,19 +445,18 @@ main {
   max-width: 800px;
   display: block;
   margin: 0 auto;
-  text-align: center;
-  margin-top: 10%;
-  margin-top: 12vw;
-  transition: margin 0.5s cubic-bezier(0.12, 0.8, 0.4, 1); }
+  text-align: center; }
 
-#intro h1 {
-  position: relative;
-  display: inline-block; }
-  #intro h1 img {
-    position: absolute;
-    bottom: 50%;
-    left: 88%;
-    width: 22vw; }
+#intro {
+  padding: 10em 0 5em; }
+  #intro h1 {
+    position: relative;
+    display: inline-block; }
+    #intro h1 img {
+      position: absolute;
+      bottom: 50%;
+      left: 88%;
+      width: 22vw; }
 
 @media (max-width: 500px) {
   h1 {
