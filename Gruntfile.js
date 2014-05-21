@@ -81,7 +81,7 @@ module.exports = function(grunt) {
                     replaceRequireScript: [{
                         files: ['build/index.html'],
                         module: '<%= pkg.version %>',
-                        modulePath: '/build/app/<%= pkg.version %>'
+                        modulePath: './app/<%= pkg.version %>'
                     }]
                 }
             }
