@@ -13,3 +13,29 @@
         }
     }
 }
+
+.tree {
+    position: absolute;
+    z-index: -1;
+    
+    top: 200px;
+    left: 4em;
+    left: 4vw;
+    
+    min-height: 80%;
+}
+.tree-top {
+    background: #e44444;
+    width: 160px;
+    height: 146px;
+}
+.tree-middle {
+    position: absolute;
+    height: 100%;
+    width: 16px;
+    background-image: url(/img/tree-middle.svg);
+    background-repeat: repeat-y;
+    background-color: #e44444;
+    left: 75px;
+    top: 146px;
+}

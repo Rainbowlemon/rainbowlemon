@@ -1,6 +1,13 @@
+html,
+body {
+    height: 100%;
+}
 html {
     color: #888;
     font-family: 'Crimson Text', serif;
+}
+body {
+    overflow-y: scroll;
 }
 
 h1,h2,h3,
@@ -32,6 +39,10 @@ a {
     &:active {
         top: 1px;
     }
+}
+
+p {
+    font-size: 1.1rem;
 }
 
 b,
@@ -77,7 +88,7 @@ strong {
     top: 0;
     left: 0;
     right: 0;
-    background: RGBA(255,255,255,0.97);
+    background: RGBA(255,255,255,0.94);
     font-size: 110%;
     z-index: 100;
     border-bottom: 1px solid #ddd;
@@ -164,9 +175,12 @@ strong {
 }
 
 main {
+    min-height: 100%;
     width: 88%;
     max-width: 1000px;
     display: block;
     margin: 0 auto;
     text-align: center;
+    position: relative;
+    z-index: 50;
 }

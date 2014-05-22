@@ -352,9 +352,16 @@ td,
 th {
   padding: 0; }
 
+html,
+body {
+  height: 100%; }
+
 html {
   color: #888;
   font-family: 'Crimson Text', serif; }
+
+body {
+  overflow-y: scroll; }
 
 h1, h2, h3,
 h4, h5, h6 {
@@ -377,6 +384,9 @@ a {
     text-decoration: none; }
   a:active {
     top: 1px; }
+
+p {
+  font-size: 1.1rem; }
 
 b,
 strong {
@@ -405,7 +415,7 @@ strong {
   top: 0;
   left: 0;
   right: 0;
-  background: RGBA(255, 255, 255, 0.97);
+  background: RGBA(255, 255, 255, 0.94);
   font-size: 110%;
   z-index: 100;
   border-bottom: 1px solid #ddd; }
@@ -464,11 +474,14 @@ strong {
     text-decoration: none; }
 
 main {
+  min-height: 100%;
   width: 88%;
   max-width: 1000px;
   display: block;
   margin: 0 auto;
-  text-align: center; }
+  text-align: center;
+  position: relative;
+  z-index: 50; }
 
 #intro {
   padding: 10em 0 5em; }
@@ -480,6 +493,29 @@ main {
       bottom: 50%;
       left: 88%;
       width: 22vw; }
+
+.tree {
+  position: absolute;
+  z-index: -1;
+  top: 200px;
+  left: 4em;
+  left: 4vw;
+  min-height: 80%; }
+
+.tree-top {
+  background: #e44444;
+  width: 160px;
+  height: 146px; }
+
+.tree-middle {
+  position: absolute;
+  height: 100%;
+  width: 16px;
+  background-image: url(/img/tree-middle.svg);
+  background-repeat: repeat-y;
+  background-color: #e44444;
+  left: 75px;
+  top: 146px; }
 
 @media (max-width: 500px) {
   h1 {
