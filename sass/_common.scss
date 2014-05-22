@@ -1,10 +1,5 @@
-html,body {
-    color: #fff;
-    background-color: #8B2424;
-}
-
 html {
-    color: #777;
+    color: #888;
     font-family: 'Crimson Text', serif;
 }
 
@@ -28,7 +23,6 @@ h2 {
 a {
     -webkit-font-smoothing: antialiased;
     position: relative;
-    color: #fff;
     
     &:hover,
     &:focus {
@@ -42,8 +36,39 @@ a {
 
 b,
 strong {
-    font-weight: 600;
+    font-weight: 400;
+    color: #000;
 }
+
+.scale-btn {
+    
+    img,
+    svg {
+       -webkit-transition: -webkit-transform 0.15s cubic-bezier(0,0.8,0.4,1);
+        transition: transform 0.15s cubic-bezier(0,0.8,0.4,1);
+    }
+    
+    &:hover,
+    &:focus {
+        img,
+        svg {
+            -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+        }
+    }
+    
+    &:active {
+        img,
+        svg {
+            -webkit-transition: none;
+            transition: none; 
+            
+            -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+        }
+    }
+}
+
 
 /* Headers, footers and container styling */
 
@@ -52,13 +77,24 @@ strong {
     top: 0;
     left: 0;
     right: 0;
-    background: #fff;
+    background: RGBA(255,255,255,0.97);
     font-size: 110%;
     z-index: 100;
+    border-bottom: 1px solid #ddd;
     
-    > nav,
-    > p {
-        
+    > nav li,
+    > p,
+    > p a {
+        height: 60px;
+        line-height: 56px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    svg {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 0.2em;
     }
     
     > nav {
@@ -70,22 +106,30 @@ strong {
             padding: 0 1.2em;
             position: relative;
             
-            &:hover,
-            &:focus {
-                background-color: #f6f6f6;
-                top: 0;
-            }
-            
             &:after {
                 content: '';
                 left: 50%;
-                bottom: -3px;
-                height: 2px;
+                top: 100%;
+                height: 3px;
                 width: 0;
                 position: absolute;
-                background-color: #fff;
+                background-color: #e44444;
                 
                 transition: left 0.15s cubic-bezier(0,.8,.4,1), width 0.15s cubic-bezier(0,.8,.4,1);
+            }
+            
+            &:hover:after,
+            &:focus:after {
+                width: 20%;
+                left: 40%;
+            }
+            &:active {
+                top: 0;
+                
+                &:after {
+                    width: 90%;
+                    left: 5%;
+                }
             }
             
             &.active:after {
@@ -103,21 +147,13 @@ strong {
     
     > p {
         float: right;
-        height: 100%;
-        display: block;
+        margin: 0 0.5rem 0 0;
     }
     
     ul {
         list-style: none;
         margin: 0;
         padding: 0;
-    }
-    
-    li {
-        display: inline-block;
-        vertical-align: middle;
-        height: 60px;
-        line-height: 56px;
     }
     
     a,
@@ -129,7 +165,7 @@ strong {
 
 main {
     width: 88%;
-    max-width: 800px;
+    max-width: 1000px;
     display: block;
     margin: 0 auto;
     text-align: center;
