@@ -129,6 +129,6 @@ module.exports = function(grunt) {
     
     grunt.registerTask('build', ['clean:build', 'copy:build', 'requirejs:build']);
     grunt.registerTask('deploy', ['aws_s3:wipe', 'aws_s3:deploy', 'clean:build']);
-    grunt.registerTast('modernizr', ['modernizr']);
+    grunt.registerTask('modernizr', ['modernizr']);
     grunt.registerTask('default', ['modernizr', 'sass', 'jshint', 'clean:build', 'copy:build', 'requirejs:build', 'aws_s3:wipe', 'aws_s3:deploy', 'clean:build']);
 };

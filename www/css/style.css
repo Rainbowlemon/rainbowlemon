@@ -503,7 +503,7 @@ main {
   min-height: 80%; }
 
 .tree-top {
-  background: #e44444;
+  background-color: #e44444;
   width: 160px;
   height: 146px; }
 
@@ -511,11 +511,16 @@ main {
   position: absolute;
   height: 100%;
   width: 16px;
-  background-image: url(/img/tree-middle.svg);
-  background-repeat: repeat-y;
   background-color: #e44444;
   left: 75px;
   top: 146px; }
+  .tree-middle .overlay {
+    background: url(/img/tree-middle.svg) repeat-y;
+    height: 100%;
+    width: 16px;
+    position: absolute;
+    top: 0;
+    left: 0; }
 
 @media (max-width: 500px) {
   h1 {

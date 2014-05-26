@@ -1,10 +1,12 @@
 define(function(){
+    'use strict';
+    
     /* accepts parameters
      * h  Object = {h:x, s:y, v:z}
      * OR 
      * h, s, v
     */
-    function hsb2Rgb(h, s, v) {
+    function hsbToRgb(h, s, v) {
         var r, g, b, i, f, p, q, t;
         if (h && s === undefined && v === undefined) {
             s = h.s, v = h.v, h = h.h;
@@ -29,5 +31,7 @@ define(function(){
         };
     }
 
-    return hsb2Rgb;
+    return {
+        hsbToRgb: hsbToRgb
+    };
 });
