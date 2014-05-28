@@ -361,7 +361,8 @@ html {
   font-family: 'Crimson Text', serif; }
 
 body {
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; }
 
 h1, h2, h3,
 h4, h5, h6 {

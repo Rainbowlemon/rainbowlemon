@@ -1,0 +1,234 @@
+@font-face {
+	font-family: 'Manta';
+	src:url('fonts/Manta.eot');
+	src:url('fonts/Manta.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Manta.woff') format('woff'),
+		url('fonts/Manta.ttf') format('truetype'),
+		url('fonts/Manta.svg#Manta') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'Manta';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="ic-"] {
+*/
+.ic-arrow-down, .ic-arrow-left, .ic-arrow-right, .ic-arrow-up, .ic-bank-book, .ic-briefcase, .ic-calendar-add, .ic-calendar-multiple, .ic-calendar, .ic-clipboard, .ic-clock, .ic-cocktail, .ic-cogs, .ic-computer, .ic-config, .ic-copy, .ic-cross, .ic-database, .ic-department, .ic-document, .ic-dollar, .ic-download, .ic-edit-doc, .ic-email, .ic-exclamation, .ic-exit, .ic-fax, .ic-female, .ic-fire, .ic-globe, .ic-graph, .ic-handbook, .ic-home, .ic-key, .ic-linkedin, .ic-location, .ic-male, .ic-mobile, .ic-padlock, .ic-pencil, .ic-people, .ic-person-speaking, .ic-person, .ic-phone, .ic-photo, .ic-pill, .ic-plus, .ic-present, .ic-refresh, .ic-reports-to-x, .ic-rss, .ic-search, .ic-speech, .ic-thermometer, .ic-tick, .ic-twitter, .ic-updown, .ic-upload-doc, .ic-x-reports-to, .ic-skype, .ic-camera, .ic-menu, .ic-plane, .ic-apps, .ic-trash {
+	font-family: 'Manta';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.ic-arrow-down:before {
+	content: "\e000";
+}
+.ic-arrow-left:before {
+	content: "\e001";
+}
+.ic-arrow-right:before {
+	content: "\e002";
+}
+.ic-arrow-up:before {
+	content: "\e003";
+}
+.ic-bank-book:before {
+	content: "\e004";
+}
+.ic-briefcase:before {
+	content: "\e005";
+}
+.ic-calendar-add:before {
+	content: "\e006";
+}
+.ic-calendar-multiple:before {
+	content: "\e007";
+}
+.ic-calendar:before {
+	content: "\e008";
+}
+.ic-clipboard:before {
+	content: "\e009";
+}
+.ic-clock:before {
+	content: "\e00a";
+}
+.ic-cocktail:before {
+	content: "\e00b";
+}
+.ic-cogs:before {
+	content: "\e00c";
+}
+.ic-computer:before {
+	content: "\e00d";
+}
+.ic-config:before {
+	content: "\e00e";
+}
+.ic-copy:before {
+	content: "\e00f";
+}
+.ic-cross:before {
+	content: "\e010";
+}
+.ic-database:before {
+	content: "\e011";
+}
+.ic-department:before {
+	content: "\e012";
+}
+.ic-document:before {
+	content: "\e013";
+}
+.ic-dollar:before {
+	content: "\e014";
+}
+.ic-download:before {
+	content: "\e015";
+}
+.ic-edit-doc:before {
+	content: "\e016";
+}
+.ic-email:before {
+	content: "\e017";
+}
+.ic-exclamation:before {
+	content: "\e018";
+}
+.ic-exit:before {
+	content: "\e019";
+}
+.ic-fax:before {
+	content: "\e01a";
+}
+.ic-female:before {
+	content: "\e01b";
+}
+.ic-fire:before {
+	content: "\e01c";
+}
+.ic-globe:before {
+	content: "\e01d";
+}
+.ic-graph:before {
+	content: "\e01e";
+}
+.ic-handbook:before {
+	content: "\e01f";
+}
+.ic-home:before {
+	content: "\e020";
+}
+.ic-key:before {
+	content: "\e021";
+}
+.ic-linkedin:before {
+	content: "\e022";
+}
+.ic-location:before {
+	content: "\e023";
+}
+.ic-male:before {
+	content: "\e024";
+}
+.ic-mobile:before {
+	content: "\e025";
+}
+.ic-padlock:before {
+	content: "\e026";
+}
+.ic-pencil:before {
+	content: "\e027";
+}
+.ic-people:before {
+	content: "\e028";
+}
+.ic-person-speaking:before {
+	content: "\e029";
+}
+.ic-person:before {
+	content: "\e02a";
+}
+.ic-phone:before {
+	content: "\e02b";
+}
+.ic-photo:before {
+	content: "\e02c";
+}
+.ic-pill:before {
+	content: "\e02d";
+}
+.ic-plus:before {
+	content: "\e02e";
+}
+.ic-present:before {
+	content: "\e02f";
+}
+.ic-refresh:before {
+	content: "\e030";
+}
+.ic-reports-to-x:before {
+	content: "\e031";
+}
+.ic-rss:before {
+	content: "\e032";
+}
+.ic-search:before {
+	content: "\e033";
+}
+.ic-speech:before {
+	content: "\e034";
+}
+.ic-thermometer:before {
+	content: "\e035";
+}
+.ic-tick:before {
+	content: "\e036";
+}
+.ic-twitter:before {
+	content: "\e037";
+}
+.ic-updown:before {
+	content: "\e038";
+}
+.ic-upload-doc:before {
+	content: "\e039";
+}
+.ic-x-reports-to:before {
+	content: "\e03a";
+}
+.ic-skype:before {
+	content: "\e03b";
+}
+.ic-camera:before {
+	content: "\e03c";
+}
+.ic-menu:before {
+	content: "\e03d";
+}
+.ic-plane:before {
+	content: "\e03e";
+}
+.ic-apps:before {
+	content: "\e03f";
+}
+.ic-trash:before {
+	content: "\e040";
+}
