@@ -93,9 +93,11 @@ strong {
     z-index: 100;
     border-bottom: 1px solid #ddd;
     
-    > nav li,
-    > p,
-    > p a {
+    li {
+        display: inline;    
+    }
+    
+    a {
         height: 60px;
         line-height: 56px;
         display: inline-block;
@@ -105,15 +107,13 @@ strong {
     svg {
         display: inline-block;
         vertical-align: middle;
-        margin: 0 0.2em;
+        margin: 0 0.1em;
     }
     
     > nav {
         float: left;
         
         a {
-            height: 100%;
-            display: block;
             padding: 0 1.2em;
             position: relative;
             

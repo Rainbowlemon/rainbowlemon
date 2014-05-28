@@ -11,7 +11,7 @@ define([
     
     var App = {
         
-        init: function(){
+        init: function() {
             this.bindEvents();
             
         },
@@ -29,11 +29,11 @@ define([
             }
         },
         
-        bindEvents: function(){
+        bindEvents: function() {
             $(window).on('scroll.' + this.options.appName, this.setColors.bind(this));
         },
         
-        setColors: function(){ 
+        setColors: function() { 
             //Get fraction of scroll related to document size
             var scrollFraction = window.scrollY / ($(document).height() - window.innerHeight);
             
@@ -51,12 +51,10 @@ define([
                 '     fill:' + rgbString +
                 ' }' +
                 ' .colored-bg,'+
-                ' #page-header > nav a.active:after {' +
+                ' #page-header > nav a:after {' +
                 '     background-color:' + rgbString +
-                ' }'            
+                ' }'
             );
-           // this.el.colored.paths.css('fill', rgbString);
-           // this.el.colored.bgs.css('background-color', rgbString);
         }
     
     };

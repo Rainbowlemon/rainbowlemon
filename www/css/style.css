@@ -419,9 +419,9 @@ strong {
   font-size: 110%;
   z-index: 100;
   border-bottom: 1px solid #ddd; }
-  #page-header > nav li,
-  #page-header > p,
-  #page-header > p a {
+  #page-header li {
+    display: inline; }
+  #page-header a {
     height: 60px;
     line-height: 56px;
     display: inline-block;
@@ -429,12 +429,10 @@ strong {
   #page-header svg {
     display: inline-block;
     vertical-align: middle;
-    margin: 0 0.2em; }
+    margin: 0 0.1em; }
   #page-header > nav {
     float: left; }
     #page-header > nav a {
-      height: 100%;
-      display: block;
       padding: 0 1.2em;
       position: relative; }
       #page-header > nav a:after {
@@ -500,7 +498,8 @@ main {
   top: 200px;
   left: 4em;
   left: 4vw;
-  min-height: 80%; }
+  min-height: 80%;
+  transition: opacity 1s linear, left 1s cubic-bezier(0, 0.7, 0.4, 1), top 1s cubic-bezier(0, 0.7, 0.4, 1); }
 
 .tree-top {
   background-color: #e44444;
@@ -522,9 +521,75 @@ main {
     top: 0;
     left: 0; }
 
+@-webkit-keyframes arrow-throb {
+  0% {
+    -webkit-transform: translateY(0); }
+
+  15% {
+    -webkit-transform: translateY(20px);
+    border-color: #999 transparent; }
+
+  45% {
+    -webkit-transform: translateY(0);
+    border-color: #ddd transparent; } }
+
+.pointer-arrows span {
+  display: block;
+  width: 0;
+  height: 0;
+  margin: 1.2em auto;
+  border-style: solid;
+  border-width: 15px 15px 0;
+  border-color: #ddd transparent;
+  -webkit-animation: arrow-throb 3s cubic-bezier(0.7, 0, 0.5, 1) 0s infinite; }
+
+.pointer-arrows span:nth-child(2) {
+  border-width: 11px 11px 0;
+  -webkit-animation-delay: .15s; }
+
+.pointer-arrows span:nth-child(3) {
+  border-width: 7px 7px 0;
+  -webkit-animation-delay: .3s; }
+
+@media (max-width: 1050px) {
+  .tree {
+    left: -2em;
+    top: 100px; } }
+@media (max-width: 700px) {
+  .tree {
+    opacity: 0; } }
 @media (max-width: 500px) {
+  h1, h2, h3, p {
+    background: RGBA(255, 255, 255, 0.9); }
+
   h1 {
-    font-size: 1.8em; }
+    font-size: 2.6em; }
 
   h2 {
-    font-size: 1.3em; } }
+    font-size: 1.5em; }
+
+  /* Header */
+  #page-header p span {
+    display: none; }
+  #page-header a {
+    height: 50px;
+    line-height: 42px; }
+  #page-header > nav a {
+    padding: 0 0.6em; }
+  #page-header > nav li {
+    display: none; }
+    #page-header > nav li:first-child {
+      display: inline-block; }
+  #page-header > nav img,
+  #page-header svg {
+    width: 36px;
+    height: auto; }
+
+  #intro {
+    padding: 5.5em 0 1em; }
+    #intro h1 img {
+      display: block;
+      position: static;
+      width: 65vw;
+      left: 0;
+      margin: 0 auto; } }
