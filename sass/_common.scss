@@ -52,6 +52,22 @@ strong {
     color: #000;
 }
 
+// Tag list
+.tags {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+        display: inline-block;
+        margin: 0 .3em;
+        padding: .2em .6em;
+        background: red;
+        color: #fff;
+        
+    }
+}
+
 .scale-btn {
     
     img,
