@@ -31,13 +31,12 @@ define([
         
         bindEvents: function() {
             $(window).on('scroll.' + this.options.appName, this.setColors.bind(this));
+            this.setColors(); //set page colors before scroll
         },
         
         setColors: function() { 
             //Get fraction of scroll related to document size
             var scrollFraction = window.scrollY / ($(document).height() - window.innerHeight);
-            
-            console.log(scrollFraction);
             
             if (scrollFraction > 1) scrollFraction = 1;
             
@@ -48,13 +47,14 @@ define([
             
             this.el.styles.html(
                 ' .colored-svg path {' +
-                '     fill:' + rgbString +
+                '     fill:' + rgbString + ' !important;' +
                 ' }' +
                 ' .colored-bg,'+
                 ' #page-header > nav a:after {' +
-                '     background-color:' + rgbString +
+                '     background-color:' + rgbString + ' !important;' +
                 ' }'
             );
+            
         }
     
     };

@@ -1,5 +1,6 @@
 #intro {
     padding: 10em 0 5em;
+    text-align: center;
     
     h1 {
         position: relative;
@@ -12,6 +13,11 @@
             width: 22vw;
         }
     }
+    
+    p {
+        width: 65%;
+        margin: 0 auto;
+    }
 }
 
 .tree {
@@ -21,8 +27,7 @@
     top: 200px;
     left: 4em;
     left: 4vw;
-    
-    min-height: 80%;
+    bottom: 0px;
     
     transition: opacity 1s linear, left 1s cubic-bezier(0,.7,.4,1), top 1s cubic-bezier(0,.7,.4,1);
 }
@@ -42,11 +47,11 @@
     
     .overlay {
         background: url(/img/tree-middle.svg) repeat-y;
-        height: 100%;
         width: 16px;
         position: absolute;
         top: 0;
         left: 0;
+        bottom: 0;
     }
 }
 
@@ -83,4 +88,38 @@
 .pointer-arrows span:nth-child(3){
     border-width: 7px 7px 0;
     -webkit-animation-delay: .3s;
+}
+
+
+#portfolio {
+    > section {
+        clear: both;
+        
+        padding-left: 1em;
+    }
+    
+    header {
+        float: left;
+        width: 38%;
+        padding-right: 2%;
+    }
+}
+
+
+.figure-container {
+    float: right;
+    width: 62%;
+    
+    figure {
+        
+    }
+    
+    img {
+        width: 100%;
+        height: auto;
+    }
+    
+    figcaption {
+        
+    }
 }

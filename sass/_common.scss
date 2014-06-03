@@ -1,31 +1,45 @@
-html,
-body {
-    height: 100%;
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
+
 html {
+    position: relative;
+    min-height: 100%;
     color: #888;
     font-family: 'Crimson Text', serif;
 }
 body {
+    height: 100%;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+    line-height: 1.6;
 }
 
 h1,h2,h3,
 h4,h5,h6 {
     font-weight: 400;
     margin: .6rem 0;
+    line-height: 1.4;
 }
 
-h1 {
+h1,
+h2 {
     font-weight: 300;
-    font-size: 4.2rem;
-    font-size: 6vw;
     font-family: "Open Sans", sans-serif;
 }
 
+h1 {
+    font-size: 4.2rem;
+    font-size: 6vw;
+}
+
 h2 {
-    font-size: 1.6rem;
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.6rem;   
 }
 
 a {
@@ -42,8 +56,9 @@ a {
     }
 }
 
-p {
-    font-size: 1.1rem;
+p,
+figcaption {
+    font-size: 1.2rem;
 }
 
 b,
@@ -197,7 +212,6 @@ main {
     max-width: 1000px;
     display: block;
     margin: 0 auto;
-    text-align: center;
     position: relative;
     z-index: 50;
 }
