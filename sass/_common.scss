@@ -76,11 +76,10 @@ strong {
     
     li {
         display: inline-block;
-        margin: 0 .3em;
+        margin: 0 0.1em 0.4em;
         padding: .2em .6em;
         background: red;
         color: #fff;
-        
     }
 }
 
@@ -209,8 +208,8 @@ strong {
 
 main {
     min-height: 100%;
-    width: 80%;
-    max-width: 1200px;
+    width: 70%;
+    max-width: 1000px;
     display: block;
     margin: 0 auto;
     position: relative;

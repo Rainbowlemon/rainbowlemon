@@ -413,7 +413,7 @@ strong {
   font-size: .9em; }
   .tags li {
     display: inline-block;
-    margin: 0 .3em;
+    margin: 0 0.1em 0.4em;
     padding: .2em .6em;
     background: red;
     color: #fff; }
@@ -498,8 +498,8 @@ strong {
 
 main {
   min-height: 100%;
-  width: 80%;
-  max-width: 1200px;
+  width: 70%;
+  max-width: 1000px;
   display: block;
   margin: 0 auto;
   position: relative;
@@ -507,7 +507,7 @@ main {
   text-align: center; }
 
 #intro {
-  padding: 10em 0 3em; }
+  padding: 8em 0 1em; }
   #intro h1 {
     position: relative;
     display: inline-block; }
@@ -523,8 +523,8 @@ main {
 .tree {
   position: absolute;
   z-index: -1;
-  top: 200px;
-  left: -40px;
+  top: 160px;
+  left: 30px;
   bottom: 0px;
   transition: opacity 1s linear, left 1s cubic-bezier(0, 0.7, 0.4, 1), top 1s cubic-bezier(0, 0.7, 0.4, 1); }
 
@@ -559,8 +559,9 @@ main {
   45% {
     -webkit-transform: translateY(0);
     border-color: #ddd transparent; } }
+
 .pointer-arrows {
-  margin-bottom: 1.5em; }
+  margin-bottom: 3em; }
   .pointer-arrows span {
     display: block;
     width: 0;
@@ -577,8 +578,29 @@ main {
       border-width: 7px 7px 0;
       -webkit-animation-delay: .3s; }
 
+#portfolio-overview {
+  list-style: none;
+  padding: 0; }
+  #portfolio-overview li {
+    float: left;
+    width: 50%;
+    padding: 0 .5%;
+    margin: 0 0 .4em; }
+  #portfolio-overview img {
+    width: 100%;
+    height: auto;
+    display: block; }
+
 #portfolio header {
   padding-bottom: 1.5em; }
+  #portfolio header h2,
+  #portfolio header h3,
+  #portfolio header time {
+    display: inline-block; }
+
+.js #intro-greeting,
+.js #portfolio > section {
+  display: none; }
 
 .figure-container figure {
   margin: 0; }
@@ -586,6 +608,9 @@ main {
   width: 100%;
   height: auto; }
 
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 5rem; } }
 @media (max-width: 1050px) {
   .tree {
     left: -2em;
@@ -601,14 +626,17 @@ main {
     font-size: 2.6em; }
 
   h2 {
-    font-size: 1.5em; }
+    font-size: 2em; }
+
+  main {
+    width: 95%; }
 
   /* Header */
   #page-header p span {
     display: none; }
   #page-header a {
     height: 50px;
-    line-height: 42px; }
+    line-height: 46px; }
   #page-header > nav a {
     padding: 0 0.6em; }
   #page-header > nav li {

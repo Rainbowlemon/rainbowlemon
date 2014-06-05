@@ -21,9 +21,11 @@ require.config({
 });
 
 require([
+    'underscore',
     'app',
     'fastclick'
 ], function(
+    _,
     App
 ) {
     'use strict';

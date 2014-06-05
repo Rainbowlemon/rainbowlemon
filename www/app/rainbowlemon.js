@@ -13,12 +13,24 @@ define([
         
         init: function() {
             this.bindEvents();
-            
+            this.setupPage();
         },
         
         options: {
             appName: 'rainbowlemon',
-            baseColor: [0,0.7,0.89]
+            baseColor: [0,0.7,0.89],
+            greetings: [
+                'Hey',
+                '你好',
+                'Salut',
+                'Hallo',
+                'Shalom',
+                'Ciào',
+                '안녕',
+                'Olá',
+                'Hej',
+                'Xin chào'
+            ]
         },
         
         el: {
@@ -26,11 +38,17 @@ define([
             colored: {
                 paths: $('.colored-svg path'),
                 bgs: $('.colored-bg')
-            }
+            },
+            
+            greeting: $('#intro-greeting'),
+            portfolio: $('#portfolio'),
+            entries: $('#portfolio > section')
         },
         
         bindEvents: function() {
             $(window).on('scroll.' + this.options.appName, this.setColors.bind(this));
+            $(window).on('hashchange.' + this.options.appName, this.changePage.bind(this));
+            
             this.setColors(); //set page colors before scroll
         },
         
@@ -54,7 +72,18 @@ define([
                 '     background-color:' + rgbString + ' !important;' +
                 ' }'
             );
+        },
+        
+        setupPage: function(){
+            this.el.greeting.text(_.sample(this.options.greetings)).show();
+        },
+        
+        changePage: function(e){
+            console.log(e);
             
+            if (e.hash === '#'){
+                console.log('home');
+            }
         }
     
     };

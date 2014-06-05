@@ -1,5 +1,5 @@
 #intro {
-    padding: 10em 0 3em;
+    padding: 8em 0 1em;
     
     h1 {
         position: relative;
@@ -23,8 +23,8 @@
     position: absolute;
     z-index: -1;
     
-    top: 200px;
-    left: -40px;
+    top: 160px;
+    left: 30px;
     bottom: 0px;
     
     transition: opacity 1s linear, left 1s cubic-bezier(0,.7,.4,1), top 1s cubic-bezier(0,.7,.4,1);
@@ -68,7 +68,7 @@
 }
 
 .pointer-arrows {
-    margin-bottom: 1.5em;
+    margin-bottom: 3em;
     
     span {
         display: block;
@@ -94,13 +94,44 @@
     }
 }
 
+#portfolio-overview {
+    list-style: none;
+    padding: 0;
+    
+    li {
+        float: left;
+        width: 50%;
+        padding: 0 .5%;
+        
+        margin: 0 0 .4em;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
 
 #portfolio {
     header {
         padding-bottom: 1.5em;
+        
+        h2,
+        h3,
+        time {
+            display: inline-block;   
+        }
     }
 }
 
+// Hide js-modified html
+.js {
+    #intro-greeting,
+    #portfolio > section {
+        display: none;   
+    }
+}
 
 .figure-container {
     

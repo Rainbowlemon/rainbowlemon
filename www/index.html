@@ -20,8 +20,7 @@
 <header id="page-header" role="banner">
     <nav>
         <ul>
-            <li><a href="#intro" class="active scale-btn"><img src="/img/rainbowlemon-logo.svg" width="40" height="40" title="Back to the top"></a></li>
-            <li><a href="#portfolio">portfolio</a></li>
+            <li><a href="#portfolio-overview" class="active scale-btn"><img src="/img/rainbowlemon-logo.svg" width="40" height="40" title="Back to the top"></a></li>
             <li><a href="#more">yours truly</a></li>
         </ul>
     </nav>
@@ -91,8 +90,8 @@
 <main role="main">
     
     <section id="intro">
-        <h1>Hey! I'm <strong>Aidan.</strong> <img alt="otherwise known as Rainbowlemon" src="/img/otherwise-known-as.svg" width="277" height="82" /></h1>
-        <h3>I’m a UI/web designer, front-end developer and hairy guy.</h3>
+        <h1><span id="intro-greeting">Hey</span>! I'm <strong>Aidan.</strong> <img alt="otherwise known as Rainbowlemon" src="/img/otherwise-known-as.svg" width="277" height="82" /></h1>
+        <h3>I’m a UI/web designer, front-end developer and hairy dude.</h3>
         <p>I massacre inconsistent user interfaces with gusto.</p>
     </section>
     
@@ -102,9 +101,46 @@
         <span></span>
     </div>
     
+    <ul id="portfolio-overview">
+        <li>
+            <a href="#!portfolio/manta">
+                <img src="//lorempixel.com/1000/440" width="500" height="220">
+            </a>
+        </li>
+        <li>
+            <a href="#!portfolio/encryptmyshit">
+                <img src="//lorempixel.com/1000/440" width="500" height="220">
+            </a>
+        </li>
+        <li>
+            <a href="#!portfolio/vivo">
+                <img src="//lorempixel.com/1000/440" width="500" height="220">
+            </a>
+        </li>
+        <li>
+            <a href="#!portfolio/everlution-posters">
+                <img src="//lorempixel.com/1000/440" width="500" height="220">
+            </a>
+        </li>
+        <li>
+            <a href="#!portfolio/base">
+                <img src="//lorempixel.com/1000/440" width="500" height="220">
+            </a>
+        </li>
+        <li>
+            <a href="#!portfolio/rocket-turtle">
+                <img src="//lorempixel.com/1000/440" width="500" height="220">
+            </a>
+        </li>
+        <li>
+            <a href="#!portfolio/whitecat">
+                <img src="//lorempixel.com/1000/440" width="500" height="220">
+            </a>
+        </li>
+    </ul>
+    
     <article id="portfolio">
-        <section>
-            
+        <section data-entry="manta">
             <header>
                 <h2>Manta</h2>
                 <h3><a href="http://manta.hr">manta.hr</a></h3>
@@ -122,27 +158,39 @@
             <div class="figure-container">
                 <figure>
                     <figcaption>This was the final marketing page. The design and all the core styling for the marketing pages was created by me.</figcaption>
-                    <img src="img/portfolio/manta1.png" alt="Manta Homepage">
+                    <noscript>
+                        <img src="img/portfolio/manta1.png" alt="Manta Homepage">
+                    </noscript>
+                    <img data-src="img/portfolio/manta1.png" alt="Manta Homepage">
                 </figure>
 
                 <figure>
                     <figcaption>I created a bespoke iconfont for Everlution, since there was a fair few icons I required that couldn't be fulfilled with a standard iconfont. If you'd like to download it for use yourself, the files can be found <a href="portfolio/manta-font/">here!</a></figcaption>
-                    <img src="img/portfolio/manta-iconfont.png" alt="Manta Iconfont">
+                    <noscript>
+                        <img src="img/portfolio/manta-iconfont.png" alt="Manta Iconfont">
+                    </noscript>
+                    <img data-src="img/portfolio/manta-iconfont.png" alt="Manta Iconfont">
                 </figure>
 
                 <figure>
                     <figcaption>This was another of my proposals for the Manta pre-login pages. I personally liked this one more, as I felt it fit better with the aesthetic of the internal pages, but unfortunately the other was chosen and this one got binned. Oh well!</figcaption>
-                    <img src="img/portfolio/manta3.jpg" alt="Manta Homepage - alternate design">
+                    <noscript>
+                        <img src="img/portfolio/manta3.jpg" alt="Manta Homepage - alternate design">
+                    </noscript>
+                    <img data-src="img/portfolio/manta3.jpg" alt="Manta Homepage - alternate design">
                 </figure>
 
                 <figure>
                     <figcaption>Finally, this is the design for the profile page on one of the internal pages. To reiterate, all the designs for the internal pages was created by me alone, and I contributed about 30% of all the bespoke front-end code - the majority of the CSS, and a large portion of the HTML and Javascript.</figcaption>
-                    <img src="img/portfolio/manta2.png" alt="Manta Internal pages">
+                    <noscript>
+                        <img src="img/portfolio/manta2.png" alt="Manta Internal pages">
+                    <noscript>
+                    <img data-src="img/portfolio/manta2.png" alt="Manta Internal pages">
                 </figure>
             </div>
         </section>
         
-        <section>
+        <section data-entry="encryptmyshit">
             <header>
                 <h2>Encryptmyshit</h2>
                 <h3><a href="http://encryptmyshit.com">encryptmyshit.com</a></h3>
@@ -157,12 +205,15 @@
             <div class="figure-container">
                 <figure>
                     <figcaption>The homepage is all that really needed designing, and my friend was luckily happy with the first thing I threw together (gotta' love relaxed clients).</figcaption>
-                    <img src="img/portfolio/encryptmyshit1.png" alt="Encryptmyshit - Homepage">
+                    <noscript>
+                        <img src="img/portfolio/encryptmyshit1.png" alt="Encryptmyshit - Homepage">
+                    </noscript>
+                    <img data-src="img/portfolio/encryptmyshit1.png" alt="Encryptmyshit - Homepage">
                 </figure>
             </div>
         </section>
         
-        <section>
+        <section data-entry="vivo">
             <header>
                 <h2>Vivo Miles</h2>
                 <h3><a href="http://vivomiles.com">vivomiles.com</a></h3>
@@ -180,17 +231,23 @@
             <div class="figure-container">
                 <figure>
                     <figcaption>This is the homepage - the background image can be switched out by the Marketing team if they wish to have a different look and feel (under my expressed caveat that it's a dark image and isn't too busy!), and the feed is pulled in as JSON from Vivo's Insights blog.</figcaption>
-                    <img src="img/portfolio/vivomiles1.jpg" alt="Vivo Miles - School rewards system">
+                    <noscript>
+                        <img src="img/portfolio/vivomiles1.jpg" alt="Vivo Miles - School rewards system">
+                    </noscript>
+                    <img data-src="img/portfolio/vivomiles1.jpg" alt="Vivo Miles - School rewards system">
                 </figure>
 
                 <figure>
                     <figcaption>A sample of another of the marketing pages, which can be found at <a href="http://vivomiles.com/#products">vivomiles.com/#products</a></figcaption>
-                    <img src="img/portfolio/vivomiles2.jpg" alt="Vivo Miles - For Schools page">
+                    <noscript>
+                        <img src="img/portfolio/vivomiles2.jpg" alt="Vivo Miles - For Schools page">
+                    </noscript>
+                    <img data-src="img/portfolio/vivomiles2.jpg" alt="Vivo Miles - For Schools page">
                 </figure>
             </div>
         </section>
         
-        <section>
+        <section data-entry="everlution-posters">
             <header>
                 <h2>Everlution HR Posters</h2>
                 <ul class="tags">
@@ -204,17 +261,23 @@
             <div class="figure-container">
                 <figure>
                     <figcaption>We had a party. On a boat! This was great fun to design.</figcaption>
-                    <img src="img/portfolio/party-poster1.png" alt="Everlution Boat Party poster">
+                    <noscript>
+                        <img src="img/portfolio/party-poster1.png" alt="Everlution Boat Party poster">
+                    </noscript>
+                    <img data-src="img/portfolio/party-poster1.png" alt="Everlution Boat Party poster">
                 </figure>
 
                 <figure>
                     <figcaption>This was for our Christmas party; who knew stacking color dodge layers could be <strong>SO EXCITING?!</strong></figcaption>
-                    <img src="img/portfolio/party-poster2.jpg" alt="Everlution Xmas Party poster">
+                    <noscript>
+                        <img src="img/portfolio/party-poster2.jpg" alt="Everlution Xmas Party poster">
+                    </noscript>
+                    <img data-src="img/portfolio/party-poster2.jpg" alt="Everlution Xmas Party poster">
                 </figure>
             </div>
         </section>
         
-        <section>
+        <section data-entry="base">
             <header>
                 <h2>Base Creative Agency</h2>
                 <ul class="tags">
@@ -229,17 +292,23 @@
             <div class="figure-container">
                 <figure>
                     <figcaption>A mockup for The Staff Canteen, a website dedicated to bring together chefs of all ranks for discussions, recipe sharing, etc.</figcaption>
-                    <img src="img/portfolio/staff-canteen1.jpg" alt="Staff Canteen - Homepage mockup">
+                    <noscript>
+                        <img src="img/portfolio/staff-canteen1.jpg" alt="Staff Canteen - Homepage mockup">
+                    </noscript>    
+                    <img data-src="img/portfolio/staff-canteen1.jpg" alt="Staff Canteen - Homepage mockup">
                 </figure>
 
                 <figure>
                     <figcaption>Base Creative had spent a fair while developing their own custom CMS, and asked for me to redesign the internals in an attempt to white-label the product and make some money out of it. This is one of the pages, the form builder.</figcaption>
-                    <img src="img/portfolio/basecms1.png" alt="Base CMS - Form builder">
+                    <noscript>
+                        <img src="img/portfolio/basecms1.png" alt="Base CMS - Form builder">
+                    </noscript>
+                    <img data-src="img/portfolio/basecms1.png" alt="Base CMS - Form builder">
                 </figure>
             </div>
         </section>
         
-        <section>
+        <section data-entry="rocket-turtle">
             <header>
                 <h2>Rocket Turtle</h2>
                 <h3><a href="portfolio/rocket-turtle/">Play the game</a></h3>
@@ -254,13 +323,16 @@
             <div class="figure-container">
                 <figure>
                     <figcaption>This game was created for Vivo Miles while I worked at Everlution Software, but was unfortunately canned due to time constraints. You can play the game (albeit in its unfinished form) <a href="portfolio/rocket-turtle/">here!</a></figcaption>
-                    <img src="img/portfolio/rocket-turtle.jpg" alt="Rocket Turtle - screenshot">
+                    <noscript>
+                        <img src="img/portfolio/rocket-turtle.jpg" alt="Rocket Turtle - screenshot">
+                    </noscript>
+                    <img data-src="img/portfolio/rocket-turtle.jpg" alt="Rocket Turtle - screenshot">
                 </figure>
             </div>
             
         </section>
         
-        <section>
+        <section data-entry="whitecat">
             <header>
                 <h2>White Cat Marketing</h2>
                 <ul class="tags">
@@ -271,7 +343,10 @@
             
             <div class="figure-container">
                 <figcaption>A basic mockup for a design &amp; marketing agency a couple friends and I were going to create. The idea is still on hold for financial reasons, but hopefully I'll be able to pick this up again later.</figcaption>
-                <img src="img/portfolio/whitecat.png" alt="White Cat Marketing">
+                <noscript>
+                    <img src="img/portfolio/whitecat.png" alt="White Cat Marketing">
+                </noscript>
+                <img data-src="img/portfolio/whitecat.png" alt="White Cat Marketing">
             </div>
         </section>
                  
