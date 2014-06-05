@@ -1,6 +1,5 @@
 #intro {
-    padding: 10em 0 5em;
-    text-align: center;
+    padding: 10em 0 3em;
     
     h1 {
         position: relative;
@@ -25,8 +24,7 @@
     z-index: -1;
     
     top: 200px;
-    left: 4em;
-    left: 4vw;
+    left: -40px;
     bottom: 0px;
     
     transition: opacity 1s linear, left 1s cubic-bezier(0,.7,.4,1), top 1s cubic-bezier(0,.7,.4,1);
@@ -69,49 +67,45 @@
     }
 }
 
-.pointer-arrows span {
-    display: block;
-    width: 0;
-    height: 0;
-    margin: 1.2em auto;
+.pointer-arrows {
+    margin-bottom: 1.5em;
     
-    border-style: solid;
-    border-width: 15px 15px 0;
-    border-color: #ddd transparent;
-    
-    -webkit-animation: arrow-throb 3s cubic-bezier(.7,0,.5,1) 0s infinite;
-}
-.pointer-arrows span:nth-child(2){
-    border-width: 11px 11px 0;
-    -webkit-animation-delay: .15s;
-}
-.pointer-arrows span:nth-child(3){
-    border-width: 7px 7px 0;
-    -webkit-animation-delay: .3s;
+    span {
+        display: block;
+        width: 0;
+        height: 0;
+        margin: 1.2em auto;
+
+        border-style: solid;
+        border-width: 15px 15px 0;
+        border-color: #ddd transparent;
+
+        -webkit-animation: arrow-throb 3s cubic-bezier(.7,0,.5,1) 0s infinite;
+        
+        &:nth-child(2){
+            border-width: 11px 11px 0;
+            -webkit-animation-delay: .15s;
+        }
+        
+        &:nth-child(3){
+            border-width: 7px 7px 0;
+            -webkit-animation-delay: .3s;
+        }
+    }
 }
 
 
 #portfolio {
-    > section {
-        clear: both;
-        
-        padding-left: 1em;
-    }
-    
     header {
-        float: left;
-        width: 38%;
-        padding-right: 2%;
+        padding-bottom: 1.5em;
     }
 }
 
 
 .figure-container {
-    float: right;
-    width: 62%;
     
     figure {
-        
+        margin: 0;
     }
     
     img {
