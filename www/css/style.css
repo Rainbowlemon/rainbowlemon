@@ -560,6 +560,18 @@ main {
     -webkit-transform: translateY(0);
     border-color: #ddd transparent; } }
 
+@keyframes arrow-throb {
+  0% {
+    transform: translateY(0); }
+
+  15% {
+    transform: translateY(20px);
+    border-color: #999 transparent; }
+
+  45% {
+    transform: translateY(0);
+    border-color: #ddd transparent; } }
+
 .pointer-arrows {
   margin-bottom: 3em; }
   .pointer-arrows span {
@@ -570,7 +582,8 @@ main {
     border-style: solid;
     border-width: 15px 15px 0;
     border-color: #ddd transparent;
-    -webkit-animation: arrow-throb 3s cubic-bezier(0.7, 0, 0.5, 1) 0s infinite; }
+    -webkit-animation: arrow-throb 3s cubic-bezier(0.7, 0, 0.5, 1) 0s infinite;
+    animation: arrow-throb 3s cubic-bezier(0.7, 0, 0.5, 1) 0s infinite; }
     .pointer-arrows span:nth-child(2) {
       border-width: 11px 11px 0;
       -webkit-animation-delay: .15s; }
@@ -578,9 +591,31 @@ main {
       border-width: 7px 7px 0;
       -webkit-animation-delay: .3s; }
 
+#portfolio-container {
+  position: relative;
+  z-index: 10;
+  -webkit-perspective: 1200;
+  perspective: 1200; }
+  #portfolio-container[data-page="1"] #portfolio {
+    -webkit-transform: rotateY(-70deg) translateX(100px) scale(1.2);
+    -webkit-transition-delay: 0s, 0s, 0.2s;
+    opacity: 0;
+    visibility: hidden; }
+  #portfolio-container[data-page="2"] #portfolio-overview {
+    -webkit-transform: rotateY(70deg) translateX(-50px) scale(0.5);
+    -webkit-transition-delay: 0s, 0s, 0.2s;
+    opacity: 0;
+    visibility: hidden; }
+
+#portfolio-overview,
+#portfolio {
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.3, 0, 0.4, 1), opacity 0.2s linear, visibility 0.2s linear; }
+
 #portfolio-overview {
+  z-index: 1;
   list-style: none;
-  padding: 0; }
+  padding: 0;
+  -webkit-transform-origin: 0 0; }
   #portfolio-overview li {
     float: left;
     width: 50%;
@@ -591,12 +626,16 @@ main {
     height: auto;
     display: block; }
 
-#portfolio header {
-  padding-bottom: 1.5em; }
-  #portfolio header h2,
-  #portfolio header h3,
-  #portfolio header time {
-    display: inline-block; }
+#portfolio {
+  position: relative;
+  z-index: 2;
+  -webkit-transform-origin: 100% 0; }
+  #portfolio header {
+    padding-bottom: 1.5em; }
+    #portfolio header h2,
+    #portfolio header h3,
+    #portfolio header time {
+      display: inline-block; }
 
 .js #intro-greeting,
 .js #portfolio > section {

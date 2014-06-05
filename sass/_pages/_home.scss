@@ -66,6 +66,20 @@
         border-color: #ddd transparent;
     }
 }
+@keyframes arrow-throb {
+    0% {
+        transform: translateY(0);   
+    }
+    15% {
+        transform: translateY(20px);
+        border-color: #999 transparent;
+    }
+    45% {
+        transform: translateY(0);
+        border-color: #ddd transparent;
+    }
+}
+
 
 .pointer-arrows {
     margin-bottom: 3em;
@@ -81,6 +95,7 @@
         border-color: #ddd transparent;
 
         -webkit-animation: arrow-throb 3s cubic-bezier(.7,0,.5,1) 0s infinite;
+        animation: arrow-throb 3s cubic-bezier(.7,0,.5,1) 0s infinite;
         
         &:nth-child(2){
             border-width: 11px 11px 0;
@@ -94,9 +109,43 @@
     }
 }
 
+#portfolio-container {
+    position: relative;
+    z-index: 10;
+    -webkit-perspective: 1200;
+    perspective: 1200;
+    
+    &[data-page="1"] {
+        #portfolio {
+            -webkit-transform: rotateY(-70deg) translateX(100px) scale(1.2);
+            -webkit-transition-delay: 0s, 0s, 0.2s;
+
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    
+    &[data-page="2"] {
+        #portfolio-overview {
+            -webkit-transform: rotateY(70deg) translateX(-50px) scale(.5);
+            -webkit-transition-delay: 0s, 0s, 0.2s;
+
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}
+
+#portfolio-overview,
+#portfolio {
+    -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.3,0,0.4,1), opacity 0.2s linear, visibility 0.2s linear;
+}
+
 #portfolio-overview {
+    z-index: 1;
     list-style: none;
     padding: 0;
+    -webkit-transform-origin: 0 0;
     
     li {
         float: left;
@@ -114,6 +163,10 @@
 
 
 #portfolio {
+    position: relative;
+    z-index: 2;
+    -webkit-transform-origin: 100% 0;
+    
     header {
         padding-bottom: 1.5em;
         
@@ -131,6 +184,10 @@
     #portfolio > section {
         display: none;   
     }
+    #portfolio {
+            
+    }
+    
 }
 
 .figure-container {
