@@ -155,6 +155,9 @@
         margin: 0 0 .4em;
     }
     img {
+        user-drag: none;
+        -webkit-user-drag: none;
+        
         width: 100%;
         height: auto;
         display: block;

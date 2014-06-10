@@ -15,6 +15,13 @@
     .tree {
         opacity: 0;   
     }
+    
+    #portfolio-overview {
+        li {
+            width: 100%;
+            margin-bottom: .7em;
+        }
+    }
 }
 
 @media (max-width: 500px) {

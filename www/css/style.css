@@ -622,6 +622,8 @@ main {
     padding: 0 .5%;
     margin: 0 0 .4em; }
   #portfolio-overview img {
+    user-drag: none;
+    -webkit-user-drag: none;
     width: 100%;
     height: auto;
     display: block; }
@@ -656,7 +658,11 @@ main {
     top: 100px; } }
 @media (max-width: 700px) {
   .tree {
-    opacity: 0; } }
+    opacity: 0; }
+
+  #portfolio-overview li {
+    width: 100%;
+    margin-bottom: .7em; } }
 @media (max-width: 500px) {
   h1, h2, h3, p {
     background: RGBA(255, 255, 255, 0.9); }
