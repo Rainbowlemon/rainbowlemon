@@ -360,7 +360,7 @@ html {
   position: relative;
   min-height: 100%;
   color: #888;
-  font-family: 'Crimson Text', serif; }
+  font-family: "Crimson Text", serif; }
 
 body {
   height: 100%;
@@ -388,6 +388,12 @@ h2 {
 
 h3 {
   font-size: 1.6rem; }
+
+h4 {
+  font-size: 1.5rem; }
+
+h5 {
+  font-size: 1.2rem; }
 
 a {
   -webkit-font-smoothing: antialiased;
@@ -529,7 +535,6 @@ main {
   transition: opacity 1s linear, left 1s cubic-bezier(0, 0.7, 0.4, 1), top 1s cubic-bezier(0, 0.7, 0.4, 1); }
 
 .tree-top {
-  background-color: #e44444;
   width: 160px;
   height: 146px; }
 
@@ -537,7 +542,6 @@ main {
   position: absolute;
   height: 100%;
   width: 16px;
-  background-color: #e44444;
   left: 75px;
   top: 146px; }
   .tree-middle .overlay {
@@ -626,7 +630,77 @@ main {
     -webkit-user-drag: none;
     width: 100%;
     height: auto;
-    display: block; }
+    display: block;
+    border: 1px solid #ddd; }
+  #portfolio-overview a {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    -webkit-user-drag: none; }
+    #portfolio-overview a div {
+      -webkit-transition: background-color 0.2s 0s, visibility 0s 0.2s;
+      transition: background-color 0.2s 0s, visibility 0s 0.2s;
+      visibility: hidden;
+      background-color: RGBA(10, 20, 25, 0);
+      position: absolute;
+      display: -webkit-box;
+      /* OLD - iOS 6-, Safari 3.1-6 */
+      display: -moz-box;
+      /* OLD - Firefox 19- (buggy but mostly works) */
+      display: -ms-flexbox;
+      /* TWEENER - IE 10 */
+      display: -webkit-flex;
+      /* NEW - Chrome */
+      display: flex;
+      /* NEW, Spec - Opera 12.1, Firefox 20+ */
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1; }
+    #portfolio-overview a h3,
+    #portfolio-overview a p {
+      color: #fff;
+      opacity: 0;
+      -webkit-transition: -webkit-transform 0.2s cubic-bezier(0, 0.7, 0.3, 1), opacity 0.2s cubic-bezier(0.5, 0.1, 0.4, 0.95);
+      -webkit-transition-delay: 0.22s, 0s;
+      transition: transform 0.2s cubic-bezier(0, 0.7, 0.3, 1), opacity 0.2s cubic-bezier(0.5, 0.1, 0.4, 0.95);
+      transition-delay: 0.22s, 0s;
+      -webkit-transform: translateY(-20px) scale(2);
+      transform: translateY(-20px) scale(2); }
+    #portfolio-overview a h3 {
+      font-family: "Open Sans", sans-serif;
+      font-size: 2.4em;
+      margin: 0;
+      line-height: 1.3;
+      margin-top: -0.3em; }
+    #portfolio-overview a p {
+      margin: 0; }
+      #portfolio-overview a p small {
+        margin: 0 .2em;
+        font-size: 50%;
+        vertical-align: middle; }
+    #portfolio-overview a:hover div, #portfolio-overview a:focus div {
+      visibility: visible;
+      background-color: RGBA(10, 20, 25, 0.88);
+      -webkit-transition-delay: 0s, 0s;
+      transition-delay: 0s, 0s; }
+    #portfolio-overview a:hover h3,
+    #portfolio-overview a:hover p, #portfolio-overview a:focus h3,
+    #portfolio-overview a:focus p {
+      -webkit-transform: translateY(0) scale(1);
+      transform: translateY(0) scale(1);
+      opacity: 1; }
+    #portfolio-overview a:hover h3, #portfolio-overview a:focus h3 {
+      -webkit-transition-delay: 0s, 0s;
+      transition-delay: 0s, 0s; }
+    #portfolio-overview a:hover p, #portfolio-overview a:focus p {
+      -webkit-transition-delay: 0.12s, 0.12s;
+      transition-delay: 0.12s, 0.12s; }
+    #portfolio-overview a:active {
+      top: 0; }
 
 #portfolio {
   position: relative;
@@ -652,6 +726,11 @@ main {
 @media (min-width: 1200px) {
   h1 {
     font-size: 5rem; } }
+@media (min-width: 700px) and (max-width: 1200px) {
+  #portfolio-overview a h3 {
+    font-size: 3.6vw; }
+  #portfolio-overview a p {
+    font-size: 1.8vw; } }
 @media (max-width: 1050px) {
   .tree {
     left: -2em;
@@ -662,19 +741,25 @@ main {
 
   #portfolio-overview li {
     width: 100%;
-    margin-bottom: .7em; } }
-@media (max-width: 500px) {
-  h1, h2, h3, p {
-    background: RGBA(255, 255, 255, 0.9); }
+    margin-bottom: .7em; }
 
+  main {
+    width: 95%; }
+
+  #intro {
+    padding: 5.5em 0 1em; }
+    #intro h1 img {
+      display: block;
+      position: static;
+      width: 65vw;
+      left: 0;
+      margin: 0 auto; } }
+@media (max-width: 500px) {
   h1 {
     font-size: 2.6em; }
 
   h2 {
     font-size: 2em; }
-
-  main {
-    width: 95%; }
 
   /* Header */
   #page-header p span {
@@ -691,13 +776,4 @@ main {
   #page-header > nav img,
   #page-header svg {
     width: 36px;
-    height: auto; }
-
-  #intro {
-    padding: 5.5em 0 1em; }
-    #intro h1 img {
-      display: block;
-      position: static;
-      width: 65vw;
-      left: 0;
-      margin: 0 auto; } }
+    height: auto; } }

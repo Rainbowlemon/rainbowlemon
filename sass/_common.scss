@@ -1,3 +1,6 @@
+$seriffont: "Crimson Text", serif;
+$sansfont: "Open Sans", sans-serif;
+
 * {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -7,7 +10,7 @@ html {
     position: relative;
     min-height: 100%;
     color: #888;
-    font-family: 'Crimson Text', serif;
+    font-family: $seriffont;
 }
 body {
     height: 100%;
@@ -26,7 +29,7 @@ h4,h5,h6 {
 h1,
 h2 {
     font-weight: 300;
-    font-family: "Open Sans", sans-serif;
+    font-family: $sansfont;
 }
 
 h1 {
@@ -41,6 +44,16 @@ h2 {
 h3 {
     font-size: 1.6rem;   
 }
+
+h4 {
+    font-size: 1.5rem;   
+}
+
+h5 {
+    font-size: 1.2rem;   
+}
+
+
 
 a {
     -webkit-font-smoothing: antialiased;

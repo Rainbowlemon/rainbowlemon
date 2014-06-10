@@ -30,7 +30,6 @@
     transition: opacity 1s linear, left 1s cubic-bezier(0,.7,.4,1), top 1s cubic-bezier(0,.7,.4,1);
 }
 .tree-top {
-    background-color: #e44444;
     width: 160px;
     height: 146px;
 }
@@ -39,7 +38,6 @@
     height: 100%;
     width: 16px;
     
-    background-color: #e44444;
     left: 75px;
     top: 146px;
     
@@ -161,6 +159,96 @@
         width: 100%;
         height: auto;
         display: block;
+        border: 1px solid #ddd;
+    }
+    a {
+        position: relative;
+        display: block;
+        text-decoration: none;
+        -webkit-user-drag: none;
+        
+        div {
+            -webkit-transition: background-color 0.2s 0s, visibility 0s 0.2s;
+            transition: background-color 0.2s 0s, visibility 0s 0.2s;
+            
+            visibility: hidden;
+            background-color: RGBA(10,20,25,0);
+            
+            position: absolute;
+            
+            @include flexbox();
+            
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        h3,
+        p {
+            color: #fff;
+            opacity: 0;
+            
+            -webkit-transition: -webkit-transform 0.2s cubic-bezier(0,0.7,0.3,1), opacity 0.2s cubic-bezier(0.5,0.1,0.4,0.95);
+            -webkit-transition-delay: 0.22s, 0s;
+            transition: transform 0.2s cubic-bezier(0,0.7,0.3,1), opacity 0.2s cubic-bezier(0.5,0.1,0.4,0.95);
+            transition-delay: 0.22s, 0s;
+            
+            -webkit-transform: translateY(-20px) scale(2);
+            transform: translateY(-20px) scale(2);
+        }
+        
+        h3 {
+            font-family: $sansfont;
+            font-size: 2.4em;
+            margin: 0;
+            line-height: 1.3;
+            margin-top: -0.3em;
+        }
+        
+        p {
+            margin: 0;
+            
+            small {
+                margin: 0 .2em;
+                font-size: 50%;
+                vertical-align: middle;
+            }
+        }
+        
+        &:hover,
+        &:focus {
+            div {
+                visibility: visible;
+                background-color: RGBA(10,20,25,0.88);
+                
+                -webkit-transition-delay: 0s, 0s;
+                transition-delay: 0s, 0s;
+            }
+            h3,
+            p {
+                -webkit-transform: translateY(0) scale(1);
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            
+            h3 {
+                -webkit-transition-delay: 0s, 0s;
+                transition-delay: 0s, 0s;
+            }
+            
+            p {
+                -webkit-transition-delay: 0.12s, 0.12s;
+                transition-delay: 0.12s, 0.12s;
+            }
+        }
+        
+        &:active {
+            top: 0;   
+        }
     }
 }
 
