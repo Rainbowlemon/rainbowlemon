@@ -41,6 +41,10 @@ h2 {
     font-size: 2.8rem;
 }
 
+h2 + h3 {
+    margin-top: -0.5em;
+}
+
 h3 {
     font-size: 1.5rem;   
 }
@@ -96,6 +100,44 @@ strong {
     }
 }
 
+.title-hover {
+    position: relative;
+    
+    &:after {
+        content: attr(data-title);
+        background: RGBA(0, 0, 0, 0.8);
+        color: #FFF;
+        padding: 0.3em 1em 0.5em;
+        visibility: hidden;
+        opacity: 0;
+        font-size: 1rem;
+        text-align: center;
+        line-height: 1.6;
+        white-space: nowrap;
+        
+        position: absolute;
+        top: 100%;
+        left: 0;
+        
+        -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;
+    }
+    
+    &.title-hover-right:after {
+        right: 0;
+        left: inherit;
+    }
+    
+    &:hover,
+    &:focus {
+        &:after {
+            opacity: 1;
+            visibility: visible;
+            -webkit-transition-delay: 0s,0s;
+        }
+    }
+    
+}
+
 .scale-btn {
     
     img,
@@ -133,14 +175,10 @@ strong {
     top: 0;
     left: 0;
     right: 0;
-    background: RGBA(255,255,255,0.94);
+    background: RGBA(248,248,248,0.9);
+    
     font-size: 110%;
     z-index: 100;
-    border-bottom: 1px solid #ddd;
-    
-    li {
-        display: inline;    
-    }
     
     a {
         height: 60px;
@@ -159,9 +197,12 @@ strong {
         float: left;
         
         a {
-            padding: 0 1.2em;
+            padding: 0 .8em;
+            margin-left: .4em;
             position: relative;
             
+            /*
+            // No need for this yet, as there is no nav
             &:after {
                 content: '';
                 left: 50%;
@@ -192,6 +233,7 @@ strong {
                 width: 100%;
                 left: 0;
             }
+            */
         }
         
         img {

@@ -386,6 +386,9 @@ h1 {
 h2 {
   font-size: 2.8rem; }
 
+h2 + h3 {
+  margin-top: -0.5em; }
+
 h3 {
   font-size: 1.5rem; }
 
@@ -424,6 +427,31 @@ strong {
     background: red;
     color: #fff; }
 
+.title-hover {
+  position: relative; }
+  .title-hover:after {
+    content: attr(data-title);
+    background: RGBA(0, 0, 0, 0.8);
+    color: #FFF;
+    padding: 0.3em 1em 0.5em;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.6;
+    white-space: nowrap;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s; }
+  .title-hover.title-hover-right:after {
+    right: 0;
+    left: inherit; }
+  .title-hover:hover:after, .title-hover:focus:after {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition-delay: 0s,0s; }
+
 .scale-btn img,
 .scale-btn svg {
   -webkit-transition: -webkit-transform 0.15s cubic-bezier(0, 0.8, 0.4, 1);
@@ -446,12 +474,9 @@ strong {
   top: 0;
   left: 0;
   right: 0;
-  background: RGBA(255, 255, 255, 0.94);
+  background: RGBA(248, 248, 248, 0.9);
   font-size: 110%;
-  z-index: 100;
-  border-bottom: 1px solid #ddd; }
-  #page-header li {
-    display: inline; }
+  z-index: 100; }
   #page-header a {
     height: 60px;
     line-height: 56px;
@@ -464,28 +489,42 @@ strong {
   #page-header > nav {
     float: left; }
     #page-header > nav a {
-      padding: 0 1.2em;
-      position: relative; }
-      #page-header > nav a:after {
-        content: '';
-        left: 50%;
-        top: 100%;
-        height: 3px;
-        width: 0;
-        position: absolute;
-        background-color: #e44444;
-        transition: left 0.15s cubic-bezier(0, 0.8, 0.4, 1), width 0.15s cubic-bezier(0, 0.8, 0.4, 1); }
-      #page-header > nav a:hover:after, #page-header > nav a:focus:after {
-        width: 20%;
-        left: 40%; }
-      #page-header > nav a:active {
-        top: 0; }
-        #page-header > nav a:active:after {
-          width: 90%;
-          left: 5%; }
-      #page-header > nav a.active:after {
-        width: 100%;
-        left: 0; }
+      padding: 0 .8em;
+      margin-left: .4em;
+      position: relative;
+      /*
+      // No need for this yet, as there is no nav
+      &:after {
+          content: '';
+          left: 50%;
+          top: 100%;
+          height: 3px;
+          width: 0;
+          position: absolute;
+          background-color: #e44444;
+          
+          transition: left 0.15s cubic-bezier(0,.8,.4,1), width 0.15s cubic-bezier(0,.8,.4,1);
+      }
+      
+      &:hover:after,
+      &:focus:after {
+          width: 20%;
+          left: 40%;
+      }
+      &:active {
+          top: 0;
+          
+          &:after {
+              width: 90%;
+              left: 5%;
+          }
+      }
+      
+      &.active:after {
+          width: 100%;
+          left: 0;
+      }
+      */ }
     #page-header > nav img {
       display: inline-block;
       vertical-align: middle;

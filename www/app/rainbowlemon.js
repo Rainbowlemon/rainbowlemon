@@ -72,7 +72,7 @@ define([
                 '     fill:' + rgbString + ' !important;' +
                 ' }' +
                 ' .colored-bg,'+
-                ' #page-header > nav a:after {' +
+                ' .colored-title-hover:after {' +
                 '     background-color:' + rgbString + ' !important;' +
                 ' }' +
                 ' a {' +
