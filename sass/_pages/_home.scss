@@ -148,9 +148,9 @@
     li {
         float: left;
         width: 50%;
-        padding: 0 .5%;
+        padding: 0 2px;
         
-        margin: 0 0 .4em;
+        margin: 0 0 2px;
     }
     img {
         user-drag: none;
@@ -260,12 +260,6 @@
     
     header {
         padding-bottom: 1.5em;
-        
-        h2,
-        h3,
-        time {
-            display: inline-block;   
-        }
     }
 }
 
@@ -276,7 +270,7 @@
         display: none;   
     }
     #portfolio {
-            
+        
     }
     
 }
@@ -294,5 +288,9 @@
     
     figcaption {
         
+        strong {
+            color: #fff;
+            font-weight: 600;
+        }
     }
 }

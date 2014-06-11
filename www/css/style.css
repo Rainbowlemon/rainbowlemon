@@ -387,10 +387,10 @@ h2 {
   font-size: 2.8rem; }
 
 h3 {
-  font-size: 1.6rem; }
+  font-size: 1.5rem; }
 
 h4 {
-  font-size: 1.5rem; }
+  font-size: 1.4rem; }
 
 h5 {
   font-size: 1.2rem; }
@@ -623,8 +623,8 @@ main {
   #portfolio-overview li {
     float: left;
     width: 50%;
-    padding: 0 .5%;
-    margin: 0 0 .4em; }
+    padding: 0 2px;
+    margin: 0 0 2px; }
   #portfolio-overview img {
     user-drag: none;
     -webkit-user-drag: none;
@@ -708,10 +708,6 @@ main {
   -webkit-transform-origin: 100% 0; }
   #portfolio header {
     padding-bottom: 1.5em; }
-    #portfolio header h2,
-    #portfolio header h3,
-    #portfolio header time {
-      display: inline-block; }
 
 .js #intro-greeting,
 .js #portfolio > section {
@@ -722,6 +718,9 @@ main {
 .figure-container img {
   width: 100%;
   height: auto; }
+.figure-container figcaption strong {
+  color: #fff;
+  font-weight: 600; }
 
 @media (min-width: 1200px) {
   h1 {

@@ -63,7 +63,9 @@ define([
             var hue = 360 - (260 * scrollFraction);
             
             var rgb = utils.hsbToRgb(hue/360, this.options.baseColor[1], this.options.baseColor[2]),
-                rgbString = 'rgb(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ')';
+                rgbString = 'rgb(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ')',
+                m = 0.85,
+                rgbDarkString = 'rgb(' + (rgb.r * m >> 0) + ',' + (rgb.g * m >> 0) + ',' + (rgb.b * m >> 0) + ')';
             
             this.el.styles.html(
                 ' .colored-svg path {' +
@@ -72,6 +74,9 @@ define([
                 ' .colored-bg,'+
                 ' #page-header > nav a:after {' +
                 '     background-color:' + rgbString + ' !important;' +
+                ' }' +
+                ' a {' +
+                '     color: '+ rgbDarkString + ';' +
                 ' }'
             );
         },
