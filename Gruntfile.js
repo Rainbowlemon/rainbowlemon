@@ -60,7 +60,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true, 
                     cwd: 'www/', 
-                    src: ['*', 'app/templates/**/*', 'css/**', 'img/**', 'fonts/*', 'vendor/libs/**/*'], 
+                    src: ['*', 'app/templates/**/*', 'css/**', 'img/**', 'fonts/*', 'vendor/libs/modernizr/modernizr-custom.js'], 
                     dest: 'build/'
                 }]
             }
@@ -129,6 +129,5 @@ module.exports = function(grunt) {
     
     grunt.registerTask('build', ['clean:build', 'copy:build', 'requirejs:build']);
     grunt.registerTask('deploy', ['aws_s3:wipe', 'aws_s3:deploy', 'clean:build']);
-    grunt.registerTask('modernizr', ['modernizr']);
     grunt.registerTask('default', ['modernizr', 'sass', 'jshint', 'clean:build', 'copy:build', 'requirejs:build', 'aws_s3:wipe', 'aws_s3:deploy', 'clean:build']);
 };
