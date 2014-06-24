@@ -44,6 +44,8 @@ module.exports = function(grunt) {
                     load: false
                 },
                 
+                tests: ['csstransforms'],
+                
                 uglify: true,
                 
                 files: {

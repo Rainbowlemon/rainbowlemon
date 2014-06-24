@@ -1,5 +1,6 @@
 #intro {
     padding: 8em 0 1em;
+    text-align: center;
     
     h1 {
         position: relative;
@@ -107,43 +108,63 @@
     }
 }
 
+#portfolio-overview,
+#portfolio {
+    width: 50%;
+    float: left;
+    transition: opacity 0.2s;
+}
+
 #portfolio-container {
     position: relative;
-    z-index: 10;
-    -webkit-perspective: 1200;
-    perspective: 1200;
+    
+    #portfolio-wrap {
+        width: 200%;
+        position: relative;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+
+        -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.3,0,0.4,1);
+        transition: transform 0.2s cubic-bezier(0.3,0,0.4,1);
+    }
     
     &[data-page="1"] {
         #portfolio {
-            -webkit-transform: rotateY(-70deg) translateX(100px) scale(1.2);
-            -webkit-transition-delay: 0s, 0s, 0.2s;
-
             opacity: 0;
-            visibility: hidden;
         }
     }
     
     &[data-page="2"] {
         #portfolio-overview {
-            -webkit-transform: rotateY(70deg) translateX(-50px) scale(.5);
-            -webkit-transition-delay: 0s, 0s, 0.2s;
-
             opacity: 0;
-            visibility: hidden;
+        }
+        
+        #portfolio-wrap {
+            left: -100%;
         }
     }
 }
 
-#portfolio-overview,
-#portfolio {
-    -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.3,0,0.4,1), opacity 0.2s linear, visibility 0.2s linear;
+.csstransforms {
+    #portfolio-container{
+        #portfolio-wrap {
+            left: 0 !important;
+        }
+        
+        &[data-page="2"] {
+            #portfolio-wrap {
+                -webkit-transform: translateX(-50%);
+                transform: translateX(-50%);
+            }
+        }
+    }
 }
 
 #portfolio-overview {
     z-index: 1;
     list-style: none;
     padding: 0;
-    -webkit-transform-origin: 0 0;
     
     li {
         float: left;
@@ -256,10 +277,26 @@
 #portfolio {
     position: relative;
     z-index: 2;
-    -webkit-transform-origin: 100% 0;
+    
+    header,
+    aside {
+        padding-bottom: 1.5em;
+        float: left;
+    }
     
     header {
-        padding-bottom: 1.5em;
+        width: 70%;
+    }
+    
+    aside {
+        width: 30%;
+        padding-left: 5%;
+    }
+    
+    .figure-container {
+        clear: both;
+        padding-top: 1em;
+        text-align: center;   
     }
 }
 
@@ -268,11 +305,7 @@
     #intro-greeting,
     #portfolio > section {
         display: none;   
-    }
-    #portfolio {
-        
-    }
-    
+    }    
 }
 
 .figure-container {

@@ -40,8 +40,10 @@ define([
                 bgs: $('.colored-bg')
             },
             
+            header: $('#page-header'),
             greeting: $('#intro-greeting'),
             portfolioContainer: $('#portfolio-container'),
+            portfolioWrap: $('#portfolio-wrap'),
             portfolioOverview: $('#portfolio-overview'),
             portfolio: $('#portfolio'),
             entries: $('#portfolio > section')
@@ -86,6 +88,15 @@ define([
             this.changePage();
         },
         
+        scrollToPortfolio: function(){
+            var top = this.el.portfolioContainer.offset().top,
+                offset = this.el.header.outerHeight();
+            
+            $('html,body').animate({
+              scrollTop: top - offset - 20
+            }, 300);
+        },
+        
         changePage: function(e){
             var loc = (window.location.hash.indexOf('/') == -1) ? '' : window.location.hash.split('/')[1];
             
@@ -93,33 +104,22 @@ define([
                 var $active = this.el.portfolio.find('[data-entry="'+ loc + '"]'),
                     $img = $active.find('img[data-src]');
                 
-                //Hide any portfolio entries that might already be shown
-                this.el.portfolio.find('section:visible').hide();
-                
                 $img.each(function(){
                     var $this = $(this);
                     
                     $this.attr('src', $this.data('src'));
                 });
                 
-                //Need to set the height on the container so the overview doesn't disappear when setting to position:absolute
-                /*
-                this.el.portfolioContainer.css({
-                    'height': this.el.portfolioOverview.outerHeight(true)
-                });
-                */
-                this.el.portfolioOverview.css('position', 'absolute');
-                
+                //hide previous page and show current page
+                this.el.portfolio.css('height', '').find('section:visible').hide();
                 $active.show();
-                this.el.portfolioContainer.attr('data-page', '2');
-            } else {
-                //Set the height on the portfolio container again, in case it has changed
-                /*
-                this.el.portfolioContainer.css({
-                    'height': this.el.portfolioOverview.outerHeight(true)
-                });
-                */
                 
+                this.el.portfolioContainer.attr('data-page', '2');
+                
+                this.scrollToPortfolio();
+            } else {
+                //set height to 0 to render container correctly
+                this.el.portfolio.css('height', '0');
                 this.el.portfolioContainer.attr('data-page', '1');
             }
         }
