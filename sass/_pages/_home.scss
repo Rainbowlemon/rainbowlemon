@@ -112,7 +112,7 @@
 #portfolio {
     width: 50%;
     float: left;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s 0s, visibility 0s 0s;
 }
 
 #portfolio-container {
@@ -131,13 +131,21 @@
     
     &[data-page="1"] {
         #portfolio {
+            -webkit-transition-duration: 0.2s, 0.2s;
+            transition-duration: 0.2s, 0.2s;
+            
             opacity: 0;
+            visibility: hidden;
         }
     }
     
     &[data-page="2"] {
         #portfolio-overview {
+            -webkit-transition-duration: 0.2s, 0.2s;
+            transition-duration: 0.2s, 0.2s;
+            
             opacity: 0;
+            visibility: hidden;
         }
         
         #portfolio-wrap {
@@ -309,7 +317,6 @@
 }
 
 .figure-container {
-    
     figure {
         margin: 0;
     }
