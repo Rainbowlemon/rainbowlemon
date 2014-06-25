@@ -8,7 +8,34 @@
     <meta http-equiv="cleartype" content="on">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300|Crimson+Text:400,700' rel='stylesheet' type='text/css'>
+    <!-- Google Authorship and Publisher Markup --> 
+    <link rel="author" href="https://plus.google.com/+AidanJalali/posts" />
+    <link rel="publisher" href="https://plus.google.com/+AidanJalali" />
+
+    <!-- Schema.org markup for Google --> 
+    <meta itemprop="name" content="Rainbowlemon" /> 
+    <meta itemprop="description" content="The portfolio of web designer/developer Aidan Jalali" /> 
+    <meta itemprop="image" content=" http://rainbowlemon.co.uk/img/rainbowlemon-logo.png" />
+
+    <!-- Twitter Card data --> 
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="@rainbowlemon" /> 
+    <meta property="twitter:title" content="Rainbowlemon | Portfolio of web designer/developer Aidan Jalali" /> 
+    <meta property="twitter:description" content="Design portfolio of web designer Rainbowlemon; pixel pusher, lemon lover and all round web dude" /> 
+    <meta property="twitter:creator" content="@rainbowlemon" />
+    <meta property="twitter:image" content="http://rainbowlemon.co.uk/img/rainbowlemon-logo.png" />
+    <meta property="twitter:url" content="http://rainbowlemon.co.uk" />
+        
+    <!-- Open Graph data --> 
+    <meta property="og:title" content="Rainbowlemon | Portfolio of web designer/developer Aidan Jalali" />
+    <meta property="og:url" content="http://www.example.com/" />
+    <meta property="og:image" content="http://rainbowlemon.co.uk/img/rainbowlemon-logo.png" />
+    <meta property="og:description" content="Design portfolio of web designer Rainbowlemon; pixel pusher, lemon lover and all round web dude" /> 
+    <meta property="og:site_name" content="Rainbowlemon" /> 
+    <meta property="article:published_time" content="2014-06-22T00:00:00+01:00" /> 
+    <meta property="article:modified_time" content="2014-06-22T00:00:00+01:00" />
+    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300|Crimson+Text:400,700' rel='stylesheet' type='text/css' />
     
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <style id="custom-styles"></style>
@@ -331,7 +358,7 @@
                 </figure>
 
                 <figure>
-                    <figcaption>A sample of another of the marketing pages, which can be found at <a href="http://vivomiles.com/#products">vivomiles.com/#products</a></figcaption>
+                    <figcaption>A sample of another of the marketing pages, which can be found at <a href="https://www.vivomiles.com/#!products">vivomiles.com/#products</a></figcaption>
                     <noscript>
                         <img src="img/portfolio/vivomiles2.jpg" alt="Vivo Miles - For Schools page">
                     </noscript>
@@ -417,7 +444,7 @@
             <section data-entry="rocket-turtle">
                 <header>
                     <h2>Rocket Turtle</h2>
-                    <h3><a href="#" class="turtle-trigger">Play the game</a></h3>
+                    <h3><a href="#" class="swf-trigger" data-swfid="rocketturtle">Play the game</a></h3>
                     <p>This game was created for Vivo Miles while I worked at Everlution Software, but was unfortunately canned due to time constraints. You can play the game (albeit in its unfinished form) <a href="portfolio/rocket-turtle/">here!</a> The illustrations for the animals and backgrounds were created by my fantastic friend and ex-colleague <a href="http://dafttom.tumblr.com/">Tom Read</a>.</p>
                 </header>
                 
@@ -440,9 +467,9 @@
                 <noscript>
                     <img src="img/portfolio/rocket-turtle.jpg" alt="Rocket Turtle - screenshot">
                 </noscript>
-                <img data-src="img/portfolio/rocket-turtle.jpg" alt="Rocket Turtle - screenshot" class="turtle-trigger">
+                <img data-swfpreview="rocketturtle" data-src="img/portfolio/rocket-turtle.jpg" alt="Rocket Turtle - screenshot" class="turtle-trigger">
                 
-                <object width="400" height="600" style="display: none">
+                <object data-swfid="rocketturtle" data-url="./portfolio/rocket-turtle/rocket-turtle.swf" width="400" height="600">
                     <param name="movie" data-value="./portfolio/rocket-turtle/rocket-turtle.swf" />
                     <embed data-src="./portfolio/rocket-turtle/rocket-turtle.swf" width="400" height="600"></embed>
                 </object>
@@ -511,6 +538,7 @@
                 <header>
                     <h2>/r/minimalism</h2>
                     <h3><a href="http://www.reddit.com/r/minimalism">reddit.com/r/minimalism</a></h3>
+                    <p>I am an avid redditor and also a huge fan of minimalism in design (and lifestyle), so I adopted full moderation of the subreddit <a href="http://www.reddit.com/r/minimalism">/r/minimalism</a> and redesigned it to fit the subject. I still moderate and frequent the sub on a regular basis; if you're keen on minimalism, please drop by and have a look!</p>
                 </header>
                 
                 <aside>
@@ -527,8 +555,6 @@
                         <dd><time>June 2010</time> to <time>present</time></dd>
                     </dl>
                 </aside>
-                
-                <figcaption>I am an avid redditor and also a huge fan of minimalism in design (and lifestyle), so I adopted full moderation of the subreddit <a href="http://www.reddit.com/r/minimalism">/r/minimalism</a> and redesigned it to fit the subject. I still moderate and frequent the sub on a regular basis; if you're keen on minimalism, please drop by and have a look!</figcaption>
 
                 <noscript>
                     <img src="img/portfolio/minimalism.png" alt="/r/minimalism homepage design">

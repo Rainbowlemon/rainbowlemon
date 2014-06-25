@@ -53,6 +53,9 @@ define([
             $(window).on('scroll.' + this.options.appName, this.setColors.bind(this));
             $(window).on('hashchange.' + this.options.appName, this.changePage.bind(this));
             
+            this.el.portfolio.on('click.' + this.options.appName, '.swf-trigger', this.showSwf.bind(this));
+            this.el.header.on('click.' + this.options.appName, 'a[href="#!"]', this.scrollToPosition.bind(this));
+            
             this.setColors();
         },
         
@@ -91,9 +94,16 @@ define([
             this.changePage();
         },
         
-        scrollToPortfolio: function(){
-            var top = this.el.portfolioContainer.offset().top,
+        scrollToPosition: function(element){
+            var top,
+                offset;
+            
+            if (element === 'portfolio') {
+                top = this.el.portfolioContainer.offset().top;
                 offset = this.el.header.outerHeight();
+            } else {
+                top = offset = 0;
+            }
             
             $('html,body').animate({
               scrollTop: top - offset - 20
@@ -118,14 +128,42 @@ define([
                 $active.show();
                 
                 this.el.portfolioContainer.attr('data-page', '2');
+                this.scrollToPosition('portfolio');
             } else {
                 //set height to 0 to render container correctly
                 this.el.portfolio.css('height', '0');
                 this.el.portfolioContainer.attr('data-page', '1');
+                
+                this.hideSwfs();
             }
+        },
+        
+        showSwf: function(e){
+            e.preventDefault();
             
-            // Dont scroll to portfolio on first page load
-            if (typeof e === 'object') this.scrollToPortfolio();
+            var id = $(e.currentTarget).data('swfid');
+            if (!id) return;
+            
+            var $preview = $('img[data-swfpreview="' + id + '"]'),
+                $obj = $('object[data-swfid="' + id + '"]'),
+                src = $obj.data('url'),
+                width = $obj[0].width,
+                height = $obj[0].height;
+            
+            $preview.hide();
+            $obj.html('<param name="movie" value="' + src + '" /><embed src="' + src + '" width="' + width + '" height="'+ height + '"></embed').show();
+        },
+        
+        hideSwfs: function(){
+            var $objs = $('object[data-swfid]');
+            
+            $objs.each(function(){
+                var $this = $(this),
+                    id = $this.data('swfid');
+                
+                $('img[data-swfpreview="' + id + '"]').show();
+                $this.empty().removeAttr('style');
+            })
         }
     
     };

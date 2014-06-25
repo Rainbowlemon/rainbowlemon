@@ -490,6 +490,9 @@ dd {
   -webkit-transform: scale(0.95);
   transform: scale(0.95); }
 
+object[data-swfid] {
+  display: none; }
+
 /* Headers, footers and container styling */
 #page-header {
   position: fixed;
@@ -890,8 +893,16 @@ main {
     width: 36px;
     height: auto; }
 
+  #portfolio #portfolio-back-link {
+    float: left;
+    margin: 1em 0.5em 1em 0.2em;
+    position: static; }
   #portfolio header,
   #portfolio aside {
     width: auto;
     float: none;
-    margin-bottom: 1em; } }
+    margin-bottom: .6em 1.2em 1em; }
+  #portfolio aside {
+    padding: 1em; }
+  #portfolio figcaption {
+    font-size: .9em; } }

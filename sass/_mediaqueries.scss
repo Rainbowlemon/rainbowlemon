@@ -97,12 +97,25 @@
     }
     
     #portfolio {
+        #portfolio-back-link {
+            float: left;
+            margin: 1em 0.5em 1em 0.2em;
+            position: static;
+        }
+        
         header,
         aside {
             width: auto;
             float: none;
-            margin-bottom: 1em;
+            margin-bottom: .6em 1.2em 1em;
         }
-
+        
+        aside {
+            padding: 1em;
+        }
+        
+        figcaption {
+            font-size: .9em;
+        }
     }
 }
