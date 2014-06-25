@@ -95,6 +95,20 @@ dd {
     margin: 0.3em 0 1.2em;   
 }
 
+.back-link {
+    display: inline-block;
+    font-size: 30px;
+    text-decoration: none;
+    background: #FFF;
+    width: 40px;
+    height: 40px;
+    line-height: 36px;
+    text-align: center;
+    border: 1px dashed #CCC;
+    border-radius: 50%;
+    
+}
+
 // Tag list
 .tags {
     list-style: none;

@@ -424,6 +424,18 @@ dt {
 dd {
   margin: 0.3em 0 1.2em; }
 
+.back-link {
+  display: inline-block;
+  font-size: 30px;
+  text-decoration: none;
+  background: #FFF;
+  width: 40px;
+  height: 40px;
+  line-height: 36px;
+  text-align: center;
+  border: 1px dashed #CCC;
+  border-radius: 50%; }
+
 .tags {
   list-style: none;
   padding: 0;
@@ -768,32 +780,57 @@ main {
 #portfolio {
   position: relative;
   z-index: 2; }
+  #portfolio #portfolio-back-link {
+    position: absolute;
+    left: -60px;
+    top: 0.8em;
+    z-index: 100; }
+    #portfolio #portfolio-back-link:after {
+      top: 110% !important; }
   #portfolio header,
   #portfolio aside {
-    padding-bottom: 1.5em;
-    float: left; }
+    float: left;
+    margin-bottom: 3em; }
   #portfolio header {
-    width: 70%; }
+    width: 70%;
+    padding-right: 3em; }
   #portfolio aside {
     width: 30%;
-    padding-left: 5%; }
-  #portfolio .figure-container {
+    margin-top: 1.5em;
+    padding: 0.5em 2% 1.4em 2%;
+    border: 1px solid #DDD;
+    border-radius: 20px; }
+  #portfolio figure {
+    position: relative;
+    margin: 0 0 1.4em;
     clear: both;
-    padding-top: 1em;
-    text-align: center; }
+    overflow: hidden; }
+  #portfolio figcaption {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: RGBA(0, 0, 0, 0.86);
+    color: #fff;
+    padding: 1.5em 3em 2.3em;
+    opacity: 0;
+    transition: opacity 0.2s; }
+  #portfolio figure:hover figcaption {
+    opacity: 1; }
+  #portfolio img {
+    width: 100%;
+    height: auto;
+    display: block; }
+    #portfolio img.turtle-trigger {
+      width: 50%; }
+  #portfolio figcaption strong {
+    color: #fff;
+    font-weight: 600; }
 
 .js #intro-greeting,
 .js #portfolio > section {
   display: none; }
-
-.figure-container figure {
-  margin: 0; }
-.figure-container img {
-  width: 100%;
-  height: auto; }
-.figure-container figcaption strong {
-  color: #fff;
-  font-weight: 600; }
 
 @media (min-width: 1200px) {
   h1 {
@@ -825,7 +862,10 @@ main {
       position: static;
       width: 65vw;
       left: 0;
-      margin: 0 auto; } }
+      margin: 0 auto; }
+
+  #portfolio img.turtle-trigger {
+    width: 100%; } }
 @media (max-width: 500px) {
   h1 {
     font-size: 2.6em; }
@@ -848,4 +888,10 @@ main {
   #page-header > nav img,
   #page-header svg {
     width: 36px;
-    height: auto; } }
+    height: auto; }
+
+  #portfolio header,
+  #portfolio aside {
+    width: auto;
+    float: none;
+    margin-bottom: 1em; } }

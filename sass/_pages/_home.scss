@@ -286,44 +286,70 @@
     position: relative;
     z-index: 2;
     
+    #portfolio-back-link {
+        position: absolute;
+        left: -60px;
+        top: 0.8em;
+        z-index: 100;
+        
+        &:after {
+            top: 110% !important;
+        }
+    }
+    
     header,
     aside {
-        padding-bottom: 1.5em;
         float: left;
+        margin-bottom: 3em;
     }
     
     header {
         width: 70%;
+        padding-right: 3em;
     }
     
     aside {
         width: 30%;
-        padding-left: 5%;
+        margin-top: 1.5em;
+        padding: 0.5em 2% 1.4em 2%;
+        border: 1px solid #DDD;
+        border-radius: 20px;
     }
     
-    .figure-container {
-        clear: both;
-        padding-top: 1em;
-        text-align: center;   
-    }
-}
-
-// Hide js-modified html
-.js {
-    #intro-greeting,
-    #portfolio > section {
-        display: none;   
-    }    
-}
-
-.figure-container {
     figure {
-        margin: 0;
+        position: relative;
+        margin: 0 0 1.4em;
+        clear: both;
+        overflow: hidden;
+    }
+    
+    figcaption {
+        position: absolute;
+        text-align: center;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: RGBA(0,0,0,0.86);
+        color: #fff;
+        padding: 1.5em 3em 2.3em;
+        opacity: 0;
+        
+        transition: opacity 0.2s;
+    }
+    figure:hover {
+        figcaption {
+            opacity: 1;
+        }
     }
     
     img {
         width: 100%;
         height: auto;
+        display: block;
+        
+        &.turtle-trigger {
+            width: 50%;
+        }
     }
     
     figcaption {
@@ -333,4 +359,12 @@
             font-weight: 600;
         }
     }
+}
+
+// Hide js-modified html
+.js {
+    #intro-greeting,
+    #portfolio > section {
+        display: none;   
+    }    
 }

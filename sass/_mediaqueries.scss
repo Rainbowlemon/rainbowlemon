@@ -49,6 +49,12 @@
             margin: 0 auto;  
         }
     }
+    
+    #portfolio {
+        img.turtle-trigger {
+            width: 100%;
+        }
+    }
 }
 
 @media (max-width: 500px) {
@@ -88,5 +94,15 @@
             width: 36px;
             height: auto;
         }
+    }
+    
+    #portfolio {
+        header,
+        aside {
+            width: auto;
+            float: none;
+            margin-bottom: 1em;
+        }
+
     }
 }

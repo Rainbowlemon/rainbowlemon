@@ -79,6 +79,9 @@ define([
                 ' }' +
                 ' a {' +
                 '     color: '+ rgbDarkString + ';' +
+                ' }' +
+                ' .colored-border {' +
+                '     border-color:' + rgbString + ' !important;' +
                 ' }'
             );
         },
@@ -115,13 +118,14 @@ define([
                 $active.show();
                 
                 this.el.portfolioContainer.attr('data-page', '2');
-                
-                this.scrollToPortfolio();
             } else {
                 //set height to 0 to render container correctly
                 this.el.portfolio.css('height', '0');
                 this.el.portfolioContainer.attr('data-page', '1');
             }
+            
+            // Dont scroll to portfolio on first page load
+            if (typeof e === 'object') this.scrollToPortfolio();
         }
     
     };
