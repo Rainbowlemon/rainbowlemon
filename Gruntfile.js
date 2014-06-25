@@ -62,7 +62,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true, 
                     cwd: 'www/', 
-                    src: ['*', 'app/templates/**/*', 'css/**', 'img/**', 'fonts/*', 'vendor/libs/modernizr/modernizr-custom.js'], 
+                    src: ['*', 'app/templates/**/*', 'css/**', 'img/**', '!img/embedded-svgs/**/*', 'fonts/*', 'portfolio/**/*', 'vendor/libs/modernizr/modernizr-custom.js'], 
                     dest: 'build/'
                 }]
             }

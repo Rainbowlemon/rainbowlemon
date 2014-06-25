@@ -3,3 +3,4 @@ www/vendor/bower/
 temp/
 *._*
 .sass-cache
+build/

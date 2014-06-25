@@ -1,10 +1,8 @@
 define([
     'require',
-    'jquery',
     'utils'
 ], function(
     require,
-    $,
     utils
 ) {
     'use strict';
