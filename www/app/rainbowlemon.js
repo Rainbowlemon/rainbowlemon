@@ -59,7 +59,7 @@ define([
         
         setColors: function() { 
             //Get fraction of scroll related to document size
-            var scrollFraction = window.scrollY / ($(document).height() - window.innerHeight);
+            var scrollFraction = window.pageYOffset / ($(document).height() - window.innerHeight);
             
             if (scrollFraction > 1) scrollFraction = 1;
             

@@ -11,13 +11,13 @@ html {
     min-height: 100%;
     color: #888;
     font-family: $seriffont;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 body {
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
     line-height: 1.6;
 }
 
@@ -146,6 +146,7 @@ dd {
         left: 0;
         
         -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;
+        transition: opacity 0.2s 0s, visibility 0s 0.2s;
     }
     
     &.title-hover-right:after {
@@ -159,6 +160,7 @@ dd {
             opacity: 1;
             visibility: visible;
             -webkit-transition-delay: 0s,0s;
+            transition-delay: 0s,0s;
         }
     }
     

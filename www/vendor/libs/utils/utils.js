@@ -8,6 +8,7 @@ define(function(){
     */
     function hsbToRgb(h, s, v) {
         var r, g, b, i, f, p, q, t;
+        
         if (h && s === undefined && v === undefined) {
             s = h.s, v = h.v, h = h.h;
         }
@@ -16,6 +17,7 @@ define(function(){
         p = v * (1 - s);
         q = v * (1 - f * s);
         t = v * (1 - (1 - f) * s);
+        
         switch (i % 6) {
             case 0: r = v, g = t, b = p; break;
             case 1: r = q, g = v, b = p; break;
