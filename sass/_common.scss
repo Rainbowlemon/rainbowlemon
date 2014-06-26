@@ -142,7 +142,7 @@ dd {
         white-space: nowrap;
         
         position: absolute;
-        top: 100%;
+        top: 110%;
         left: 0;
         
         -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;
@@ -208,21 +208,18 @@ object[data-swfid] {
     left: 0;
     right: 0;
     background: RGBA(248,248,248,0.9);
+    padding: 10px 0;
     
     font-size: 110%;
     z-index: 100;
     
     a {
-        height: 60px;
-        line-height: 56px;
-        display: inline-block;
-        vertical-align: middle;
+        float: right;
     }
     
     svg {
-        display: inline-block;
-        vertical-align: middle;
-        margin: 0 0.1em;
+        display: block;
+        margin: 0 0.2em;
     }
     
     > nav {
@@ -269,8 +266,7 @@ object[data-swfid] {
         }
         
         img {
-            display: inline-block;
-            vertical-align: middle;
+            display: block;
             margin: 0 .2em;
         }
     }
