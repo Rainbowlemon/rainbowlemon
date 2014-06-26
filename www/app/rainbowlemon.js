@@ -161,7 +161,7 @@ define([
                 
                 $('img[data-swfpreview="' + id + '"]').show();
                 $this.empty().removeAttr('style');
-            })
+            });
         }
     
     };
