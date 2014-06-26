@@ -122,7 +122,7 @@ module.exports = function(grunt) {
                 secretAccessKey: '<%= aws.secretAccessKey %>',
                 bucket: '<%= aws.bucket %>',
                 region: 'eu-west-1',
-                uploadConcurrency: 5,debug:true
+                uploadConcurrency: 5
             },
             
             wipe: {
