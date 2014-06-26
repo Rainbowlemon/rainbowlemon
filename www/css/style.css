@@ -507,7 +507,8 @@ object[data-swfid] {
   z-index: 100; }
   #page-header a {
     float: right; }
-  #page-header svg {
+  #page-header svg,
+  #page-header img {
     display: block;
     margin: 0 0.2em; }
   #page-header > nav {
@@ -549,9 +550,6 @@ object[data-swfid] {
           left: 0;
       }
       */ }
-    #page-header > nav img {
-      display: block;
-      margin: 0 .2em; }
   #page-header > p {
     float: right;
     margin: 0 0.5rem 0 0; }

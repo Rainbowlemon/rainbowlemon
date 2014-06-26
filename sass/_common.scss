@@ -217,7 +217,8 @@ object[data-swfid] {
         float: right;
     }
     
-    svg {
+    svg,
+    img {
         display: block;
         margin: 0 0.2em;
     }
@@ -263,11 +264,6 @@ object[data-swfid] {
                 left: 0;
             }
             */
-        }
-        
-        img {
-            display: block;
-            margin: 0 .2em;
         }
     }
     
