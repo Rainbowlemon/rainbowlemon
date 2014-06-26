@@ -58,7 +58,7 @@ module.exports = function(grunt) {
         },
         
         copy: {
-            temp: {
+            build: {
                 files: [{
                     expand: true, 
                     cwd: 'www/', 
@@ -72,43 +72,25 @@ module.exports = function(grunt) {
                         'portfolio/**/*',
                         'vendor/libs/modernizr/modernizr-custom.js'
                     ], 
-                    dest: 'temp/'
+                    dest: 'build/'
                 }]
             }
         },
         
-        compress: {
-            build: {
-                options: {
-                    mode: 'gzip'
-                },
-                expand: true,
-                cwd: 'temp/',
-                src: ['**/*'],
-                dest: 'build/',
-                filter: 'isFile',
-                ext: function(ext){
-                    return ext;
-                }
-            }
-        },
-        
         clean: {
-            build: 'build/',
-            backup: 'backup/',
-            temp: 'temp/'
+            build: 'build/'
         },
         
         requirejs: {
-            temp: {
+            build: {
                 options: {
                     name: 'main',
                     mainConfigFile: 'www/app/main.js',
-                    out: 'temp/app/<%= pkg.version %>.js',
+                    out: 'build/app/<%= pkg.version %>.js',
                     preserveLicenseComments: false,
                     almond: true,
                     replaceRequireScript: [{
-                        files: ['temp/index.html'],
+                        files: ['build/index.html'],
                         module: '<%= pkg.version %>',
                         modulePath: './app/<%= pkg.version %>'
                     }]
@@ -116,51 +98,13 @@ module.exports = function(grunt) {
             }
         },
         
-        aws_s3: {
+        'gh-pages': {
             options: {
-                accessKeyId: '<%= aws.accessKeyId %>',
-                secretAccessKey: '<%= aws.secretAccessKey %>',
-                bucket: '<%= aws.bucket %>',
-                region: 'eu-west-1',
-                uploadConcurrency: 5
+                base: 'build',
+                branch: 'master',
+                repo: 'git@github.com:Rainbowlemon/rainbowlemon.github.io.git'
             },
-            
-            wipe: {
-                files: [
-                    {
-                        dest: '/',
-                        'action': 'delete'
-                    }
-                ]
-            },
-            
-            deploy: {
-                files: [
-                    {
-                        'action': 'upload',
-                        expand: true,
-                        cwd: 'build/',
-                        src: ['**'],
-                        dest: '',
-                        differential: true,
-                        params: {
-                            ContentEncoding: 'gzip'
-                        }
-                    },{
-                        'action': 'delete',
-                        dest: '/',
-                        cwd: 'build/',
-                        differential: true,
-                        exclude: 'app/*.js'
-                    }
-                ]
-            },
-            
-            backup: {
-                cwd: 'backup/',
-                dest: '/',
-                'action': 'download'
-            }
+            src: '**/*'
         }
     });
     
@@ -168,16 +112,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-modernizr');
     grunt.loadNpmTasks('grunt-requirejs');
-    grunt.loadNpmTasks('grunt-aws-s3');
+    grunt.loadNpmTasks('grunt-gh-pages');
     
-    grunt.registerTask('build', ['clean:build', 'clean:temp', 'copy:temp', 'requirejs:temp', 'compress:build', 'clean:temp']);
-    grunt.registerTask('backup', ['clean:backup', 'aws_s3:backup']);
-    grunt.registerTask('wipe', ['aws_s3:wipe']);
-    grunt.registerTask('deploy', ['aws_s3:deploy']);
+    grunt.registerTask('build', ['clean:build', 'copy:build', 'requirejs:build']);
     
-    grunt.registerTask('default', ['modernizr', 'sass', 'jshint', 'clean:build', 'clean:temp', 'copy:temp', 'requirejs:temp', 'compress:build', 'aws_s3:deploy', 'clean:temp']);
+    grunt.registerTask('default', ['modernizr', 'sass', 'jshint', 'clean:build', 'copy:build', 'requirejs:build', 'gh-pages', 'clean:build']);
 };

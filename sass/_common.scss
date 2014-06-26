@@ -106,7 +106,12 @@ dd {
     text-align: center;
     border: 1px dashed #CCC;
     border-radius: 50%;
+    transition: background-color 0.2s;
     
+    &:hover,
+    &:focus {
+        background: #f7f7f7;
+    }
 }
 
 // Tag list

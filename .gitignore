@@ -3,6 +3,5 @@ www/vendor/bower/
 temp/
 *._*
 .sass-cache
-backup/
-test/
 build/
+.grunt/
