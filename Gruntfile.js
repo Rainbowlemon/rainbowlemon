@@ -1,7 +1,6 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        aws: grunt.file.readJSON('../_aws/rainbowlemon.json'),
         
         jshint: {
             gruntfile: {

@@ -1,8 +1,6 @@
 define([
-    'require',
     'utils'
 ], function(
-    require,
     utils
 ) {
     'use strict';
@@ -143,24 +141,27 @@ define([
             if (!id) return;
             
             var $preview = $('img[data-swfpreview="' + id + '"]'),
-                $obj = $('object[data-swfid="' + id + '"]'),
-                src = $obj.data('url'),
-                width = $obj[0].width,
-                height = $obj[0].height;
+                $container = $('div[data-swfid="' + id + '"]'),
+                src = $container.data('url'),
+                width = $container.data('width'),
+                height = $container.data('height');
             
             $preview.hide();
-            $obj.html('<param name="movie" value="' + src + '" /><embed src="' + src + '" width="' + width + '" height="'+ height + '"></embed').show();
+            
+            var html = utils.createSwf(src, {width: width, height: height}, {wmode: 'transparent'});
+            
+            $container.html(html).show();
         },
         
         hideSwfs: function(){
-            var $objs = $('object[data-swfid]');
+            var $containers = $('div[data-swfid]');
             
-            $objs.each(function(){
+            $containers.each(function(){
                 var $this = $(this),
                     id = $this.data('swfid');
                 
                 $('img[data-swfpreview="' + id + '"]').show();
-                $this.empty().removeAttr('style');
+                $this.empty();
             });
         }
     

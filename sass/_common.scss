@@ -104,13 +104,13 @@ dd {
     height: 40px;
     line-height: 36px;
     text-align: center;
-    border: 1px dashed #CCC;
+    border: 1px solid #CCC;
     border-radius: 50%;
-    transition: background-color 0.2s;
+    transition: opacity 0.2s;
     
     &:hover,
     &:focus {
-        background: #f7f7f7;
+        opacity: 0.8;
     }
 }
 

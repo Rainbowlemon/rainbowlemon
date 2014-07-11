@@ -344,10 +344,14 @@
         width: 100%;
         height: auto;
         display: block;
+        clear: both;
         
         &.turtle-trigger {
             width: 50%;
         }
+    }
+    .swf-container {
+        clear: both;
     }
     
     figcaption {
