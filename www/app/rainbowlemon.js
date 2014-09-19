@@ -86,7 +86,8 @@ define([
         },
         
         setupPage: function(){
-            this.el.greeting.text(_.sample(this.options.greetings)).show();
+            var randGreeting = this.options.greetings[Math.floor(Math.random() * this.options.greetings.length)];
+            this.el.greeting.text(randGreeting).show();
             this.changePage();
         },
         

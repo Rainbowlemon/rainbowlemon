@@ -1,0 +1,158 @@
+{
+  "basics": {
+    "name": "Aidan Jalali",
+    "label": "Web/UI Designer & Front-end Developer",
+    "picture": "https://s3.amazonaws.com/uifaces/faces/twitter/rainbowlemon/128.jpg",
+    "email": "aidanjalali@gmail.com",
+    "phone": "+44 74741 67766",
+    "website": "http://www.rainbowlemon.co.uk",
+    "summary": "Aidan is a web designer and developer from the sunny climes of Manchester (ha!), living, working and breathing in London. Having finished his BA in Creative Digital Media at Teesside University, he went on to snatch a job at EA games creating all kinds of colourful things - namely, Flash adverts and marketing pages. Following that, he joined the wonderful Everlution Software where he rediscovered his love for front-end development, and is now jobless after realising he wanted to 'do his own thing for a while' (whatever that means). He has since designed and developed his first mobile app, Point Me There, and is well on his way to making his first mobile game. He also loves talking in third person, because it makes him feel a little bit like Yoda.",
+    "location": {
+      "address": "Flat 32 Bridge View Court, 19 Grange Road",
+      "postalCode": "SE1 3BT",
+      "city": "London",
+      "countryCode": "UK",
+      "region": "Greater London"
+    },
+    "profiles": [{
+      "network": "Twitter",
+      "username": "Rainbowlemon",
+      "url": "https://twitter.com/Rainbowlemon"
+    },{
+      "network": "Reddit",
+      "username": "Rainbowlemon",
+      "url": "http://www.reddit.com/user/Rainbowlemon/"
+    },{
+      "network": "LinkedIn",
+      "username": "Aidan Jalali",
+      "url": "https://www.linkedin.com/profile/view?id=58368619"
+    }]
+  },
+  "work": [{
+    "company": "Self-employed",
+    "position": "Procrastininja",
+    "website": "http://www.rainbowlemon.co.uk",
+    "startDate": "2014-04-01",
+    "summary": "Designing and developing apps and websites for myself and others. Basically taking time out to take it easy and work on my own stuff for a while!",
+    "highlights": [
+		"Created my first app, Point Me There",
+        "Redesigned my portfolio, my girlfriend's portfolio, and my friend's portfolio",
+        "Completed Dark Souls II"
+    ]
+  },{
+    "company": "Everlution Software",
+    "position": "Graphic/UI Designer & Front-end Developer",
+    "website": "http://www.everlution.com",
+    "startDate": "2010-06-01",
+    "endDate": "2014-04-01",
+    "summary": "Designing and building websites (from initial concept -> wireframe -> design -> front-end build), designing marketing material in a variety of formats (posters, fliers, online ads), with a focus on good user flow & user experience. The first port-of-call in our company for anything related to ui/ux design.",
+    "highlights": [
+		"Designed the logo, website and all stationery for Everlution Software",
+        "Single-handedly won a contract for a large bank to provide UI/UX advice for their global website overhaul",
+        "Saw over 10 large projects from start to finish, including wireframing, initial designs and front-end development and styling"
+    ]
+  },{
+    "company": "Base Creative Agency",
+    "position": "Digital Designer",
+    "website": "http://www.wearebase.com/",
+    "startDate": "2010-02-01",
+    "endDate": "2010-05-01",
+    "summary": "Designed websites for clients as well as design proposals for internal projects"
+  },{
+    "company": "Electronic Arts",
+    "position": "Graphic Artist",
+    "website": "http://www.ea.com/uk",
+    "startDate": "2008-09-01",
+    "endDate": "2009-12-01",
+    "summary": "Creating and modifying banners in Flash, advising external agencies on user flow and interface design for outsourced adverts, and advising dev. team on Flash integration for rich media in marketing pages. Bespoke designs for marketing emails and landing pages using Photoshop and Illustrator, as well as frequent modifications to existing creatives.",
+    "highlights": [
+		"Developed new designs for EU Pogo's 'download games' pages (one of the key revenue streams)",
+        "Applying user interaction knowledge and marketing advice to develop the best user flow for optimum click-through rates/conversions for premium content"
+    ]
+  }],
+  "education": [{
+    "institution": "University of Teesside",
+    "area": "Creative Digital Media",
+    "studyType": "Bachelor of Arts",
+    "startDate": "2005-09-01",
+    "endDate": "2008-06-01"
+  },{
+    "institution": "Turton Media Arts College",
+    "startDate": "2003-09-01",
+    "endDate": "2005-06-01",
+    "courses": [
+      "Maths - C",
+      "Physics - B",
+      "Chemistry - B"
+    ]
+  }],
+  "skills": [{
+    "name": "Web Development",
+    "level": "Advanced",
+    "keywords": [
+      "HTML",
+      "CSS",
+      "Javascript"  
+    ]
+  },{
+    "name": "UX Design",
+    "level": "Advanced",
+    "keywords": [
+        "Balsamiq",
+        "Pen & Paper"
+    ]
+  },{
+    "name": "UI/Graphic Design",
+    "level": "Advanced",
+    "keywords": [
+      "Lumix LX7"
+    ]
+  },{
+    "name": "Photography",
+    "level": "Intermediate",
+    "keywords": [
+      "Photoshop",
+      "Illustrator",
+      "Flash"
+    ]
+  }],
+  "languages": [{
+    "language": "English",
+    "fluency": "Fluent"
+  },{
+    "language": "French",
+    "fluency": "Intermediate"
+  },{
+    "language": "German",
+    "fluency": "Beginner"
+  }],
+  "interests": [{
+    "name": "Playing computer games"
+  },{
+    "name": "Swimming"
+  },{
+    "name": "Cooking fantastical things"
+  },{
+    "name": "Eating everything afterwards"
+  },{
+    "name": "Making silly facebook pictures"
+  },{
+    "name": "Playing computer games"
+  },{
+    "name": "Wasting away untold hours browsing Reddit"
+  },{
+    "name": "The usual going out, socialising, etc."
+  },{
+    "name": "Playing computer games"
+  }],
+  "references": [{
+    "name": "Peter Brown, Web Developer",
+    "reference": "Aidan is an amazingly creative and gifted designer with an exceptional understanding of marketing requirements and user experience. He has consistently delivered top notch design and is always ready to go above and beyond to get the job done right. His passion for his job is infectious and his can do attitude and talent under pressure and tight deadlines is inspirational. Aidan brings something special to everything he works on, he is a joy to work with and a brilliant guy both in and out of the office. I cannot recommend Aidan highly enough."
+  },{
+    "name": "Raf Keustermans, Director of Marketing",
+    "reference": "Top Flash guy. We hired Aidan to work on European projects, but after our US colleagues discovered his work and talent, he also started working on global projects and campaigns. Aidan is an exceptional designer and a great colleague. Someone I'd like to work with again in the future."
+  },{
+    "name": "Mark Young, Producer",
+    "reference": "Aidan is a conscientious, skilled and versatile artist, who knows exactly how to put himself in the shoes of the customer/user. He has excellent attention to detail which makes a huge difference to the great work he produces. He's also an absolutely charming chap and it has been a pleasure to work with him."
+  }]
+}
