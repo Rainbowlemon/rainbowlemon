@@ -7,7 +7,7 @@
 @media (min-width: 700px) and (max-width: 1200px) {
     #portfolio-overview a {
         h3 {
-            font-size: 3.6vw;   
+            font-size: 3.4vw;   
         }
         p {
             font-size: 1.8vw;   
@@ -28,6 +28,11 @@
     }
     
     #portfolio-overview {
+        a {
+            h3 {
+                font-size: 1.8em;
+            }
+        }
         li {
             width: 100%;
             margin-bottom: .7em;

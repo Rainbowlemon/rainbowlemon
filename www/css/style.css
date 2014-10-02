@@ -1,1 +1,906 @@
-/*! normalize.css v3.0.0 | MIT License | git.io/normalize */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:0.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}*{box-sizing:border-box;-moz-box-sizing:border-box}html{position:relative;min-height:100%;color:#888;font-family:"Crimson Text",serif;overflow-y:scroll;-webkit-overflow-scrolling:touch}body{width:100%;height:100%;overflow:hidden;line-height:1.6}h1,h2,h3,h4,h5,h6{font-weight:400;margin:.6rem 0;line-height:1.4}h1,h2{font-weight:300;font-family:"Open Sans",sans-serif}h1{font-size:4.2rem;font-size:6vw}h2{font-size:2.8rem}h2+h3{margin-top:-0.5em}h3{font-size:1.5rem}h4{font-size:1.4rem}h5{font-size:1.2rem}a{-webkit-font-smoothing:antialiased;position:relative}a:hover,a:focus{text-decoration:none}a:active{top:1px}p,figcaption{font-size:1.2rem}b,strong{font-weight:400;color:#000}dt{font-size:1.1rem;color:#000}dd{margin:0.3em 0 1.2em}.back-link{display:inline-block;font-size:30px;text-decoration:none;background:#FFF;width:40px;height:40px;line-height:36px;text-align:center;border:1px solid #CCC;border-radius:50%;transition:opacity 0.2s}.back-link:hover,.back-link:focus{opacity:0.8}.tags{list-style:none;padding:0;margin:0;font-size:.9em}.tags li{display:inline-block;margin:0 .1em 0.3em 0;padding:0.1em 0.5em .2em;background:#F00;color:#FFF;border-radius:2px}.title-hover{position:relative}.title-hover:after{content:attr(data-title);background:RGBA(0, 0, 0, 0.8);color:#FFF;padding:0.3em 1em 0.5em;visibility:hidden;opacity:0;font-size:1rem;text-align:center;line-height:1.6;white-space:nowrap;position:absolute;top:110%;left:0;-webkit-transition:opacity 0.2s 0s, visibility 0s 0.2s;transition:opacity 0.2s 0s, visibility 0s 0.2s}.title-hover.title-hover-right:after{right:0;left:inherit}.title-hover:hover:after,.title-hover:focus:after{opacity:1;visibility:visible;-webkit-transition-delay:0s,0s;transition-delay:0s,0s}.scale-btn img,.scale-btn svg{-webkit-transition:-webkit-transform 0.15s cubic-bezier(0, 0.8, 0.4, 1);transition:transform 0.15s cubic-bezier(0, 0.8, 0.4, 1)}.scale-btn:hover img,.scale-btn:hover svg,.scale-btn:focus img,.scale-btn:focus svg{-webkit-transform:scale(1.05);transform:scale(1.05)}.scale-btn:active img,.scale-btn:active svg{-webkit-transition:none;transition:none;-webkit-transform:scale(0.95);transform:scale(0.95)}object[data-swfid]{display:none}#page-header{position:fixed;top:0;left:0;right:0;background:RGBA(248, 248, 248, 0.9);padding:10px 0;font-size:110%;z-index:100}#page-header a{float:right}#page-header svg,#page-header img{display:block;margin:0 0.2em}#page-header>nav{float:left}#page-header>nav a{padding:0 .8em;margin-left:.4em;position:relative}#page-header>p{float:right;margin:0 0.5rem 0 0}#page-header ul{list-style:none;margin:0;padding:0}#page-header a,#page-header p{color:#878787;text-decoration:none}main{min-height:100%;width:70%;max-width:1000px;display:block;margin:0 auto;position:relative;z-index:50}#intro{padding:8em 0 1em;text-align:center}#intro h1{position:relative;display:inline-block}#intro h1 img{position:absolute;bottom:50%;left:88%;width:22vw}#intro p{width:65%;margin:0 auto}.tree{position:absolute;z-index:-1;top:160px;left:30px;bottom:80px;transition:opacity 1s linear,left 1s cubic-bezier(0, 0.7, 0.4, 1),top 1s cubic-bezier(0, 0.7, 0.4, 1)}.tree-top{width:160px;height:146px}.tree-middle{position:absolute;height:100%;width:16px;left:75px;top:146px}.tree-middle .overlay{background:#fff url(/img/tree-middle.svg) repeat-y;width:16px;position:absolute;top:0;left:0;bottom:0}@-webkit-keyframes arrow-throb{0%{-webkit-transform:translateY(0)}15%{-webkit-transform:translateY(20px);border-color:#999 transparent}45%{-webkit-transform:translateY(0);border-color:#ddd transparent}}@keyframes arrow-throb{0%{transform:translateY(0)}15%{transform:translateY(20px);border-color:#999 transparent}45%{transform:translateY(0);border-color:#ddd transparent}}.pointer-arrows{margin-bottom:3em}.pointer-arrows span{display:block;width:0;height:0;margin:1.2em auto;border-style:solid;border-width:15px 15px 0;border-color:#ddd transparent;-webkit-animation:arrow-throb 3s cubic-bezier(0.7, 0, 0.5, 1) 0s infinite;animation:arrow-throb 3s cubic-bezier(0.7, 0, 0.5, 1) 0s infinite}.pointer-arrows span:nth-child(2){border-width:11px 11px 0;-webkit-animation-delay:.15s;animation-delay:.15s}.pointer-arrows span:nth-child(3){border-width:7px 7px 0;-webkit-animation-delay:.3s;animation-delay:.3s}#portfolio-overview,#portfolio{width:50%;float:left;transition:opacity 0.2s 0s, visibility 0s 0s}#portfolio-container{position:relative}#portfolio-container #portfolio-wrap{width:200%;position:relative;top:0;left:0;overflow:hidden;-webkit-transition:-webkit-transform 0.2s cubic-bezier(0.3, 0, 0.4, 1);transition:transform 0.2s cubic-bezier(0.3, 0, 0.4, 1)}#portfolio-container[data-page="1"] #portfolio{-webkit-transition-duration:0.2s, 0.2s;transition-duration:0.2s, 0.2s;opacity:0;visibility:hidden}#portfolio-container[data-page="2"] #portfolio-overview{-webkit-transition-duration:0.2s, 0.2s;transition-duration:0.2s, 0.2s;opacity:0;visibility:hidden}#portfolio-container[data-page="2"] #portfolio-wrap{left:-100%}.csstransforms #portfolio-container #portfolio-wrap{left:0 !important}.csstransforms #portfolio-container[data-page="2"] #portfolio-wrap{-webkit-transform:translateX(-50%);transform:translateX(-50%)}#portfolio-overview{z-index:1;list-style:none;padding:0}#portfolio-overview li{float:left;width:50%;padding:0 2px;margin:0 0 2px}#portfolio-overview img{user-drag:none;-webkit-user-drag:none;width:100%;height:auto;display:block;border:1px solid #ddd}#portfolio-overview a{position:relative;display:block;text-decoration:none;-webkit-user-drag:none}#portfolio-overview a div{-webkit-transition:background-color 0.2s 0s, visibility 0s 0.2s;transition:background-color 0.2s 0s, visibility 0s 0.2s;visibility:hidden;background-color:RGBA(10, 20, 25, 0);position:absolute;display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;align-items:center;justify-content:center;flex-direction:column;top:0;width:100%;height:100%;z-index:1}#portfolio-overview a h3,#portfolio-overview a p{color:#fff;opacity:0;-webkit-transition:-webkit-transform 0.2s cubic-bezier(0, 0.7, 0.3, 1),opacity 0.2s cubic-bezier(0.5, 0.1, 0.4, 0.95);-webkit-transition-delay:0.22s, 0s;transition:transform 0.2s cubic-bezier(0, 0.7, 0.3, 1),opacity 0.2s cubic-bezier(0.5, 0.1, 0.4, 0.95);transition-delay:0.22s, 0s;-webkit-transform:translateY(-20px) scale(2);transform:translateY(-20px) scale(2)}#portfolio-overview a h3{font-family:"Open Sans",sans-serif;font-size:2.4em;margin:0;line-height:1.3;margin-top:-0.3em}#portfolio-overview a p{margin:0}#portfolio-overview a:hover div,#portfolio-overview a:focus div{visibility:visible;background-color:RGBA(10, 20, 25, 0.88);-webkit-transition-delay:0s, 0s;transition-delay:0s, 0s}#portfolio-overview a:hover h3,#portfolio-overview a:hover p,#portfolio-overview a:focus h3,#portfolio-overview a:focus p{-webkit-transform:translateY(0) scale(1);transform:translateY(0) scale(1);opacity:1}#portfolio-overview a:hover h3,#portfolio-overview a:focus h3{-webkit-transition-delay:0s, 0s;transition-delay:0s, 0s}#portfolio-overview a:hover p,#portfolio-overview a:focus p{-webkit-transition-delay:0.12s, 0.12s;transition-delay:0.12s, 0.12s}#portfolio-overview a:active{top:0}#portfolio{position:relative;z-index:2}#portfolio #portfolio-back-link{position:absolute;left:-60px;top:0.8em;z-index:100}#portfolio header,#portfolio aside{float:left;margin-bottom:3em}#portfolio header{width:70%;padding-right:3em}#portfolio aside{width:30%;margin-top:1.5em;padding:0.5em 2% 1.4em 2%;border:1px solid #DDD;border-radius:20px}#portfolio figure{position:relative;margin:0 0 1.4em;clear:both;overflow:hidden;border:1px solid #eaeaea}#portfolio figcaption{position:absolute;text-align:center;bottom:0;left:0;right:0;background:RGBA(0, 0, 0, 0.86);color:#fff;padding:1.5em 3em 2.3em;opacity:0;transition:opacity 0.2s}#portfolio figure:hover figcaption{opacity:1}#portfolio img{width:100%;height:auto;display:block;clear:both}#portfolio img.turtle-trigger{width:50%}#portfolio .swf-container{clear:both}#portfolio figcaption strong{color:#fff;font-weight:600}.js #intro-greeting,.js #portfolio>section{display:none}@media (min-width: 1200px){h1{font-size:5rem}}@media (min-width: 700px) and (max-width: 1200px){#portfolio-overview a h3{font-size:3.6vw}#portfolio-overview a p{font-size:1.8vw}}@media (max-width: 1050px){.tree{left:-2em;top:100px}}@media (max-width: 700px){.tree{opacity:0}#portfolio-overview li{width:100%;margin-bottom:.7em}main{width:95%}#intro{padding:5.5em 0 1em}#intro h1 img{display:block;position:static;width:65vw;left:0;margin:0 auto}#portfolio img.turtle-trigger{width:100%}}@media (max-width: 500px){h1{font-size:2.6em}h2{font-size:2em}#page-header p span{display:none}#page-header>nav a{padding:0 0.6em}#page-header>nav li{display:none}#page-header>nav li:first-child{display:inline-block}#page-header>nav img,#page-header svg{width:36px;height:auto}#portfolio #portfolio-back-link{float:left;margin:1em 0.5em 1em 0.2em;position:static}#portfolio header,#portfolio aside{width:auto;float:none;margin-bottom:.6em 1.2em 1em}#portfolio aside{padding:1em}#portfolio figcaption{font-size:.9em}}
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background: transparent; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10.
+ */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8+, and Opera
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+
+html {
+  position: relative;
+  min-height: 100%;
+  color: #888;
+  font-family: "Crimson Text", serif;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; }
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  line-height: 1.6; }
+
+h1, h2, h3,
+h4, h5, h6 {
+  font-weight: 400;
+  margin: .6rem 0;
+  line-height: 1.4; }
+
+h1,
+h2 {
+  font-weight: 300;
+  font-family: "Open Sans", sans-serif; }
+
+h1 {
+  font-size: 4.2rem;
+  font-size: 6vw; }
+
+h2 {
+  font-size: 2.8rem; }
+
+h2 + h3 {
+  margin-top: -0.5em; }
+
+h3 {
+  font-size: 1.5rem; }
+
+h4 {
+  font-size: 1.4rem; }
+
+h5 {
+  font-size: 1.2rem; }
+
+a {
+  -webkit-font-smoothing: antialiased;
+  position: relative; }
+  a:hover, a:focus {
+    text-decoration: none; }
+  a:active {
+    top: 1px; }
+
+p,
+figcaption {
+  font-size: 1.2rem; }
+
+b,
+strong {
+  font-weight: 400;
+  color: #000; }
+
+dt {
+  font-size: 1.1rem;
+  color: #000; }
+
+dd {
+  margin: 0.3em 0 1.2em; }
+
+.back-link {
+  display: inline-block;
+  font-size: 30px;
+  text-decoration: none;
+  background: #FFF;
+  width: 40px;
+  height: 40px;
+  line-height: 36px;
+  text-align: center;
+  border: 1px solid #CCC;
+  border-radius: 50%;
+  transition: border-color 0.2s;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); }
+
+.tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: .9em; }
+  .tags li {
+    display: inline-block;
+    margin: 0 .1em 0.3em 0;
+    padding: 0.1em 0.5em .2em;
+    background: #F00;
+    color: #FFF;
+    border-radius: 2px; }
+
+.title-hover {
+  position: relative; }
+  .title-hover:after {
+    content: attr(data-title);
+    background: RGBA(0, 0, 0, 0.8);
+    color: #FFF;
+    padding: 0.3em 1em 0.5em;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.6;
+    white-space: nowrap;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;
+    transition: opacity 0.2s 0s, visibility 0s 0.2s; }
+  .title-hover.title-hover-right:after {
+    right: 0;
+    left: inherit; }
+  .title-hover:hover:after, .title-hover:focus:after {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition-delay: 0s,0s;
+    transition-delay: 0s,0s; }
+
+.scale-btn img,
+.scale-btn svg {
+  -webkit-transition: -webkit-transform 0.15s cubic-bezier(0, 0.8, 0.4, 1);
+  transition: transform 0.15s cubic-bezier(0, 0.8, 0.4, 1); }
+.scale-btn:hover img,
+.scale-btn:hover svg, .scale-btn:focus img,
+.scale-btn:focus svg {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05); }
+.scale-btn:active img,
+.scale-btn:active svg {
+  -webkit-transition: none;
+  transition: none;
+  -webkit-transform: scale(0.95);
+  transform: scale(0.95); }
+
+object[data-swfid] {
+  display: none; }
+
+/* Headers, footers and container styling */
+#page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: RGBA(248, 248, 248, 0.9);
+  padding: 10px 0;
+  font-size: 110%;
+  z-index: 100; }
+  #page-header a {
+    float: right; }
+  #page-header svg,
+  #page-header img {
+    display: block;
+    margin: 0 0.2em; }
+  #page-header > nav {
+    float: left; }
+    #page-header > nav a {
+      padding: 0 .8em;
+      margin-left: .4em;
+      position: relative;
+      /*
+      // No need for this yet, as there is no nav
+      &:after {
+          content: '';
+          left: 50%;
+          top: 100%;
+          height: 3px;
+          width: 0;
+          position: absolute;
+          background-color: #e44444;
+          
+          transition: left 0.15s cubic-bezier(0,.8,.4,1), width 0.15s cubic-bezier(0,.8,.4,1);
+      }
+      
+      &:hover:after,
+      &:focus:after {
+          width: 20%;
+          left: 40%;
+      }
+      &:active {
+          top: 0;
+          
+          &:after {
+              width: 90%;
+              left: 5%;
+          }
+      }
+      
+      &.active:after {
+          width: 100%;
+          left: 0;
+      }
+      */ }
+  #page-header > p {
+    float: right;
+    margin: 0 0.5rem 0 0; }
+  #page-header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  #page-header a,
+  #page-header p {
+    color: #878787;
+    text-decoration: none; }
+
+main {
+  min-height: 100%;
+  width: 70%;
+  max-width: 1000px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 50; }
+
+#intro {
+  padding: 8em 0 1em;
+  text-align: center; }
+  #intro h1 {
+    position: relative;
+    display: inline-block; }
+    #intro h1 img {
+      position: absolute;
+      bottom: 50%;
+      left: 88%;
+      width: 22vw; }
+  #intro p {
+    width: 65%;
+    margin: 0 auto; }
+
+.tree {
+  position: absolute;
+  z-index: -1;
+  top: 160px;
+  left: 30px;
+  bottom: 80px;
+  transition: opacity 1s linear, left 1s cubic-bezier(0, 0.7, 0.4, 1), top 1s cubic-bezier(0, 0.7, 0.4, 1); }
+
+.tree-top {
+  width: 160px;
+  height: 146px; }
+
+.tree-middle {
+  position: absolute;
+  height: 100%;
+  width: 16px;
+  left: 75px;
+  top: 146px; }
+  .tree-middle .overlay {
+    background: white url(/img/tree-middle.svg) repeat-y;
+    width: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0; }
+
+@-webkit-keyframes arrow-throb {
+  0% {
+    -webkit-transform: translateY(0); }
+
+  15% {
+    -webkit-transform: translateY(20px);
+    border-color: #999 transparent; }
+
+  45% {
+    -webkit-transform: translateY(0);
+    border-color: #ddd transparent; } }
+
+@keyframes arrow-throb {
+  0% {
+    transform: translateY(0); }
+
+  15% {
+    transform: translateY(20px);
+    border-color: #999 transparent; }
+
+  45% {
+    transform: translateY(0);
+    border-color: #ddd transparent; } }
+
+.pointer-arrows {
+  margin-bottom: 3em; }
+  .pointer-arrows span {
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 1.2em auto;
+    border-style: solid;
+    border-width: 15px 15px 0;
+    border-color: #ddd transparent;
+    -webkit-animation: arrow-throb 3s cubic-bezier(0.7, 0, 0.5, 1) 0s infinite;
+    animation: arrow-throb 3s cubic-bezier(0.7, 0, 0.5, 1) 0s infinite; }
+    .pointer-arrows span:nth-child(2) {
+      border-width: 11px 11px 0;
+      -webkit-animation-delay: .15s;
+      animation-delay: .15s; }
+    .pointer-arrows span:nth-child(3) {
+      border-width: 7px 7px 0;
+      -webkit-animation-delay: .3s;
+      animation-delay: .3s; }
+
+#portfolio-overview,
+#portfolio {
+  width: 50%;
+  float: left;
+  transition: opacity 0.2s 0s, visibility 0s 0s; }
+
+#portfolio-container {
+  position: relative; }
+  #portfolio-container #portfolio-wrap {
+    width: 200%;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.3, 0, 0.4, 1);
+    transition: transform 0.2s cubic-bezier(0.3, 0, 0.4, 1); }
+  #portfolio-container[data-page="1"] #portfolio {
+    -webkit-transition-duration: 0.2s, 0.2s;
+    transition-duration: 0.2s, 0.2s;
+    opacity: 0;
+    visibility: hidden; }
+  #portfolio-container[data-page="2"] #portfolio-overview {
+    -webkit-transition-duration: 0.2s, 0.2s;
+    transition-duration: 0.2s, 0.2s;
+    opacity: 0;
+    visibility: hidden; }
+  #portfolio-container[data-page="2"] #portfolio-wrap {
+    left: -100%; }
+
+.csstransforms #portfolio-container #portfolio-wrap {
+  left: 0 !important; }
+.csstransforms #portfolio-container[data-page="2"] #portfolio-wrap {
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%); }
+
+#portfolio-overview {
+  z-index: 1;
+  list-style: none;
+  padding: 0; }
+  #portfolio-overview li {
+    float: left;
+    width: 50%;
+    padding: 0 2px;
+    margin: 0 0 2px; }
+  #portfolio-overview img {
+    user-drag: none;
+    -webkit-user-drag: none;
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #ddd; }
+  #portfolio-overview a {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    -webkit-user-drag: none; }
+    #portfolio-overview a div {
+      -webkit-transition: background-color 0.2s 0s, visibility 0s 0.2s;
+      transition: background-color 0.2s 0s, visibility 0s 0.2s;
+      visibility: hidden;
+      background-color: RGBA(10, 20, 25, 0);
+      position: absolute;
+      display: -webkit-box;
+      /* OLD - iOS 6-, Safari 3.1-6 */
+      display: -moz-box;
+      /* OLD - Firefox 19- (buggy but mostly works) */
+      display: -ms-flexbox;
+      /* TWEENER - IE 10 */
+      display: -webkit-flex;
+      /* NEW - Chrome */
+      display: flex;
+      /* NEW, Spec - Opera 12.1, Firefox 20+ */
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1; }
+    #portfolio-overview a h3,
+    #portfolio-overview a p {
+      color: #fff;
+      opacity: 0;
+      -webkit-transition: -webkit-transform 0.2s cubic-bezier(0, 0.7, 0.3, 1), opacity 0.2s cubic-bezier(0.5, 0.1, 0.4, 0.95);
+      -webkit-transition-delay: 0.22s, 0s;
+      transition: transform 0.2s cubic-bezier(0, 0.7, 0.3, 1), opacity 0.2s cubic-bezier(0.5, 0.1, 0.4, 0.95);
+      transition-delay: 0.22s, 0s;
+      -webkit-transform: translateY(-20px) scale(2);
+      transform: translateY(-20px) scale(2); }
+    #portfolio-overview a h3 {
+      font-family: "Open Sans", sans-serif;
+      font-size: 2.4em;
+      margin: 0;
+      line-height: 1.3;
+      margin-top: -0.3em; }
+    #portfolio-overview a p {
+      margin: 0; }
+    #portfolio-overview a:hover div, #portfolio-overview a:focus div {
+      visibility: visible;
+      background-color: RGBA(10, 20, 25, 0.88);
+      -webkit-transition-delay: 0s, 0s;
+      transition-delay: 0s, 0s; }
+    #portfolio-overview a:hover h3,
+    #portfolio-overview a:hover p, #portfolio-overview a:focus h3,
+    #portfolio-overview a:focus p {
+      -webkit-transform: translateY(0) scale(1);
+      transform: translateY(0) scale(1);
+      opacity: 1; }
+    #portfolio-overview a:hover h3, #portfolio-overview a:focus h3 {
+      -webkit-transition-delay: 0s, 0s;
+      transition-delay: 0s, 0s; }
+    #portfolio-overview a:hover p, #portfolio-overview a:focus p {
+      -webkit-transition-delay: 0.12s, 0.12s;
+      transition-delay: 0.12s, 0.12s; }
+    #portfolio-overview a:active {
+      top: 0; }
+
+#portfolio {
+  position: relative;
+  z-index: 2; }
+  #portfolio #portfolio-back-link {
+    position: absolute;
+    left: -60px;
+    top: 0.8em;
+    z-index: 100; }
+  #portfolio header,
+  #portfolio aside {
+    float: left;
+    margin-bottom: 3em; }
+  #portfolio header {
+    width: 70%;
+    padding-right: 3em; }
+  #portfolio aside {
+    width: 30%;
+    margin-top: 1.5em;
+    padding: 0.5em 2% 1.4em 2%;
+    border: 1px solid #DDD;
+    border-radius: 20px; }
+  #portfolio figure {
+    position: relative;
+    margin: 0 0 1.4em;
+    clear: both;
+    overflow: hidden;
+    border: 1px solid #eaeaea; }
+  #portfolio figcaption {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: RGBA(0, 0, 0, 0.86);
+    color: #fff;
+    padding: 1.5em 3em 2.3em;
+    opacity: 0;
+    transition: opacity 0.2s; }
+  #portfolio figure:hover figcaption {
+    opacity: 1; }
+  #portfolio img {
+    width: 100%;
+    height: auto;
+    display: block;
+    clear: both; }
+    #portfolio img.turtle-trigger {
+      width: 50%; }
+  #portfolio .swf-container {
+    clear: both; }
+  #portfolio figcaption strong {
+    color: #fff;
+    font-weight: 600; }
+
+.js #intro-greeting,
+.js #portfolio > section {
+  display: none; }
+
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 5rem; } }
+@media (min-width: 700px) and (max-width: 1200px) {
+  #portfolio-overview a h3 {
+    font-size: 3.4vw; }
+  #portfolio-overview a p {
+    font-size: 1.8vw; } }
+@media (max-width: 1050px) {
+  .tree {
+    left: -2em;
+    top: 100px; } }
+@media (max-width: 700px) {
+  .tree {
+    opacity: 0; }
+
+  #portfolio-overview a h3 {
+    font-size: 1.8em; }
+  #portfolio-overview li {
+    width: 100%;
+    margin-bottom: .7em; }
+
+  main {
+    width: 95%; }
+
+  #intro {
+    padding: 5.5em 0 1em; }
+    #intro h1 img {
+      display: block;
+      position: static;
+      width: 65vw;
+      left: 0;
+      margin: 0 auto; }
+
+  #portfolio img.turtle-trigger {
+    width: 100%; } }
+@media (max-width: 500px) {
+  h1 {
+    font-size: 2.6em; }
+
+  h2 {
+    font-size: 2em; }
+
+  /* Header */
+  #page-header p span {
+    display: none; }
+  #page-header > nav a {
+    padding: 0 0.6em; }
+  #page-header > nav li {
+    display: none; }
+    #page-header > nav li:first-child {
+      display: inline-block; }
+  #page-header > nav img,
+  #page-header svg {
+    width: 36px;
+    height: auto; }
+
+  #portfolio #portfolio-back-link {
+    float: left;
+    margin: 1em 0.5em 1em 0.2em;
+    position: static; }
+  #portfolio header,
+  #portfolio aside {
+    width: auto;
+    float: none;
+    margin-bottom: .6em 1.2em 1em; }
+  #portfolio aside {
+    padding: 1em; }
+  #portfolio figcaption {
+    font-size: .9em; } }

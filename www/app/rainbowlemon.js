@@ -81,6 +81,9 @@ define([
                 ' }' +
                 ' .colored-border {' +
                 '     border-color:' + rgbString + ' !important;' +
+                ' }' +
+                ' .colored-border-hover:hover {' +
+                '     border-color:' + rgbString + ' !important;' +
                 ' }'
             );
         },

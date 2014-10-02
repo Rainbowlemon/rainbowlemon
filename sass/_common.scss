@@ -106,12 +106,10 @@ dd {
     text-align: center;
     border: 1px solid #CCC;
     border-radius: 50%;
-    transition: opacity 0.2s;
+    transition: border-color 0.2s;
     
-    &:hover,
-    &:focus {
-        opacity: 0.8;
-    }
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 // Tag list
