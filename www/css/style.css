@@ -664,7 +664,7 @@ main {
 #portfolio {
   width: 50%;
   float: left;
-  transition: opacity 0.2s 0s, visibility 0s 0s; }
+  transition: opacity 0.2s 0s, visibility 0s 0s, height 0.2s 0s; }
 
 #portfolio-container {
   position: relative; }

@@ -9,15 +9,274 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300|Crimson+Text:400,700' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-    
-    <script src="./vendor/libs/modernizr/modernizr-custom.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+        
+        html {
+            color: #ccc;
+            background: #171b1d;
+            font-family: "Crimson Text", serif;
+            text-align: center;
+        }
+        
+        body {
+            padding: 10px;
+        }
+        
+        a {
+            color: #fff;
+        }
+        a:hover,
+        a:focus {
+            text-decoration: none;
+        }
+        
+        h1 {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 300;
+            padding-top: 2em;
+            padding-top: 6vh;
+            color: #fff;
+        }
+        
+        p {
+            padding-bottom: 3em;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @keyframes swing {
+            0% {   transform: rotate(10deg); }
+            50% {  transform: rotate(-10deg); }
+            100% { transform: rotate(10deg); }
+        }
+        @-webkit-keyframes swing {
+            0% {   -webkit-transform: rotate(10deg); }
+            50% {  -webkit-transform: rotate(-10deg); }
+            100% { -webkit-transform: rotate(10deg); }
+        }
+        
+        @-webkit-keyframes flash {
+            0% { opacity: 1; }
+            5% { opacity: 0; }
+            5.8% { opacity: 1; }
+            6.2% { opacity: 0; }
+            7% { opacity: 1; }
+            46.5% { opacity: 0; }
+            47% {opacity: 1; }
+            47.5% { opacity: 0; }
+            48% { opacity: 1; }
+            48.5% { opacity: 0; }
+            49% { opacity: 1; }
+            74% { opacity: 0; }
+            74.5% { opacity: 1; }
+        }
+        
+        keyframes flash {
+            0% { opacity: 1; }
+            5% { opacity: 0; }
+            5.8% { opacity: 1; }
+            6.2% { opacity: 0; }
+            7% { opacity: 1; }
+            46.5% { opacity: 0; }
+            47% {opacity: 1; }
+            47.5% { opacity: 0; }
+            48% { opacity: 1; }
+            48.5% { opacity: 0; }
+            49% { opacity: 1; }
+            74% { opacity: 0; }
+            74.5% { opacity: 1; }
+        }
+        
+        #bulb {
+            width: 404px;
+            height: 404px;
+            width: 40vh;
+            height: 40vh;
+            display: block;
+            margin: 0 auto;
+            background: url(./img/404-bulb.png);
+            background-size: contain;
+            
+            position: relative;
+            z-index: -2;
+            
+            -webkit-transform-origin: 50% -100%;
+            transform-origin: 50% -100%;
+            
+            -webkit-animation: swing 4s infinite ease-in-out, flash 8s steps(1) infinite;
+            animation: swing 4s infinite ease-in-out, flash 8s steps(1) infinite;
+        }
+        
+        #spark-point {
+            position: absolute;
+            top: 140px;
+            left: 50%;
+            width: 1px;
+            height: 1px;
+        }
+        
+        #sparks {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+        
+        @media screen and (max-width: 500px) {
+            h1 {
+                padding-top: 3vw;
+            }
+            
+            #bulb {
+                width: 202px;
+                height: 202px;
+            }
+        }
+    </style>
 </head>
 <body>
     <main>
-        <h1>Oops!</h1>
-        <h2>You've come to a page that doesn't exist.</h2>
-        <p><a href="">Head back to the homepage to find all my stuff :)</a></p>
+        <h1>Oh dear. Something broke!</h1>
+        <p>The page you're looking for has disappeared into the darkness. Try <a href="/">heading to the homepage</a> to find what you're looking for!</p>
+        <span id="bulb"><span id="spark-point"></span></span>
+        <canvas id="sparks"></canvas>
     </main>
+    
+    <script>
+        var canvas = document.getElementById('sparks');
+        var ctx = canvas.getContext('2d');
+        var canvasHeight = canvas.height;
+        var updateRate = 15;
+        
+        // Full width, full height canvas
+        var resizeCanvas = function(){
+            canvas.width = window.innerWidth;
+            
+            var height = window.outerHeight
+            canvas.height = height;
+            canvasHeight = height;
+        };
+
+        window.addEventListener('resize', function() {
+            resizeCanvas();
+        }, false);
+        
+        
+        var Point = function(x, y) {
+            this.x = x;
+            this.y = y;
+            this.xspeed = -2 + Math.random()*4;
+            this.yspeed = -2.5 + Math.random()*3;
+            this.lifespan = 30 + 80*Math.random();
+            this.id = new Date().getTime() + Math.random();
+        }
+        
+        Point.prototype.update = function(spark) {
+            this.lifespan--;
+            
+            this.x += this.xspeed;
+            this.y += this.yspeed;
+            this.yspeed += .2;
+
+            if (this.y > canvasHeight) {
+                this.yspeed = -this.yspeed / 4;
+            }
+        };
+        
+        // Spark is a cluster of points
+        var Spark = function(x, y){
+            this.x = x;
+            this.y = y;
+            this.points = [];
+            
+            var numSparks = 3 + ~~(Math.random() * 20);
+            
+            for (var i = 0; i < numSparks; i++){
+                this.points.push(new Point(this.x, this.y));
+            }
+        };
+        
+        Spark.prototype.update = function() {            
+            // Update points
+            this.points.forEach(function(point, index){
+                point.update(this, index);
+            });
+            
+            // Set new points to be equal to any points with lifespan greater than 0
+            this.points = this.points.filter(function(point){
+                return point.lifespan > 0;
+            });
+        };
+        
+        // Find the initial point to place a spark
+        var sparkPoint = document.getElementById('spark-point');
+        var getPosition = function(element) {
+            var offsets = element.getBoundingClientRect();
+            
+            return { x: offsets.left, y: offsets.top };
+        }
+        
+        var sparkObjs = [];
+        var colors = [
+            '#edc38a',
+            '#ffb898',
+            '#fffbc7',
+            '#ffe2a9',
+            '#fff5e6',
+            '#ffffff'
+        ];
+        var animate = function(){
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            
+            // Remove any objects with length < 0
+            sparkObjs = sparkObjs.filter(function(obj){
+                return obj.points.length > 0;
+            });
+
+            //roll dice to generate a spark
+            if (Math.random() < 0.01) {
+                var currentBulbPosition = getPosition(sparkPoint);
+                sparkObjs.push(new Spark(currentBulbPosition.x, currentBulbPosition.y));
+            }
+
+            //draw canvas with coords in drawarray
+            sparkObjs.forEach(function(obj){
+                obj.update();
+                
+                obj.points.forEach(function(point){
+                    // Select a random color
+                    var rand = Math.floor(Math.random() * colors.length);
+                    ctx.fillStyle = colors[rand];
+
+                    // Draw the faint circle around the point
+                    ctx.globalAlpha = 0.02;
+                    ctx.beginPath();
+                    ctx.arc(point.x, point.y, 10, 0, Math.PI*2, true); 
+                    ctx.closePath();
+                    ctx.fill();
+
+                    // Fill the spark
+                    ctx.globalAlpha = 1;
+                    ctx.fillRect(point.x, point.y, 1, 1);
+                });
+            });
+        }
+        setInterval(animate, updateRate);
+
+        resizeCanvas();
+    </script>
 </body>
 </html>

@@ -124,6 +124,7 @@ define([
                 });
                 
                 //hide previous page and show current page
+                this.el.portfolioOverview.css('height', '0');
                 this.el.portfolio.css('height', '').find('section:visible').hide();
                 $active.show();
                 
@@ -131,6 +132,7 @@ define([
                 this.scrollToPosition('portfolio');
             } else {
                 //set height to 0 to render container correctly
+                this.el.portfolioOverview.css('height', '');
                 this.el.portfolio.css('height', '0');
                 this.el.portfolioContainer.attr('data-page', '1');
                 
