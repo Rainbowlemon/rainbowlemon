@@ -5,14 +5,15 @@ define([
 ) {
     'use strict';
     
-    var App = {
-        
-        init: function() {
-            this.bindEvents();
-            this.setupPage();
-        },
-        
-        options: {
+    var animEndEventNames = {
+        'WebkitAnimation' : 'webkitAnimationEnd',
+        'OAnimation' : 'oAnimationEnd',
+        'msAnimation' : 'MSAnimationEnd',
+        'animation' : 'animationend'
+    };
+    
+    var App = function() {
+        this.options = {
             appName: 'rainbowlemon',
             baseColor: [0,0.7,0.89],
             greetings: [
@@ -26,7 +27,18 @@ define([
                 'Olá',
                 'Hej',
                 'Xin chào'
-            ]
+            ],
+            // animation end event name
+            animEndEventName: animEndEventNames[ Modernizr.prefixed( 'animation' ) ],
+            // support css animations
+            support: Modernizr.cssanimations
+        };
+    };
+    
+    App.prototype = {
+        init: function() {
+            this.bindEvents();
+            this.setupPage();
         },
         
         el: {
@@ -37,20 +49,19 @@ define([
             },
             
             header: $('#page-header'),
+            
+            homePage: $('#home-page'),
             greeting: $('#intro-greeting'),
-            portfolioContainer: $('#portfolio-container'),
-            portfolioWrap: $('#portfolio-wrap'),
-            portfolioOverview: $('#portfolio-overview'),
-            portfolio: $('#portfolio'),
+            
+            portfolioPage: $('#portfolio-page'),
             entries: $('#portfolio > section')
         },
         
         bindEvents: function() {
             $(window).on('scroll.' + this.options.appName, this.setColors.bind(this));
-            $(window).on('hashchange.' + this.options.appName, this.changePage.bind(this));
+            $(window).on('hashchange.' + this.options.appName, this.hashChange.bind(this));
             
-            this.el.portfolio.on('click.' + this.options.appName, '.swf-trigger', this.showSwf.bind(this));
-            this.el.header.on('click.' + this.options.appName, 'a[href="#!"]', this.scrollToPosition.bind(this));
+            this.el.portfolioPage.on('click.' + this.options.appName, '.swf-trigger', this.showSwf.bind(this));
             
             this.setColors();
         },
@@ -88,33 +99,27 @@ define([
             );
         },
         
-        setupPage: function(){
+        setupPage: function() {
             var randGreeting = this.options.greetings[Math.floor(Math.random() * this.options.greetings.length)];
             this.el.greeting.text(randGreeting).show();
-            this.changePage();
+            this.hashChange();
         },
         
-        scrollToPosition: function(element){
-            var top,
-                offset;
-            
-            if (element === 'portfolio') {
-                top = this.el.portfolioContainer.offset().top;
-                offset = this.el.header.outerHeight();
-            } else {
-                top = offset = 0;
-            }
-            
-            $('html,body').animate({
-              scrollTop: top - offset - 20
-            }, 300);
-        },
-        
-        changePage: function(e){
+        hashChange: function(e) {
+            // Remove initial slash if it exists
             var loc = (window.location.hash.indexOf('/') == -1) ? '' : window.location.hash.split('/')[1];
             
-            if (loc !== ''){
-                var $active = this.el.portfolio.find('[data-entry="'+ loc + '"]'),
+            if (loc === '') {
+                // Home page
+                this.hideSwfs();
+                
+                this.changePage(this.el.homePage);
+            } else {
+                // Project page
+                
+                // Show correct section of portfolio,
+                // And load images
+                var $active = this.el.portfolioPage.find('[data-entry="'+ loc + '"]'),
                     $img = $active.find('img[data-src]');
                 
                 $img.each(function(){
@@ -123,20 +128,44 @@ define([
                     $this.attr('src', $this.data('src'));
                 });
                 
-                //hide previous page and show current page
-                this.el.portfolioOverview.css('height', '0');
-                this.el.portfolio.css('height', '').find('section:visible').hide();
+                this.el.portfolioPage.css('height', '').find('section:visible').hide();
                 $active.show();
                 
-                this.el.portfolioContainer.attr('data-page', '2');
-                this.scrollToPosition('portfolio');
+                // Project page
+                this.changePage(this.el.portfolioPage);
+            }
+        },
+        
+        changePage: function($el) {
+            var $current = $('.page.active');
+            var $next = $el;
+            var animEventName = this.options.animEndEventName;
+
+            if ($next.length === 0 || $current[0] === $next[0]) return;
+
+            if ($current.length === 0) {
+                $next.addClass('active');
+                return;   
+            }
+
+            var direction = ($current.index() < $next.index()) ? ['Left','Right'] : ['Right', 'Left'];
+
+            var curClass = 'page-moveTo' + direction[0],
+                nextClass = 'page-moveFrom' + direction[1];
+
+            var changeClasses = function(){
+                $current.addClass(curClass).on(animEventName, function(){
+                    $current.removeClass('active ' + curClass).off(animEventName);
+                });
+                $next.addClass('active ' + nextClass).on(animEventName, function(){
+                    $next.removeClass(nextClass).off(animEventName);
+                });
+            };
+
+            if (window.animationEndEvent === void 0) {
+                setTimeout(changeClasses, 10);
             } else {
-                //set height to 0 to render container correctly
-                this.el.portfolioOverview.css('height', '');
-                this.el.portfolio.css('height', '0');
-                this.el.portfolioContainer.attr('data-page', '1');
-                
-                this.hideSwfs();
+                changeClasses();
             }
         },
         
@@ -170,8 +199,9 @@ define([
                 $this.empty();
             });
         }
-    
     };
     
-    return App;
+    var Rainbowlemon = new App();
+    
+    return Rainbowlemon;
 });

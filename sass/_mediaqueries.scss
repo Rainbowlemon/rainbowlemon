@@ -15,18 +15,7 @@
     }
 }
 
-@media (max-width: 1050px){
-    .tree {
-        left: -2em;
-        top: 100px;
-    }
-}
-
 @media (max-width: 700px) {
-    .tree {
-        opacity: 0;
-    }
-    
     #portfolio-overview {
         a {
             h3 {
@@ -39,14 +28,10 @@
         }
     }
     
-    main {
-        width: 95%;    
-    }
-    
     #intro {
         padding: 5.5em 0 1em;
         
-        h1 img {
+        h1 svg {
             display: block;
             position: static;
             width: 65vw;
@@ -96,18 +81,19 @@
         }
     }
     
-    #portfolio {
-        #portfolio-back-link {
-            float: left;
-            margin: 1em 0.5em 1em 0.2em;
-            position: static;
+    #portfolio-page {
+        > section {
+            padding-top: 5em;
+        }
+        
+        header {
+            padding-right: 0;
         }
         
         header,
         aside {
             width: auto;
             float: none;
-            margin-bottom: .6em 1.2em 1em;
         }
         
         aside {
@@ -117,8 +103,15 @@
             border-left: none;
         }
         
+        figure {
+            padding: .4em;
+        }
+        
         figcaption {
-            font-size: .9em;
+            padding-left: .5em;
+            padding-right: .5em;
+            font-size: 1em;
+            text-align: left;
         }
     }
 }

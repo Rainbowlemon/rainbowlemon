@@ -1,0 +1,214 @@
+// Page animations
+
+@-webkit-keyframes rotateRoomLeftOut {
+	from { }
+	to { opacity: .3; -webkit-transform: translateX(-100%) rotateY(90deg); }
+}
+@keyframes rotateRoomLeftOut {
+	from { }
+	to { opacity: .3; -webkit-transform: translateX(-100%) rotateY(90deg); transform: translateX(-100%) rotateY(90deg); }
+}
+
+@-webkit-keyframes rotateRoomLeftIn {
+	from { opacity: .3; -webkit-transform: translateX(100%) rotateY(-90deg); }
+}
+@keyframes rotateRoomLeftIn {
+	from { opacity: .3; -webkit-transform: translateX(100%) rotateY(-90deg); transform: translateX(100%) rotateY(-90deg); }
+}
+
+@-webkit-keyframes rotateRoomRightOut {
+	from { }
+	to { opacity: .3; -webkit-transform: translateX(100%) rotateY(-90deg); }
+}
+@keyframes rotateRoomRightOut {
+	from { }
+	to { opacity: .3; -webkit-transform: translateX(100%) rotateY(-90deg); transform: translateX(100%) rotateY(-90deg); }
+}
+
+@-webkit-keyframes rotateRoomRightIn {
+	from { opacity: .3; -webkit-transform: translateX(-100%) rotateY(90deg); }
+}
+@keyframes rotateRoomRightIn {
+	from { opacity: .3; -webkit-transform: translateX(-100%) rotateY(90deg); transform: translateX(-100%) rotateY(90deg); }
+}
+
+.page-moveToLeft {
+	-webkit-transform-origin: 100% 50%;
+	transform-origin: 100% 50%;
+	-webkit-animation: rotateRoomLeftOut .5s both ease;
+	animation: rotateRoomLeftOut .5s both ease;
+}
+.page-moveFromLeft {
+	-webkit-transform-origin: 100% 50%;
+	transform-origin: 100% 50%;
+	-webkit-animation: rotateRoomRightIn .5s both ease;
+	animation: rotateRoomRightIn .5s both ease;
+}
+.page-moveToRight {
+	-webkit-transform-origin: 0% 50%;
+	transform-origin: 0% 50%;
+	-webkit-animation: rotateRoomRightOut .5s both ease;
+	animation: rotateRoomRightOut .5s both ease;
+}
+.page-moveFromRight {
+	-webkit-transform-origin: 0% 50%;
+	transform-origin: 0% 50%;
+	-webkit-animation: rotateRoomLeftIn .5s both ease;
+	animation: rotateRoomLeftIn .5s both ease;
+}
+
+
+// Color animations
+
+$color0: #de4d4d;
+$color1: #cf3d74;
+$color2: #d25fbb;
+$color3: #b062d4;
+$color4: #6559d9;
+$color5: #506bde;
+$color6: #45bbd9;
+$color7: #54cca9;
+$color8: #65be69;
+$color9: #9fd44c;
+$color10: #c5de1a;
+$color11: #e28205;
+
+@-webkit-keyframes rainbow-bg {
+    0% {background-color: $color0;}
+    8.33% {background-color: $color1;}
+    16.66% {background-color: $color2;}
+    25% {background-color: $color3;}
+    33.33% {background-color: $color4;}
+    41.66% {background-color: $color5;}
+    50% {background-color: $color6;}
+    58.33% {background-color: $color7;}
+    66.66% {background-color: $color8;}
+    75% {background-color: $color9;}
+    83.33% {background-color: $color10;}
+    91.66% {background-color: $color11;}
+    100% {background-color: $color0;}
+}
+
+@keyframes rainbow-bg {
+    0% {background-color: $color0;}
+    8.33% {background-color: $color1;}
+    16.66% {background-color: $color2;}
+    25% {background-color: $color3;}
+    33.33% {background-color: $color4;}
+    41.66% {background-color: $color5;}
+    50% {background-color: $color6;}
+    58.33% {background-color: $color7;}
+    66.66% {background-color: $color8;}
+    75% {background-color: $color9;}
+    83.33% {background-color: $color10;}
+    91.66% {background-color: $color11;}
+    100% {background-color: $color0;}
+}
+
+@-webkit-keyframes rainbow-svg {
+    0% {fill: $color0;}
+    8.33% {fill: $color1;}
+    16.66% {fill: $color2;}
+    25% {fill: $color3;}
+    33.33% {fill: $color4;}
+    41.66% {fill: $color5;}
+    50% {fill: $color6;}
+    58.33% {fill: $color7;}
+    66.66% {fill: $color8;}
+    75% {fill: $color9;}
+    83.33% {fill: $color10;}
+    91.66% {fill: $color11;}
+    100% {fill: $color0;}
+}
+
+@keyframes rainbow-svg {
+    0% {fill: $color0;}
+    8.33% {fill: $color1;}
+    16.66% {fill: $color2;}
+    25% {fill: $color3;}
+    33.33% {fill: $color4;}
+    41.66% {fill: $color5;}
+    50% {fill: $color6;}
+    58.33% {fill: $color7;}
+    66.66% {fill: $color8;}
+    75% {fill: $color9;}
+    83.33% {fill: $color10;}
+    91.66% {fill: $color11;}
+    100% {fill: $color0;}
+}
+
+@-webkit-keyframes rainbow-text {
+    0% {color: $color0;}
+    8.33% {color: $color1;}
+    16.66% {color: $color2;}
+    25% {color: $color3;}
+    33.33% {color: $color4;}
+    41.66% {color: $color5;}
+    50% {color: $color6;}
+    58.33% {color: $color7;}
+    66.66% {color: $color8;}
+    75% {color: $color9;}
+    83.33% {color: $color10;}
+    91.66% {color: $color11;}
+    100% {color: $color0;}
+}
+
+@keyframes rainbow-text {
+    0% {color: $color0;}
+    8.33% {color: $color1;}
+    16.66% {color: $color2;}
+    25% {color: $color3;}
+    33.33% {color: $color4;}
+    41.66% {color: $color5;}
+    50% {color: $color6;}
+    58.33% {color: $color7;}
+    66.66% {color: $color8;}
+    75% {color: $color9;}
+    83.33% {color: $color10;}
+    91.66% {color: $color11;}
+    100% {color: $color0;}
+}
+
+@-webkit-keyframes rainbow-border {
+    0% {border-color: $color0;}
+    8.33% {border-color: $color1;}
+    16.66% {border-color: $color2;}
+    25% {border-color: $color3;}
+    33.33% {border-color: $color4;}
+    41.66% {border-color: $color5;}
+    50% {border-color: $color6;}
+    58.33% {border-color: $color7;}
+    66.66% {border-color: $color8;}
+    75% {border-color: $color9;}
+    83.33% {border-color: $color10;}
+    91.66% {border-color: $color11;}
+    100% {border-color: $color0;}
+}
+
+@keyframes rainbow-border {
+    0% {border-color: $color0;}
+    8.33% {border-color: $color1;}
+    16.66% {border-color: $color2;}
+    25% {border-color: $color3;}
+    33.33% {border-color: $color4;}
+    41.66% {border-color: $color5;}
+    50% {border-color: $color6;}
+    58.33% {border-color: $color7;}
+    66.66% {border-color: $color8;}
+    75% {border-color: $color9;}
+    83.33% {border-color: $color10;}
+    91.66% {border-color: $color11;}
+    100% {border-color: $color0;}
+}
+
+.colored-bg {
+    -webkit-animation: rainbow-bg 40s linear infinite;
+    animation: rainbow-bg 40s linear infinite;
+}
+
+.colored-svg {
+    -webkit-animation: rainbow-svg 40s linear infinite;
+    animation: rainbow-svg 40s linear infinite;
+}
+
+

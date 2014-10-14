@@ -92,28 +92,32 @@
     "keywords": [
       "HTML",
       "CSS",
-      "Javascript"  
+      "Javascript & jQuery",
+      "Backbone / Marionette",
+      "Npm / Grunt",
+      "Browserify / Requirejs"
     ]
   },{
     "name": "UX Design",
     "level": "Advanced",
     "keywords": [
-        "Balsamiq",
-        "Pen & Paper"
+      "Balsamiq",
+      "Moqups",
+      "Pen & Paper"
     ]
   },{
     "name": "UI/Graphic Design",
     "level": "Advanced",
     "keywords": [
-      "Lumix LX7"
+      "Photoshop",
+      "Illustrator",
+      "Flash"
     ]
   },{
     "name": "Photography",
     "level": "Intermediate",
     "keywords": [
-      "Photoshop",
-      "Illustrator",
-      "Flash"
+      "Lumix LX7"
     ]
   }],
   "languages": [{

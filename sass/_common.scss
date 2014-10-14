@@ -6,19 +6,56 @@ $sansfont: "Open Sans", sans-serif;
     -moz-box-sizing: border-box;
 }
 
-html {
-    position: relative;
-    min-height: 100%;
-    color: #888;
-    font-family: $seriffont;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-}
-body {
-    width: 100%;
+html, body {
     height: 100%;
+}
+
+html {
+    background: grey;
+    color: #777;
+    font-family: $seriffont;
+}
+
+body {
     overflow: hidden;
     line-height: 1.6;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-perspective: 1000px;
+    perspective: 1200px;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    visibility: hidden;
+    overflow: hidden;
+    background: #fff;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    
+    &.active {
+        visibility: visible;
+        z-index: 5;
+    }
 }
 
 h1,h2,h3,
@@ -64,6 +101,8 @@ h5 {
 a {
     -webkit-font-smoothing: antialiased;
     position: relative;
+    -webkit-animation: rainbow-text 40s linear infinite;
+    animation: rainbow-text 40s linear infinite;
     
     &:hover,
     &:focus {
@@ -166,7 +205,11 @@ dd {
             transition-delay: 0s,0s;
         }
     }
-    
+}
+
+.colored-title-hover:after {
+    -webkit-animation: rainbow-bg 30s linear infinite;
+    animation: rainbow-bg 30s linear infinite;
 }
 
 .scale-btn {
@@ -206,6 +249,7 @@ object[data-swfid] {
 /* Headers, footers and container styling */
 
 #page-header {
+    z-index: 10;
     position: fixed;
     top: 0;
     left: 0;
@@ -286,14 +330,4 @@ object[data-swfid] {
         color: #878787;
         text-decoration: none;
     }
-}
-
-main {
-    min-height: 100%;
-    width: 70%;
-    max-width: 1000px;
-    display: block;
-    margin: 0 auto;
-    position: relative;
-    z-index: 50;
 }
