@@ -292,6 +292,15 @@ object[data-swfid] {
     -webkit-user-select: none;
     user-drag: none;
     user-select: none;
+    
+    img {
+        transition: transform 0.5s ease;
+    }
+    
+    &:hover img,
+    &:focus img {
+        transform: rotate(-150deg);
+    }
 }
 
 #page-breadcrumb {
