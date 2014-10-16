@@ -14,7 +14,6 @@ define([
     
     var App = function() {
         this.options = {
-            appName: 'rainbowlemon',
             baseColor: [0,0.7,0.89],
             greetings: [
                 'Hey',
@@ -30,8 +29,13 @@ define([
             ],
             // animation end event name
             animEndEventName: animEndEventNames[ Modernizr.prefixed( 'animation' ) ],
+            
             // support css animations
-            support: Modernizr.cssanimations
+            support: Modernizr.cssanimations,
+            
+            // store previous scroll height and header top value
+            prevScroll: 0,
+            headerTop: 0
         };
     };
     
@@ -59,9 +63,10 @@ define([
         },
         
         bindEvents: function() {
-            $(window).on('hashchange.' + this.options.appName, this.hashChange.bind(this));
+            $('.page').on('scroll', this.checkHeader.bind(this));
+            $(window).on('hashchange', this.hashChange.bind(this));
             
-            this.el.portfolioPage.on('click.' + this.options.appName, '.swf-trigger', this.showSwf.bind(this));
+            this.el.portfolioPage.on('click', '.swf-trigger', this.showSwf.bind(this));
         },
         
         setupPage: function() {
@@ -69,6 +74,28 @@ define([
             this.el.greeting.text(randGreeting).show();
             
             this.hashChange();
+        },
+        
+        checkHeader: function(e) {
+            var currentScroll = e.currentTarget.scrollTop;
+            
+            // Store any values that don't change
+            if (this.options.headerHeight === void 0){
+                this.options.headerHeight = this.el.header.outerHeight();
+            }
+            
+            var targetTop = this.options.headerTop + (this.options.prevScroll - currentScroll);
+            
+            if (targetTop >= 0) {
+                targetTop = 0;
+            } else if (targetTop <= -this.options.headerHeight) {
+                targetTop = -this.options.headerHeight;
+            }
+            
+            this.el.header.css('top', targetTop + 'px');
+            
+            this.options.prevScroll = currentScroll;
+            this.options.headerTop = targetTop;
         },
         
         hashChange: function(e) {

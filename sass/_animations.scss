@@ -108,6 +108,8 @@
 
 // Color animations
 
+$cycletime: 50s;
+
 $color0: #de4d4d;
 $color1: #cf3d74;
 $color2: #d25fbb;
@@ -117,8 +119,8 @@ $color5: #506bde;
 $color6: #45bbd9;
 $color7: #54cca9;
 $color8: #65be69;
-$color9: #9fd44c;
-$color10: #c5de1a;
+$color9: #82cc0f;
+$color10: #bec600;
 $color11: #e28205;
 
 @-webkit-keyframes rainbow-bg {
@@ -250,18 +252,18 @@ $color11: #e28205;
 }
 
 .colored-bg {
-    -webkit-animation: rainbow-bg 50s linear infinite;
-    animation: rainbow-bg 50s linear infinite;
+    -webkit-animation: rainbow-bg $cycletime linear infinite;
+    animation: rainbow-bg $cycletime linear infinite;
 }
 
 .colored-svg {
-    -webkit-animation: rainbow-svg 50s linear infinite;
-    animation: rainbow-svg 50s linear infinite;
+    -webkit-animation: rainbow-svg $cycletime linear infinite;
+    animation: rainbow-svg $cycletime linear infinite;
 }
 
 .colored-text {
-    -webkit-animation: rainbow-text 40s linear infinite;
-    animation: rainbow-text 40s linear infinite;
+    -webkit-animation: rainbow-text $cycletime linear infinite;
+    animation: rainbow-text $cycletime linear infinite;
 }
 
 

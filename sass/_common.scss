@@ -113,6 +113,16 @@ a {
     }
 }
 
+::-moz-selection {
+    color: #fff;
+    background: #de4d4d;
+}
+
+::selection {
+    color: #fff;
+    background: #de4d4d;
+}
+
 p,
 figcaption {
     font-size: 1.2rem;
