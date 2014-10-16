@@ -102,6 +102,7 @@ define([
         setupPage: function() {
             var randGreeting = this.options.greetings[Math.floor(Math.random() * this.options.greetings.length)];
             this.el.greeting.text(randGreeting).show();
+            
             this.hashChange();
         },
         
@@ -117,51 +118,71 @@ define([
             } else {
                 // Project page
                 
-                // Show correct section of portfolio,
-                // And load images
-                var $active = this.el.portfolioPage.find('[data-entry="'+ loc + '"]'),
-                    $img = $active.find('img[data-src]');
+                this.el.portfolioPage.find('section:visible').hide();
+                this.el.portfolioPage.find('[data-entry="'+ loc + '"]').show();
                 
-                $img.each(function(){
-                    var $this = $(this);
-                    
-                    $this.attr('src', $this.data('src'));
-                });
-                
-                this.el.portfolioPage.css('height', '').find('section:visible').hide();
-                $active.show();
-                
-                // Project page
+                // Show project page container
                 this.changePage(this.el.portfolioPage);
             }
         },
         
-        changePage: function($el) {
+        loadImages: function($el){
+            if ($el.length === 0) return;
+            
+            $el.find('section:visible img[data-src]').each(function(index){
+                var $this = $(this);
+                
+                $this.css('opacity', 0).attr('src', $this.data('src'));
+                setTimeout(function(){
+                    this.addClass('show');
+                }.bind($this), index * 300);
+            });
+        },
+        
+        changePage: function($next) {
             var $current = $('.page.active');
-            var $next = $el;
             var animEventName = this.options.animEndEventName;
-
-            if ($next.length === 0 || $current[0] === $next[0]) return;
-
-            if ($current.length === 0) {
-                $next.addClass('active');
-                return;   
+            var _this = this;
+            
+            // Set original class name as data, to reset class names when URL changes (avoid bugs with quick navigation)
+            if ($next.data('originalClass') === void 0) {
+                $next.data('originalClass', $next[0].className);
             }
 
+            // Initial pageload - no pages are currently active
+            if ($current.length === 0) {
+                $next.addClass('active');
+                
+                this.loadImages($next);
+                return;
+            }
+            
+            // Get the correct class to add to each page
             var direction = ($current.index() < $next.index()) ? ['Left','Right'] : ['Right', 'Left'];
-
             var curClass = 'page-moveTo' + direction[0],
                 nextClass = 'page-moveFrom' + direction[1];
 
             var changeClasses = function(){
-                $current.addClass(curClass).on(animEventName, function(){
-                    $current.removeClass('active ' + curClass).off(animEventName);
+                // Reset classes on pages
+                $current.attr('class', $current.data('originalClass'));
+                $next.attr('class', $next.data('originalClass'));
+                
+                // Remove animation event on page, add animating class, and check for animation finish
+                $current.off(animEventName);
+                $current.addClass('active ' + curClass).on(animEventName, function(){
+                    $current.attr('class', $current.data('originalClass')).off(animEventName);
                 });
+                
+                $next.off(animEventName);
                 $next.addClass('active ' + nextClass).on(animEventName, function(){
-                    $next.removeClass(nextClass).off(animEventName);
+                    $next.attr('class', $next.data('originalClass') + ' active').off(animEventName);
+                    
+                    console.log($next);
+                    
+                    _this.loadImages($next);
                 });
             };
-
+            
             if (window.animationEndEvent === void 0) {
                 setTimeout(changeClasses, 10);
             } else {

@@ -57,9 +57,17 @@
     
     img {
         width: 100%;
+        min-height: 100px;
         height: auto;
         display: block;
         clear: both;
+        background: url(../img/rainbowlemon-loading.gif) no-repeat 50% 50%;
+        
+        &.show {
+            -webkit-transition: opacity .6s linear;
+            transition: opacity .6s linear;
+            opacity: 1 !important;
+        }
         
         &.turtle-trigger {
             width: 50%;
