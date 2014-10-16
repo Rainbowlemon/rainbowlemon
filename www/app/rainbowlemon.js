@@ -172,6 +172,8 @@ define([
                 $current.attr('class', $current.data('originalClass'));
                 $next.attr('class', $next.data('originalClass'));
                 
+                $next.scrollTop(0).trigger('scroll');
+                
                 // Remove animation event on page, add animating class, and check for animation finish
                 $current.off(animEventName).addClass(curClass).on(animEventName, function(){
                     $current.attr('class', $current.data('originalClass')).off(animEventName);

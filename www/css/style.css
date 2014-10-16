@@ -966,7 +966,8 @@ object[data-swfid] {
   padding: 10px 0;
   font-size: 110%;
   z-index: 100;
-  color: #878787; }
+  color: #878787;
+  transition: top 0.16s ease; }
   #page-header svg,
   #page-header img {
     display: block;
