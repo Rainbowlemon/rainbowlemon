@@ -79,17 +79,26 @@ define([
                 // Home page
                 this.el.breadcrumb.removeClass('active');
                 this.hideSwfs();
-                this.changePage(this.el.homePage);
+                
+                if (window.location.hash !== '#!' && window.location.hash !== '#') {
+                    window.location.replace('#!');
+                } else {
+                    this.changePage(this.el.homePage);
+                }
             } else {
                 // Project page
                 var projectName = loc.split('-').join(' ');
                 this.el.breadcrumb.find('span').html('&nbsp;&nbsp;&raquo;&nbsp;&nbsp;' + projectName).end().addClass('active');
                 
                 this.el.portfolioPage.find('section:visible').hide();
-                this.el.portfolioPage.find('[data-entry="'+ loc + '"]').show();
+                var $entry = this.el.portfolioPage.find('[data-entry="'+ loc + '"]');
                 
-                // Show project page container
-                this.changePage(this.el.portfolioPage);
+                if ($entry.length !== 0) {
+                    $entry.show();
+                    this.changePage(this.el.portfolioPage);
+                } else {
+                    window.location.replace('#!');
+                }
             }
         },
         
@@ -110,6 +119,9 @@ define([
             var $current = $('.page.active');
             var animEventName = this.options.animEndEventName;
             var _this = this;
+            
+            // If the page hasn't changed, don't do anything
+            if ($next.length === 0 || $current[0] === $next[0]) return;
             
             // Set original class name as data, to reset class names when URL changes (avoid bugs with quick navigation)
             if ($next.data('originalClass') === void 0) {
