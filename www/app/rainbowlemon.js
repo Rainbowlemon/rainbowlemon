@@ -1,5 +1,6 @@
 define([
-    'utils'
+    'utils',
+    'jquery-throttle-debounce'
 ], function(
     utils
 ) {
@@ -63,17 +64,19 @@ define([
         },
         
         bindEvents: function() {
-            $('.page').on('scroll', this.checkHeader.bind(this));
+            $('main').on('scroll', '.page.active', $.throttle(100, this.checkHeader.bind(this)).bind(this));
             $(window).on('hashchange', this.hashChange.bind(this));
             
             this.el.portfolioPage.on('click', '.swf-trigger', this.showSwf.bind(this));
         },
         
         setupPage: function() {
+            this.hashChange();
+        },
+        
+        setGreeting: function(){
             var randGreeting = this.options.greetings[Math.floor(Math.random() * this.options.greetings.length)];
             this.el.greeting.text(randGreeting).show();
-            
-            this.hashChange();
         },
         
         checkHeader: function(e) {
@@ -92,10 +95,12 @@ define([
                 targetTop = -this.options.headerHeight;
             }
             
-            this.el.header.css('top', targetTop + 'px');
+            if (targetTop !== this.options.headerTop) {
+                this.el.header.css('transform', 'translate3d(0px, ' + targetTop + 'px, 0px)');
+                this.options.headerTop = targetTop;
+            }
             
             this.options.prevScroll = currentScroll;
-            this.options.headerTop = targetTop;
         },
         
         hashChange: function(e) {
@@ -106,6 +111,7 @@ define([
                 // Home page
                 this.el.breadcrumb.removeClass('active');
                 this.hideSwfs();
+                this.setGreeting();
                 
                 if (window.location.hash !== '#!' && window.location.hash !== '#') {
                     window.location.replace('#!');
@@ -135,10 +141,9 @@ define([
             $el.find('section:visible img[data-src]').each(function(index){
                 var $this = $(this);
                 
-                $this.css('opacity', 0).attr('src', $this.data('src'));
-                setTimeout(function(){
-                    this.addClass('show');
-                }.bind($this), index * 300);
+                $this.css('opacity', 0).on('load', function(){
+                    $(this).addClass('show');
+                }).attr('src', $this.data('src'));
             });
         },
         

@@ -43,15 +43,6 @@ main {
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    
     &.active {
         visibility: visible;
         z-index: 5;
@@ -141,23 +132,6 @@ dt {
 
 dd {
     margin: 0.3em 0 1.2em;   
-}
-
-.back-link {
-    display: inline-block;
-    font-size: 30px;
-    text-decoration: none;
-    background: #FFF;
-    width: 40px;
-    height: 40px;
-    line-height: 36px;
-    text-align: center;
-    border: 1px solid #CCC;
-    border-radius: 50%;
-    transition: border-color 0.2s;
-    
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
 }
 
 // Tag list
@@ -270,7 +244,9 @@ object[data-swfid] {
     font-size: 110%;
     z-index: 100;
     color: #878787;
-    transition: top 0.16s ease;
+    
+    -webkit-transition: -webkit-transform 0.16s ease;
+    transition: transform 0.16s ease;
     
     svg,
     img {

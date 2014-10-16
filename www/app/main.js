@@ -1,8 +1,7 @@
 require.config({
     paths: {
-        'easing': '../vendor/bower/jquery.easing/js/jquery.easing',
         'fastclick': '../vendor/bower/fastclick/lib/fastclick',
-        
+        'jquery-throttle-debounce': '../vendor/bower/jquery-throttle-debounce/jquery.ba-throttle-debounce',
         'utils': '../vendor/libs/utils/utils',
         'app': 'rainbowlemon'
     }
@@ -10,11 +9,14 @@ require.config({
 
 require([
     'app',
-    'fastclick'
+    'fastclick',
 ], function(
-    App
+    App,
+    FastClick
 ) {
     'use strict';
+    
+    FastClick.attach(document.body);
     
     App.init();
 });
