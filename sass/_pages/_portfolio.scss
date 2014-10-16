@@ -36,7 +36,7 @@
         width: 30%;
         margin-top: 1.5em;
         padding: 0.5em 2% 1.4em 3%;
-        border-left: 1px solid #DDD;
+        border-left: 1px solid #ddd;
     }
     
     figure {
@@ -44,7 +44,8 @@
         margin: 0 0 3em;
         clear: both;
         background: #f6f6f6;
-        padding: 1em;
+        padding: .4em;
+        box-shadow: 0 0px 5px #bcbcbc;
     }
     
     figcaption {
@@ -55,6 +56,12 @@
         
         color: #fff;
         @extend .colored-bg;
+        
+        a {
+            -webkit-animation: none;
+            animation: none;
+            color: #fff;
+        }
     }
     
     img {

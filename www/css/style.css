@@ -759,12 +759,12 @@ th {
     border-color: #de4d4d; } }
 
 .colored-bg, .colored-title-hover:after, #portfolio-page figcaption {
-  -webkit-animation: rainbow-bg 40s linear infinite;
-  animation: rainbow-bg 40s linear infinite; }
+  -webkit-animation: rainbow-bg 50s linear infinite;
+  animation: rainbow-bg 50s linear infinite; }
 
 .colored-svg, #social-links .mail-icon path, #intro h1 svg path {
-  -webkit-animation: rainbow-svg 40s linear infinite;
-  animation: rainbow-svg 40s linear infinite; }
+  -webkit-animation: rainbow-svg 50s linear infinite;
+  animation: rainbow-svg 50s linear infinite; }
 
 .colored-text, a {
   -webkit-animation: rainbow-text 40s linear infinite;
@@ -1187,19 +1187,24 @@ object[data-swfid] {
   width: 30%;
   margin-top: 1.5em;
   padding: 0.5em 2% 1.4em 3%;
-  border-left: 1px solid #DDD; }
+  border-left: 1px solid #ddd; }
 #portfolio-page figure {
   position: relative;
   margin: 0 0 3em;
   clear: both;
   background: #f6f6f6;
-  padding: 1em; }
+  padding: .4em;
+  box-shadow: 0 0px 5px #bcbcbc; }
 #portfolio-page figcaption {
   text-align: center;
   padding: 1em 1.5em 1.3em;
   margin-top: 0.6em;
   box-shadow: 0 1px 2px RGBA(0, 0, 0, 0.06);
   color: #fff; }
+  #portfolio-page figcaption a {
+    -webkit-animation: none;
+    animation: none;
+    color: #fff; }
 #portfolio-page img {
   width: 100%;
   min-height: 100px;
