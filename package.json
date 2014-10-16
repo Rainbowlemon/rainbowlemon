@@ -11,6 +11,8 @@
     "grunt-contrib-sass": "0.5.x",
     "grunt-contrib-watch": "0.5.x",
     "grunt-modernizr": "0.5.x",
-    "grunt-gh-pages": "0.9.x"
+    "grunt-gh-pages": "0.9.x",
+    "grunt-contrib-imagemin": "0.8.x",
+    "grunt-newer": "0.7.x"
   }
 }

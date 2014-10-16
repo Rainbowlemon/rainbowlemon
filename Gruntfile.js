@@ -97,6 +97,20 @@ module.exports = function(grunt) {
             }
         },
         
+        imagemin: {
+            build: {
+                options: {
+                    optimizationLevel: 2
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'www/img/',
+                    src: ['**/*.{png,jpg,gif}'],
+                    dest: 'www/img/'
+                }]
+            }
+        },
+        
         'gh-pages': {
             options: {
                 base: 'build',
@@ -114,9 +128,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-modernizr');
     grunt.loadNpmTasks('grunt-requirejs');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-gh-pages');
+    grunt.loadNpmTasks('grunt-newer');
     
     grunt.registerTask('build', ['clean:build', 'copy:build', 'requirejs:build']);
     
-    grunt.registerTask('default', ['modernizr', 'sass', 'jshint', 'clean:build', 'copy:build', 'requirejs:build', 'gh-pages', 'clean:build']);
+    grunt.registerTask('default', ['modernizr', 'sass', 'jshint', 'newer:imagemin', 'clean:build', 'copy:build', 'requirejs:build', 'gh-pages', 'clean:build']);
 };
