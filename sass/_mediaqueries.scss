@@ -57,12 +57,8 @@
     }
     
     /* Header */
-    #page-header {
-        p span {
-            display: none;   
-        }
-        
-        > nav a {
+    #page-header {        
+        #page-logo {
             padding: 0 0.6em;    
         }
         
@@ -79,6 +75,10 @@
             width: 36px;
             height: auto;
         }
+    }
+    
+    #page-breadcrumb {
+        display: none;
     }
     
     #portfolio-page {

@@ -49,6 +49,7 @@ define([
             },
             
             header: $('#page-header'),
+            breadcrumb: $('#page-breadcrumb'),
             
             homePage: $('#home-page'),
             greeting: $('#intro-greeting'),
@@ -58,45 +59,9 @@ define([
         },
         
         bindEvents: function() {
-            $(window).on('scroll.' + this.options.appName, this.setColors.bind(this));
             $(window).on('hashchange.' + this.options.appName, this.hashChange.bind(this));
             
             this.el.portfolioPage.on('click.' + this.options.appName, '.swf-trigger', this.showSwf.bind(this));
-            
-            this.setColors();
-        },
-        
-        setColors: function() { 
-            //Get fraction of scroll related to document size
-            var scrollFraction = window.pageYOffset / ($(document).height() - window.innerHeight);
-            
-            if (scrollFraction > 1) scrollFraction = 1;
-            
-            var hue = 360 - (260 * scrollFraction);
-            
-            var rgb = utils.hsbToRgb(hue/360, this.options.baseColor[1], this.options.baseColor[2]),
-                rgbString = 'rgb(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ')',
-                m = 0.85,
-                rgbDarkString = 'rgb(' + (rgb.r * m >> 0) + ',' + (rgb.g * m >> 0) + ',' + (rgb.b * m >> 0) + ')';
-            
-            this.el.styles.html(
-                ' .colored-svg path {' +
-                '     fill:' + rgbString + ' !important;' +
-                ' }' +
-                ' .colored-bg,'+
-                ' .colored-title-hover:after {' +
-                '     background-color:' + rgbString + ' !important;' +
-                ' }' +
-                ' a {' +
-                '     color: '+ rgbDarkString + ';' +
-                ' }' +
-                ' .colored-border {' +
-                '     border-color:' + rgbString + ' !important;' +
-                ' }' +
-                ' .colored-border-hover:hover {' +
-                '     border-color:' + rgbString + ' !important;' +
-                ' }'
-            );
         },
         
         setupPage: function() {
@@ -112,11 +77,13 @@ define([
             
             if (loc === '') {
                 // Home page
+                this.el.breadcrumb.removeClass('active');
                 this.hideSwfs();
-                
                 this.changePage(this.el.homePage);
             } else {
                 // Project page
+                var projectName = loc.split('-').join(' ');
+                this.el.breadcrumb.find('span').html('&nbsp;&nbsp;&raquo;&nbsp;&nbsp;' + projectName).end().addClass('active');
                 
                 this.el.portfolioPage.find('section:visible').hide();
                 this.el.portfolioPage.find('[data-entry="'+ loc + '"]').show();
@@ -152,7 +119,6 @@ define([
             // Initial pageload - no pages are currently active
             if ($current.length === 0) {
                 $next.addClass('active');
-                
                 this.loadImages($next);
                 return;
             }
@@ -168,22 +134,18 @@ define([
                 $next.attr('class', $next.data('originalClass'));
                 
                 // Remove animation event on page, add animating class, and check for animation finish
-                $current.off(animEventName);
-                $current.addClass('active ' + curClass).on(animEventName, function(){
+                $current.off(animEventName).addClass(curClass).on(animEventName, function(){
                     $current.attr('class', $current.data('originalClass')).off(animEventName);
                 });
                 
-                $next.off(animEventName);
-                $next.addClass('active ' + nextClass).on(animEventName, function(){
-                    $next.attr('class', $next.data('originalClass') + ' active').off(animEventName);
-                    
-                    console.log($next);
+                $next.off(animEventName).addClass('active ' + nextClass).on(animEventName, function(){
+                    $next.removeClass(nextClass).off(animEventName);
                     
                     _this.loadImages($next);
                 });
             };
             
-            if (window.animationEndEvent === void 0) {
+            if (this.options.animEndEventName === void 0) {
                 setTimeout(changeClasses, 10);
             } else {
                 changeClasses();

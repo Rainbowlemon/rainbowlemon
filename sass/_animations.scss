@@ -76,27 +76,31 @@
     }
 }
 
+.page {
+    &.page-moveToLeft,
+    &.page-moveFromLeft,
+    &.page-moveToRight,
+    &.page-moveFromRight {
+        visibility: visible;
+        z-index: 5;
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+    }
+}
+
 .page-moveToLeft {
-	-webkit-transform-origin: 50% 50%;
-	transform-origin: 50% 50%;
 	-webkit-animation: rotateRoomLeftOut .5s both ease;
 	animation: rotateRoomLeftOut .5s both ease;
 }
 .page-moveFromLeft {
-	-webkit-transform-origin: 50% 50%;
-	transform-origin: 50% 50%;
 	-webkit-animation: rotateRoomRightIn .5s both ease;
 	animation: rotateRoomRightIn .5s both ease;
 }
 .page-moveToRight {
-	-webkit-transform-origin: 50% 50%;
-	transform-origin: 50% 50%;
 	-webkit-animation: rotateRoomRightOut .5s both ease;
 	animation: rotateRoomRightOut .5s both ease;
 }
 .page-moveFromRight {
-	-webkit-transform-origin: 50% 50%;
-	transform-origin: 50% 50%;
 	-webkit-animation: rotateRoomLeftIn .5s both ease;
 	animation: rotateRoomLeftIn .5s both ease;
 }
@@ -253,6 +257,11 @@ $color11: #e28205;
 .colored-svg {
     -webkit-animation: rainbow-svg 40s linear infinite;
     animation: rainbow-svg 40s linear infinite;
+}
+
+.colored-text {
+    -webkit-animation: rainbow-text 40s linear infinite;
+    animation: rainbow-text 40s linear infinite;
 }
 
 

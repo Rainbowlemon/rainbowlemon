@@ -416,27 +416,25 @@ th {
     -webkit-transform: scale(0.6) translate3d(-200%, 0, 0);
     transform: scale(0.6) translate3d(-200%, 0, 0); } }
 
-.page-moveToLeft {
+.page.page-moveToLeft, .page.page-moveFromLeft, .page.page-moveToRight, .page.page-moveFromRight {
+  visibility: visible;
+  z-index: 5;
   -webkit-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
+  transform-origin: 50% 50%; }
+
+.page-moveToLeft {
   -webkit-animation: rotateRoomLeftOut .5s both ease;
   animation: rotateRoomLeftOut .5s both ease; }
 
 .page-moveFromLeft {
-  -webkit-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
   -webkit-animation: rotateRoomRightIn .5s both ease;
   animation: rotateRoomRightIn .5s both ease; }
 
 .page-moveToRight {
-  -webkit-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
   -webkit-animation: rotateRoomRightOut .5s both ease;
   animation: rotateRoomRightOut .5s both ease; }
 
 .page-moveFromRight {
-  -webkit-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
   -webkit-animation: rotateRoomLeftIn .5s both ease;
   animation: rotateRoomLeftIn .5s both ease; }
 
@@ -760,13 +758,17 @@ th {
   100% {
     border-color: #de4d4d; } }
 
-.colored-bg {
+.colored-bg, .colored-title-hover:after, #portfolio-page figcaption {
   -webkit-animation: rainbow-bg 40s linear infinite;
   animation: rainbow-bg 40s linear infinite; }
 
-.colored-svg {
+.colored-svg, #social-links .mail-icon path, #intro h1 svg path {
   -webkit-animation: rainbow-svg 40s linear infinite;
   animation: rainbow-svg 40s linear infinite; }
+
+.colored-text, a {
+  -webkit-animation: rainbow-text 40s linear infinite;
+  animation: rainbow-text 40s linear infinite; }
 
 * {
   box-sizing: border-box;
@@ -846,9 +848,7 @@ h5 {
 
 a {
   -webkit-font-smoothing: antialiased;
-  position: relative;
-  -webkit-animation: rainbow-text 40s linear infinite;
-  animation: rainbow-text 40s linear infinite; }
+  position: relative; }
   a:hover, a:focus {
     text-decoration: none; }
   a:active {
@@ -925,10 +925,6 @@ dd {
     -webkit-transition-delay: 0s,0s;
     transition-delay: 0s,0s; }
 
-.colored-title-hover:after {
-  -webkit-animation: rainbow-bg 40s linear infinite;
-  animation: rainbow-bg 40s linear infinite; }
-
 .scale-btn img,
 .scale-btn svg {
   -webkit-transition: -webkit-transform 0.15s cubic-bezier(0, 0.8, 0.4, 1);
@@ -948,6 +944,9 @@ dd {
 object[data-swfid] {
   display: none; }
 
+.swf-trigger {
+  cursor: pointer; }
+
 /* Headers, footers and container styling */
 #page-header {
   z-index: 10;
@@ -958,63 +957,48 @@ object[data-swfid] {
   background: RGBA(248, 248, 248, 0.9);
   padding: 10px 0;
   font-size: 110%;
-  z-index: 100; }
-  #page-header a {
-    float: right; }
+  z-index: 100;
+  color: #878787; }
   #page-header svg,
   #page-header img {
     display: block;
     margin: 0 0.2em; }
-  #page-header > nav {
+  #page-header nav {
     float: left; }
-    #page-header > nav a {
-      padding: 0 .8em;
-      margin-left: .4em;
-      position: relative;
-      /*
-      // No need for this yet, as there is no nav
-      &:after {
-          content: '';
-          left: 50%;
-          top: 100%;
-          height: 3px;
-          width: 0;
-          position: absolute;
-          background-color: #e44444;
-          
-          transition: left 0.15s cubic-bezier(0,.8,.4,1), width 0.15s cubic-bezier(0,.8,.4,1);
-      }
-      
-      &:hover:after,
-      &:focus:after {
-          width: 20%;
-          left: 40%;
-      }
-      &:active {
-          top: 0;
-          
-          &:after {
-              width: 90%;
-              left: 5%;
-          }
-      }
-      
-      &.active:after {
-          width: 100%;
-          left: 0;
-      }
-      */ }
-  #page-header > p {
-    float: right;
-    margin: 0 0.5rem 0 0; }
   #page-header ul {
     list-style: none;
     margin: 0;
     padding: 0; }
-  #page-header a,
-  #page-header p {
-    color: #878787;
-    text-decoration: none; }
+
+#page-logo,
+#page-breadcrumb {
+  display: inline-block;
+  vertical-align: middle; }
+
+#page-logo {
+  padding: 0 .8em;
+  margin-left: .4em;
+  position: relative;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  user-drag: none;
+  user-select: none; }
+
+#page-breadcrumb {
+  visibility: hidden;
+  opacity: 0;
+  margin: -.1em 0 0;
+  transition: opacity 0.2s linear 0s, visibility 0.2s linear 0.2s; }
+  #page-breadcrumb.active {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s, 0s; }
+
+#social-links {
+  float: right;
+  margin: 0 0.5rem 0 0; }
+  #social-links a {
+    float: right; }
 
 #intro {
   padding: 8em 0 1em;
@@ -1028,8 +1012,16 @@ object[data-swfid] {
       left: 88%;
       width: 22vw; }
   #intro p {
-    width: 65%;
-    margin: 0 auto; }
+    width: 80%;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 1em 1em 1.3em;
+    border: 1px dashed #DDD;
+    border-width: 1px 0;
+    margin-top: 2em;
+    transition: box-shadow 0.5s linear; }
+    #intro p:hover {
+      box-shadow: 0 0 8px #ececec; }
 
 @-webkit-keyframes arrow-throb {
   0% {
@@ -1098,7 +1090,10 @@ object[data-swfid] {
     position: relative;
     display: block;
     text-decoration: none;
-    -webkit-user-drag: none; }
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-drag: none;
+    user-select: none; }
     #portfolio-overview a div {
       -webkit-transition: background-color 0.2s 0s, visibility 0s 0.2s;
       transition: background-color 0.2s 0s, visibility 0s 0.2s;
@@ -1198,9 +1193,9 @@ object[data-swfid] {
 #portfolio-page figcaption {
   text-align: center;
   padding: 1em 1.5em 1.3em;
-  margin-top: 0.4em;
-  background: #FFF;
-  box-shadow: 0 1px 2px RGBA(0, 0, 0, 0.06); }
+  margin-top: 0.6em;
+  box-shadow: 0 1px 2px RGBA(0, 0, 0, 0.06);
+  color: #fff; }
 #portfolio-page img {
   width: 100%;
   min-height: 100px;
@@ -1251,9 +1246,7 @@ object[data-swfid] {
     font-size: 2em; }
 
   /* Header */
-  #page-header p span {
-    display: none; }
-  #page-header > nav a {
+  #page-header #page-logo {
     padding: 0 0.6em; }
   #page-header > nav li {
     display: none; }
@@ -1263,6 +1256,9 @@ object[data-swfid] {
   #page-header svg {
     width: 36px;
     height: auto; }
+
+  #page-breadcrumb {
+    display: none; }
 
   #portfolio-page > section {
     padding-top: 5em; }
