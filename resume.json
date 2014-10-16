@@ -6,7 +6,7 @@
     "email": "aidanjalali@gmail.com",
     "phone": "+44 74741 67766",
     "website": "http://www.rainbowlemon.co.uk",
-    "summary": "Aidan is a web designer and developer from the sunny climes of Manchester (ha!), living, working and breathing in London. Having finished his BA in Creative Digital Media at Teesside University, he went on to snatch a job at EA games creating all kinds of colourful things - namely, Flash adverts and marketing pages. Following that, he joined the wonderful Everlution Software where he rediscovered his love for front-end development, and is now jobless after realising he wanted to 'do his own thing for a while' (whatever that means). He has since designed and developed his first mobile app, Point Me There, and is well on his way to making his first mobile game. He also loves talking in third person, because it makes him feel a little bit like Yoda.",
+    "summary": "Aidan is a web designer and developer from the sunny climes of Manchester (ha!), living, working and breathing in London. Having finished his BA in Creative Digital Media at Teesside University, he went on to snatch a job at EA games creating all kinds of colourful things - namely, Flash adverts and marketing pages. Following that, he joined the wonderful Everlution Software where he rediscovered his love for front-end development, and is now jobless after deciding he wanted to 'do his own thing for a while'. He has since designed and developed his first mobile app, Point Me There, and is well on his way to making his first mobile game. He also loves talking in third person, because it makes him feel a little bit like Yoda.",
     "location": {
       "address": "Flat 32 Bridge View Court, 19 Grange Road",
       "postalCode": "SE1 3BT",
@@ -33,7 +33,7 @@
     "position": "Procrastininja",
     "website": "http://www.rainbowlemon.co.uk",
     "startDate": "2014-04-01",
-    "summary": "Designing and developing apps and websites for myself and others. Basically taking time out to take it easy and work on my own stuff for a while!",
+    "summary": "Designing and developing apps and websites for myself and others; essentially taking a breather from the nine-to-five to work on my own projects for a while.",
     "highlights": [
 		"Created my first app, Point Me There",
         "Redesigned my portfolio, my girlfriend's portfolio, and my friend's portfolio",
@@ -57,7 +57,7 @@
     "website": "http://www.wearebase.com/",
     "startDate": "2010-02-01",
     "endDate": "2010-05-01",
-    "summary": "Designed websites for clients as well as design proposals for internal projects"
+    "summary": "Designed websites for clients as well as design proposals for internal projects."
   },{
     "company": "Electronic Arts",
     "position": "Graphic Artist",
