@@ -155,6 +155,9 @@ define([
             // If the page hasn't changed, don't do anything
             if ($next.length === 0 || $current[0] === $next[0]) return;
             
+            // Set the background color of the body to the correct cycled color
+            $('body').css('background-color', $('a').first().css('color'));
+            
             // Set original class name as data, to reset class names when URL changes (avoid bugs with quick navigation)
             if ($next.data('originalClass') === void 0) {
                 $next.data('originalClass', $next[0].className);
