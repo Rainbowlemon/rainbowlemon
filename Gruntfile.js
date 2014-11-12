@@ -65,6 +65,7 @@ module.exports = function(grunt) {
                         '*',
                         'app/templates/**/*',
                         'css/**',
+                        'docs/**',
                         'img/**',
                         '!img/embedded-svgs/**/*',
                         'fonts/*',

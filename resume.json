@@ -6,7 +6,7 @@
     "email": "aidanjalali@gmail.com",
     "phone": "+44 74741 67766",
     "website": "http://www.rainbowlemon.co.uk",
-    "summary": "Aidan is a web designer and developer from the sunny climes of Manchester, living, working and breathing in London. Having finished his BA in Creative Digital Media at Teesside University, he went on to snatch a job at EA games creating all kinds of colourful things - namely, Flash adverts and marketing pages. Then, following a brief stint working for a web design agency in Bournemouth, he joined the wonderful Everlution Software where he rediscovered his love for front-end development, and is now jobless after deciding he wanted to 'do his own thing for a while'. He has since designed and developed his first mobile app, Point Me There, and is well on his way to making his first mobile game. He also loves talking in third person, because it makes him feel a little bit like Yoda.",
+    "summary": "Aidan is a web designer and developer from the sunny climes of Manchester, living, working and breathing in London. Having finished his BA in Creative Digital Media at Teesside University, he went on to snatch a job at EA games creating all kinds of colourful things - namely, Flash adverts and marketing pages. Then, following a brief stint working for a web design agency in Bournemouth, he joined the wonderful Everlution Software where he rediscovered his love for front-end development, and is now the director of Polyprism Ltd after deciding he wanted to 'do his own thing for a while'. He has since designed and developed his first mobile app, Point Me There, and is well on his way to making his first mobile game.",
     "location": {
       "address": "Flat 32 Bridge View Court, 19 Grange Road",
       "postalCode": "SE1 3BT",
@@ -48,8 +48,9 @@
     "summary": "Designing and building websites (from initial concept -> wireframe -> design -> front-end build), designing marketing material in a variety of formats (posters, fliers, online ads), with a focus on good user flow & user experience. The first port-of-call in our company for anything related to ui/ux design.",
     "highlights": [
 		"Designed the logo, website and all stationery for Everlution Software",
-        "Single-handedly won a contract for a large bank to provide UI/UX advice for their global website overhaul",
-        "Saw over 10 large projects from start to finish, including wireframing, initial designs and front-end development and styling"
+        "Single-handedly won and carried out a contract for a global bank to provide UI/UX advice for their website overhauls",
+        "Saw over 10 large projects from start to finish, including wireframing, initial designs and front-end development and styling",
+        "Wrote a large majority of the Backbone/Marionette code for Manta, a SaaS human resources webapp for SMEs."
     ]
   },{
     "company": "Base Creative Agency",
@@ -95,7 +96,8 @@
       "Javascript & jQuery",
       "Backbone / Marionette / Angularjs",
       "Npm / Grunt",
-      "Browserify / Requirejs"
+      "Browserify / Requirejs",
+      "Mocha"
     ]
   },{
     "name": "UX Design",
@@ -129,7 +131,7 @@
     "fluency": "Intermediate"
   },{
     "language": "German",
-    "fluency": "Beginner"
+    "fluency": "Intermediate"
   }],
   "interests": [{
     "name": "Playing computer games"
@@ -140,7 +142,7 @@
   },{
     "name": "Eating everything afterwards"
   },{
-    "name": "Making silly facebook pictures"
+    "name": "Fiddling around with my Raspberry Pi"
   },{
     "name": "Playing computer games"
   },{
