@@ -1,6 +1,6 @@
 define([
-    'utils',
-    'jquery-throttle-debounce'
+    '../libs/utils/utils',
+    '../../node_modules/js-throttle-debounce/build/js-throttle-debounce.min.js'
 ], function(
     utils
 ) {
@@ -64,7 +64,10 @@ define([
         },
         
         bindEvents: function() {
-            $('main').on('scroll', '.page.active', $.throttle(100, this.checkHeader.bind(this)).bind(this));
+            $('main').on('scroll', '.page.active', function(){
+                this.checkHeader.throttle(100);
+            }.bind(this));
+            
             $(window).on('hashchange', this.hashChange.bind(this));
             
             this.el.portfolioPage.on('click', '.swf-trigger', this.showSwf.bind(this));

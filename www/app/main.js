@@ -1,8 +1,8 @@
 require.config({
     paths: {
-        'fastclick': '../vendor/bower/fastclick/lib/fastclick',
-        'jquery-throttle-debounce': '../vendor/bower/jquery-throttle-debounce/jquery.ba-throttle-debounce',
-        'utils': '../vendor/libs/utils/utils',
+        'fastclick': '../../node_modules/fastclick/lib/fastclick',
+        'jquery-throttle-debounce': '../../node_modules/js-throttle-debounce/build/js-throttle-debounce.min.js',
+        'utils': '../libs/utils/utils',
         'app': 'rainbowlemon'
     }
 });
