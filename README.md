@@ -1,23 +1,4 @@
 rainbowlemon
 ============
 
-##### Install:
-
-````
-npm install
-bower install
-````
-
-### To compile my Resume
-
-````
-npm install -g resume-cli
-resume publish
-````
-
-##### Compile css:
-
-````
-grunt sass
-
-````
+Hello! I am a web developer and UI/UX designer based in Manchester, UK, working through my company, [Polyprism](https://www.polyprism.com/).
